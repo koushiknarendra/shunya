@@ -560,14 +560,17 @@ export default function Home() {
             className="object-contain opacity-50"
           />
           <p className="text-xs text-zinc-500 text-center">
-            © {new Date().getFullYear()} shunya. all rights reserved.
+            © {new Date().getFullYear()} Advocare Technologies Private Limited. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-zinc-500">
-            <a href="#" className="hover:text-zinc-200 transition-colors">
-              privacy
+            <a href="/contact-us" className="hover:text-zinc-200 transition-colors">
+              Contact Us
             </a>
-            <a href="#" className="hover:text-zinc-200 transition-colors">
-              terms
+            <a href="/terms-conditions" className="hover:text-zinc-200 transition-colors">
+              Terms of Service
+            </a>
+            <a href="/cancellation-refund" className="hover:text-zinc-200 transition-colors">
+              Refund Policy
             </a>
           </div>
         </div>

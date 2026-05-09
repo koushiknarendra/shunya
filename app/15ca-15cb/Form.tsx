@@ -59,7 +59,7 @@ function Field({
 export function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "" });
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -68,33 +68,36 @@ export function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
-  }
+    setError("");
 
-  if (submitted) {
-    return (
-      <div className="flex flex-col items-center text-center py-10 gap-4">
-        <div
-          className="w-16 h-16 rounded-full flex items-center justify-center"
-          style={{ backgroundColor: "rgba(20,110,255,0.2)" }}
-        >
-          <CheckCircle2 size={32} style={{ color: "#7ab8ff" }} strokeWidth={1.75} />
-        </div>
-        <div>
-          <h3
-            className="text-xl font-bold text-white mb-1"
-            style={{ fontFamily: "var(--font-bricolage)" }}
-          >
-            request received!
-          </h3>
-          <p className="text-white/45 text-sm leading-relaxed">
-            a qualified CA will reach out to you within <strong className="text-white/70">24 hours</strong> to take this forward.
-          </p>
-        </div>
-      </div>
-    );
+    try {
+      // Create Cashfree order via API
+      const res = await fetch("/api/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.paymentSessionId) {
+        throw new Error(data.error || "Could not initiate payment. Please try again.");
+      }
+
+      // Load Cashfree SDK and open modal
+      const { load } = await import("@cashfreepayments/cashfree-js");
+      const cashfree = await load({ mode: "production" });
+
+      cashfree.checkout({
+        paymentSessionId: data.paymentSessionId,
+        redirectTarget: "_modal",
+      });
+
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -109,12 +112,11 @@ export function ContactForm() {
           required
         />
         <Field
-          label="Company Name"
+          label="Company Name (optional)"
           name="company"
           placeholder="Acme Exports Pvt Ltd"
           value={form.company}
           onChange={handleChange}
-          required
         />
       </div>
       <Field
@@ -136,12 +138,18 @@ export function ContactForm() {
         required
       />
 
+      {error && (
+        <p className="text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
         disabled={loading}
         style={{
           background: loading
-            ? "rgba(20,110,255,0.5)"
+            ? "rgba(20,110,255,0.4)"
             : "linear-gradient(103deg, #146EFF -6%, rgba(255,255,255,0.85) 94%)",
           padding: "1.5px",
           borderRadius: "9999px",
@@ -152,25 +160,36 @@ export function ContactForm() {
         }}
       >
         <span
-          className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-sm font-semibold text-white transition-opacity"
-          style={{ backgroundColor: loading ? "rgba(20,110,255,0.5)" : "#146EFF" }}
+          className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-sm font-semibold text-white"
+          style={{ backgroundColor: loading ? "rgba(20,110,255,0.4)" : "#146EFF" }}
         >
           {loading ? (
             <>
               <Loader2 size={16} className="animate-spin" />
-              submitting…
+              setting up payment…
             </>
           ) : (
             <>
-              get a free consultation <ArrowRight size={16} />
+              Start the process now — ₹999 <ArrowRight size={16} />
             </>
           )}
         </span>
       </button>
 
-      <p className="text-center text-xs text-white/25">
-        no spam. your details are safe with us.
-      </p>
+      <div className="flex items-center justify-center gap-4 text-[11px] text-white/25">
+        <span className="flex items-center gap-1">
+          <CheckCircle2 size={11} />
+          Secure payment
+        </span>
+        <span className="flex items-center gap-1">
+          <CheckCircle2 size={11} />
+          Powered by Cashfree
+        </span>
+        <span className="flex items-center gap-1">
+          <CheckCircle2 size={11} />
+          Certificate in 30 min
+        </span>
+      </div>
     </form>
   );
 }
