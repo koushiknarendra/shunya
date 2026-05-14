@@ -1,0 +1,92 @@
+const fs = require("fs");
+const path = require("path");
+
+const BASE_URL = "https://shunya.so";
+const WEB_DIR = __dirname;
+const TODAY = new Date().toISOString().split("T")[0];
+
+// Pages excluded from the sitemap
+const EXCLUDE = new Set([
+  "start-registration",
+  "thank-you",
+  "thank-you-ca",
+  "thank-you-startup-india",
+  "thank-you-15ca-15cb",
+]);
+
+// Priority rules by slug pattern
+function getPriority(slug) {
+  if (slug === "/") return 1.0;
+  if (slug === "/15ca-15cb" || slug === "/startup-india") return 0.9;
+  if (slug === "/consultation" || slug === "/how-it-works") return 0.8;
+  if (slug === "/blogs" || slug === "/about") return 0.7;
+  if (
+    slug === "/privacy-policy" ||
+    slug === "/terms-conditions" ||
+    slug === "/cancellation-refund"
+  )
+    return 0.3;
+  if (slug.startsWith("/blogs/")) return 0.6;
+  return 0.5;
+}
+
+function getChangefreq(slug) {
+  if (slug === "/" || slug === "/blogs") return "weekly";
+  if (slug === "/privacy-policy" || slug === "/terms-conditions" || slug === "/cancellation-refund")
+    return "yearly";
+  return "monthly";
+}
+
+function collectHtmlFiles(dir, rootDir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const urls = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      // Only recurse into blogs/
+      if (entry.name === "blogs") {
+        urls.push(...collectHtmlFiles(fullPath, rootDir));
+      }
+      continue;
+    }
+
+    if (!entry.name.endsWith(".html")) continue;
+
+    const relative = path.relative(rootDir, fullPath);
+    const slug = relative === "index.html"
+      ? "/"
+      : "/" + relative.replace(/\.html$/, "").replace(/\\/g, "/");
+
+    const base = slug.replace(/^\/blogs\//, "").replace(/^\//, "");
+    if (EXCLUDE.has(base)) continue;
+
+    urls.push(slug);
+  }
+
+  return urls;
+}
+
+const slugs = collectHtmlFiles(WEB_DIR, WEB_DIR).sort((a, b) => {
+  // Homepage first, then by path
+  if (a === "/") return -1;
+  if (b === "/") return 1;
+  return a.localeCompare(b);
+});
+
+const entries = slugs.map((slug) => `  <url>
+    <loc>${BASE_URL}${slug === "/" ? "/" : slug}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${getChangefreq(slug)}</changefreq>
+    <priority>${getPriority(slug).toFixed(1)}</priority>
+  </url>`).join("\n");
+
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries}
+</urlset>
+`;
+
+fs.writeFileSync(path.join(WEB_DIR, "sitemap.xml"), xml);
+console.log(`sitemap.xml generated with ${slugs.length} URLs`);
