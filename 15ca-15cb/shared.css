@@ -1,0 +1,86 @@
+/* Shunya — 15CA/15CB shared article styles (dark theme) */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Article layout ─── */
+main { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+
+/* ─── Breadcrumb ─── */
+.breadcrumb { font-size: 0.82rem; color: #82848e; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+.breadcrumb a { color: #82848e; }
+.breadcrumb a:hover { color: #bcd9f5; }
+.breadcrumb .sep { color: #3a3b40; }
+
+/* ─── Article typography ─── */
+article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.75rem; color: #bcd9f5; letter-spacing: -0.02em; }
+article h2 { font-size: 1.3rem; font-weight: 700; margin: 2.25rem 0 0.75rem; color: #bcd9f5; }
+article h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #d4e8f8; }
+article p { margin-bottom: 1.1rem; color: #82848e; font-size: 1rem; }
+article p:last-child { margin-bottom: 0; }
+article ul, article ol { margin: 0 0 1.1rem 1.5rem; color: #82848e; }
+article li { margin-bottom: 0.4rem; }
+article strong { color: #bcd9f5; }
+article a { color: #146eff; }
+article a:hover { color: #4d8fff; }
+
+/* ─── Quick Answer ─── */
+.quick-answer { background: rgba(20, 110, 255, 0.08); border-left: 4px solid #146eff; padding: 1.25rem 1.5rem; margin-bottom: 2.25rem; border-radius: 0 10px 10px 0; }
+.quick-answer .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #146eff; margin-bottom: 0.6rem; }
+.quick-answer p { color: #bcd9f5; font-weight: 500; margin-bottom: 0; }
+
+/* ─── Note ─── */
+.note { font-size: 0.875rem; color: #82848e; font-style: italic; background: rgba(255,255,255,0.04); padding: 0.75rem 1.1rem; border-radius: 6px; margin: 1.75rem 0; border: 1px solid rgba(255,255,255,0.08); }
+
+/* ─── Disclaimer ─── */
+.disclaimer { font-size: 0.8rem; color: #82848e; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; margin: 1.75rem 0; }
+
+/* ─── Mid-article CTA ─── */
+.cta-soft { background: rgba(20, 110, 255, 0.08); border: 1.5px solid rgba(20, 110, 255, 0.3); border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0; text-align: center; }
+.cta-soft .cta-headline { font-weight: 700; font-size: 1.05rem; color: #bcd9f5; margin-bottom: 0.5rem; }
+.cta-soft p { color: #82848e; margin-bottom: 1.1rem; font-size: 0.95rem; }
+.cta-soft .btn { display: inline-block; background: transparent; color: #146eff; border: 2px solid #146eff; padding: 0.6rem 1.6rem; border-radius: 7px; font-weight: 700; font-size: 0.92rem; transition: all 0.15s; }
+.cta-soft .btn:hover { background: #146eff; color: #fff; }
+
+/* ─── End CTA ─── */
+.cta-hard { background: linear-gradient(135deg, rgba(20,110,255,0.15) 0%, rgba(20,110,255,0.05) 100%); border: 1px solid rgba(20,110,255,0.25); border-radius: 14px; padding: 2.25rem 2rem; margin: 2.75rem 0; text-align: center; }
+.cta-hard h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.65rem; color: #bcd9f5; }
+.cta-hard p { color: #82848e; margin-bottom: 1.4rem; font-size: 0.97rem; }
+.cta-hard .btn { display: inline-block; background: #146eff; color: #fff; padding: 0.8rem 2.25rem; border-radius: 8px; font-weight: 700; font-size: 1rem; }
+.cta-hard .btn:hover { background: #0056d6; }
+
+/* ─── FAQ ─── */
+.faq { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.75rem; margin: 2rem 0; }
+.faq .faq-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #82848e; margin-bottom: 0.75rem; }
+.faq h3 { font-size: 1rem; font-weight: 700; color: #bcd9f5; margin: 0 0 0.75rem; }
+.faq p { color: #82848e; margin-bottom: 0; font-size: 0.95rem; }
+
+/* ─── Related articles ─── */
+.related { margin-top: 3rem; }
+.related h2 { font-size: 1.1rem; margin-bottom: 1.1rem; color: #bcd9f5; }
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.related-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1.1rem 1.25rem; color: #82848e; display: block; transition: border-color 0.15s, box-shadow 0.15s; }
+.related-card:hover { border-color: #146eff; box-shadow: 0 2px 10px rgba(20,110,255,0.12); }
+.related-card .tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #146eff; margin-bottom: 0.4rem; }
+.related-card .card-title { font-size: 0.9rem; font-weight: 600; color: #bcd9f5; line-height: 1.4; }
+
+/* ─── Resources hub page ─── */
+.resources-hero { text-align: center; padding: 3.5rem 1rem 2.5rem; margin-bottom: 2.5rem; }
+.resources-hero h1 { font-size: 2.2rem; font-weight: 800; color: #bcd9f5; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+.resources-hero .sub { font-size: 1.1rem; color: #82848e; max-width: 580px; margin: 0 auto 1.75rem; }
+.resources-hero .btn-hero { display: inline-block; background: #146eff; color: #fff; padding: 0.8rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; }
+.resources-hero .btn-hero:hover { background: #0056d6; }
+.resources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.resource-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; color: #82848e; display: flex; flex-direction: column; gap: 0.4rem; transition: border-color 0.15s, box-shadow 0.15s; }
+.resource-card:hover { border-color: #146eff; box-shadow: 0 3px 14px rgba(20,110,255,0.12); }
+.resource-card .art-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #146eff; }
+.resource-card h2 { font-size: 0.97rem; font-weight: 700; color: #bcd9f5; line-height: 1.4; }
+.resource-card p { font-size: 0.85rem; color: #82848e; flex: 1; }
+.resource-card .read-more { font-size: 0.85rem; font-weight: 600; color: #146eff; }
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  article h1 { font-size: 1.5rem; }
+  .resources-hero h1 { font-size: 1.6rem; }
+  .related-grid { grid-template-columns: 1fr; }
+  .resources-grid { grid-template-columns: 1fr; }
+  .cta-hard { padding: 1.75rem 1.25rem; }
+}

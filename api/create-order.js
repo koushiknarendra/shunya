@@ -14,39 +14,42 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid phone number' });
   }
 
-  const orderId = `SH15CB_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
+  const receipt = `SH15CB_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 
-  const cfRes = await fetch('https://api.cashfree.com/pg/orders', {
+  const credentials = Buffer.from(
+    `${process.env.RAZORPAY_KEY_ID}:${process.env.RAZORPAY_KEY_SECRET}`
+  ).toString('base64');
+
+  const rzRes = await fetch('https://api.razorpay.com/v1/orders', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-version': '2023-08-01',
-      'x-client-id': process.env.CASHFREE_APP_ID,
-      'x-client-secret': process.env.CASHFREE_SECRET_KEY,
+      Authorization: `Basic ${credentials}`,
     },
     body: JSON.stringify({
-      order_id: orderId,
-      order_amount: 999,
-      order_currency: 'INR',
-      customer_details: {
-        customer_id: `cust_${Date.now()}`,
-        customer_name: name,
-        customer_email: email,
-        customer_phone: cleanPhone,
+      amount: 99900,
+      currency: 'INR',
+      receipt,
+      notes: {
+        name,
+        email,
+        phone: cleanPhone,
+        company: company || 'Individual / NRI',
       },
-      order_meta: {
-        return_url: `https://soshunya.vercel.app/15ca-15cb?order_id=${orderId}&status=success`,
-      },
-      order_note: company ? `Company: ${company}` : 'Individual / NRI',
     }),
   });
 
-  if (!cfRes.ok) {
-    const err = await cfRes.json();
-    console.error('Cashfree error:', err);
+  if (!rzRes.ok) {
+    const err = await rzRes.json();
+    console.error('Razorpay error:', err);
     return res.status(500).json({ error: 'Failed to create payment order' });
   }
 
-  const data = await cfRes.json();
-  res.status(200).json({ paymentSessionId: data.payment_session_id, orderId: data.order_id });
+  const data = await rzRes.json();
+  res.status(200).json({
+    orderId: data.id,
+    amount: data.amount,
+    currency: data.currency,
+    keyId: process.env.RAZORPAY_KEY_ID,
+  });
 }

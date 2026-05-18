@@ -12,6 +12,8 @@ const EXCLUDE = new Set([
   "thank-you-ca",
   "thank-you-startup-india",
   "thank-you-15ca-15cb",
+  "15ca-15cb/15ca-15cb-google-ads-meta-ads-india",
+  "15ca-15cb/index",
 ]);
 
 // Priority rules by slug pattern
@@ -27,6 +29,7 @@ function getPriority(slug) {
   )
     return 0.3;
   if (slug.startsWith("/blogs/")) return 0.6;
+  if (slug.startsWith("/15ca-15cb/")) return 0.7;
   return 0.5;
 }
 
@@ -45,8 +48,7 @@ function collectHtmlFiles(dir, rootDir) {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      // Only recurse into blogs/
-      if (entry.name === "blogs") {
+      if (entry.name === "blogs" || entry.name === "15ca-15cb") {
         urls.push(...collectHtmlFiles(fullPath, rootDir));
       }
       continue;
@@ -59,7 +61,7 @@ function collectHtmlFiles(dir, rootDir) {
       ? "/"
       : "/" + relative.replace(/\.html$/, "").replace(/\\/g, "/");
 
-    const base = slug.replace(/^\/blogs\//, "").replace(/^\//, "");
+    const base = slug.replace(/^\//, "");
     if (EXCLUDE.has(base)) continue;
 
     urls.push(slug);
