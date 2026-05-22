@@ -73,6 +73,54 @@ Every page needs two things in the footer to match the design:
 | Heading text | `#bcd9f5` |
 | Purple glow | `text-shadow: 0 0 50px #9747ff` |
 
+## Performance — Image Rules (apply to every new page/change)
+
+All images added to this site must follow these rules before committing.
+
+### Format: always WebP
+Convert every new PNG/JPG to WebP using Pillow before adding to the repo:
+
+```python
+from PIL import Image
+img = Image.open('input.jpg')       # or .png
+img.save('output.webp', 'WEBP', quality=85, method=6)
+# Use quality=80 for large background images (bg-*)
+# Use quality=85 for photos and UI images
+```
+
+Keep the original file too (it stays in the repo as fallback), but the HTML/CSS must reference the `.webp` version.
+
+### `sizes` attribute — never use `100vw` for small elements
+| Element type | Correct `sizes` |
+|---|---|
+| Avatar circles (≤ 3rem) | `"48px"` |
+| Logo images | `"(max-width:780px) 200px, 120px"` |
+| Full-width hero/banner images | `"100vw"` |
+| Content images (max ~900px wide) | `"(max-width:768px) 100vw, 900px"` |
+
+### `loading` and `fetchpriority`
+- Add `loading="eager" fetchpriority="high"` to the **LCP image** (first visible above-the-fold image).
+- All other images default to `loading="lazy" decoding="async"`.
+
+### CSS background images
+Use `.webp` in all `background-image: url()` declarations:
+```css
+background-image: url('image/bg3.webp');   /* not bg3.jpg */
+```
+
+### Common typo to avoid
+`sizes="(max-wdith:…)"` is wrong — always spell it `max-width`.
+
+### Conversion reference (actual savings achieved May 2026)
+| File | Before | After | Saved |
+|---|---|---|---|
+| user avatars (PNG) | 219–331 KB | 11–31 KB | ~93% |
+| journey photo (PNG) | 452 KB | 30 KB | 94% |
+| bg3.jpg (hero bg) | 5.1 MB | 133 KB | 98% |
+| bg2.jpg (CTA bg) | 2.6 MB | 100 KB | 97% |
+
+---
+
 ## Hero Headline Pattern (thin + thick)
 
 ```html
