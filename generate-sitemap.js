@@ -19,7 +19,7 @@ const EXCLUDE = new Set([
 // Priority rules by slug pattern
 function getPriority(slug) {
   if (slug === "/") return 1.0;
-  if (slug === "/15ca-15cb" || slug === "/startup-india") return 0.9;
+  if (slug === "/15ca-15cb" || slug === "/startup-india" || slug === "/company-closure") return 0.9;
   if (slug === "/consultation" || slug === "/how-it-works") return 0.8;
   if (slug === "/blogs" || slug === "/about") return 0.7;
   if (
@@ -30,6 +30,7 @@ function getPriority(slug) {
     return 0.3;
   if (slug.startsWith("/blogs/")) return 0.6;
   if (slug.startsWith("/15ca-15cb/")) return 0.7;
+  if (slug.startsWith("/company-closure/")) return 0.7;
   return 0.5;
 }
 
@@ -48,7 +49,7 @@ function collectHtmlFiles(dir, rootDir) {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      if (entry.name === "blogs" || entry.name === "15ca-15cb") {
+      if (entry.name === "blogs" || entry.name === "15ca-15cb" || entry.name === "company-closure") {
         urls.push(...collectHtmlFiles(fullPath, rootDir));
       }
       continue;
