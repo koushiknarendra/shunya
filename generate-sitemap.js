@@ -12,6 +12,7 @@ const EXCLUDE = new Set([
   "thank-you-ca",
   "thank-you-startup-india",
   "thank-you-15ca-15cb",
+  "thank-you-company-closure",
   "15ca-15cb/15ca-15cb-google-ads-meta-ads-india",
   "15ca-15cb/index",
 ]);
