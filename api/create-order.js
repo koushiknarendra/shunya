@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       Authorization: `Basic ${credentials}`,
     },
     body: JSON.stringify({
-      amount: 99900,
+      amount: 199900,
       currency: 'INR',
       receipt,
       notes: {
