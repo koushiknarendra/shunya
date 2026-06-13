@@ -579,7 +579,7 @@ async function submitLead(name, company, phone, filings, errEl, btn) {
     });
     var data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
-    window.location.href = '/thank-you-company-closure';
+    window.location.href = '/thank-you-ccfs-2026';
   } catch (e) {
     errEl.textContent = e.message || 'Something went wrong. Please try again.';
     errEl.style.display = 'block';
