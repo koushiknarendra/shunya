@@ -15,26 +15,56 @@ export default async function handler(req, res) {
   }
 
   const lead = {
-    source: 'CCFS-2026 Landing Page',
     name: name.trim(),
     company: company.trim(),
     phone: cleanPhone,
     filings: filings || 'Not specified',
-    timestamp: new Date().toISOString(),
   };
 
-  console.log('CCFS-2026 Lead captured:', JSON.stringify(lead));
+  console.log('CCFS-2026 Lead:', JSON.stringify(lead));
 
-  const webhookUrl = process.env.LEAD_WEBHOOK_URL;
-  if (webhookUrl) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (apiKey) {
     try {
-      await fetch(webhookUrl, {
+      await fetch('https://api.resend.com/emails', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(lead),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          from: 'leads@shunya.so',
+          to: 'teamgrowth@letstranzact.com',
+          subject: `New lead: ${lead.company} — CCFS-2026 closure`,
+          html: `
+            <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px 24px;background:#f9f9fb;border-radius:12px;">
+              <h2 style="margin:0 0 4px;font-size:18px;color:#111;">New company closure lead</h2>
+              <p style="margin:0 0 24px;font-size:13px;color:#888;">via CCFS-2026 landing page</p>
+              <table style="width:100%;border-collapse:collapse;">
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;width:40%;">Name</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${lead.name}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">Company</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${lead.company}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">Phone</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${lead.phone}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;font-size:13px;color:#555;">Annual filings</td>
+                  <td style="padding:10px 0;font-size:13px;color:#111;font-weight:600;">${lead.filings}</td>
+                </tr>
+              </table>
+              <a href="https://wa.me/91${lead.phone}" style="display:inline-block;margin-top:24px;padding:10px 20px;background:#25D366;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;">Reply on WhatsApp</a>
+            </div>
+          `,
+        }),
       });
     } catch (e) {
-      console.error('Webhook delivery failed:', e.message);
+      console.error('Resend error:', e.message);
     }
   }
 
