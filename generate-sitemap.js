@@ -20,7 +20,7 @@ const EXCLUDE = new Set([
 // Priority rules by slug pattern
 function getPriority(slug) {
   if (slug === "/") return 1.0;
-  if (slug === "/15ca-15cb" || slug === "/startup-india" || slug === "/company-closure") return 0.9;
+  if (slug === "/15ca-15cb" || slug === "/startup-india" || slug === "/company-closure" || slug === "/ccfs-2026-company-closure") return 0.9;
   if (slug === "/consultation" || slug === "/how-it-works") return 0.8;
   if (slug === "/blogs" || slug === "/about") return 0.7;
   if (
