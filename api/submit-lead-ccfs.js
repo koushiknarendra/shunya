@@ -33,7 +33,7 @@ export default async function handler(req, res) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          from: 'leads@shunya.so',
+          from: 'leads@updates.shunya.so',
           to: 'namaste@shunya.so',
           subject: `New lead: ${lead.company} — CCFS-2026 closure`,
           html: `
