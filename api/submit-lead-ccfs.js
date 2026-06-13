@@ -34,7 +34,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: 'leads@shunya.so',
-          to: 'teamgrowth@letstranzact.com',
+          to: 'namaste@shunya.so',
           subject: `New lead: ${lead.company} — CCFS-2026 closure`,
           html: `
             <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px 24px;background:#f9f9fb;border-radius:12px;">
