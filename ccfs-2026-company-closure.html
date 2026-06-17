@@ -589,6 +589,11 @@ async function submitLead(name, company, phone, filings, errEl, btn) {
   }
 }
 
+function validatePhone(phone) {
+  var digits = phone.replace(/[\s\-+()]/g, '').replace(/^0*91/, '');
+  return /^[6-9]\d{9}$/.test(digits);
+}
+
 function handleCCFSLead() {
   var name = document.getElementById('cf_name').value.trim();
   var company = document.getElementById('cf_company').value.trim();
@@ -598,6 +603,11 @@ function handleCCFSLead() {
   var btn = document.getElementById('ccfs_submit_btn');
   if (!name || !company || !phone) {
     errEl.textContent = 'Please fill in your name, company name, and phone number.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (!validatePhone(phone)) {
+    errEl.textContent = 'Please enter a valid 10-digit Indian mobile number.';
     errEl.style.display = 'block';
     return;
   }
@@ -613,6 +623,11 @@ function handleCCFSLeadBottom() {
   var btn = document.getElementById('ccfs_submit_btn_bottom');
   if (!name || !company || !phone) {
     errEl.textContent = 'Please fill in your name, company name, and phone number.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (!validatePhone(phone)) {
+    errEl.textContent = 'Please enter a valid 10-digit Indian mobile number.';
     errEl.style.display = 'block';
     return;
   }

@@ -21,6 +21,8 @@ export default async function handler(req, res) {
     filings: filings || 'Not specified',
   };
 
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
   console.log('CCFS-2026 Lead:', JSON.stringify(lead));
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -43,19 +45,19 @@ export default async function handler(req, res) {
               <table style="width:100%;border-collapse:collapse;">
                 <tr>
                   <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;width:40%;">Name</td>
-                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${lead.name}</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${esc(lead.name)}</td>
                 </tr>
                 <tr>
                   <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">Company</td>
-                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${lead.company}</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${esc(lead.company)}</td>
                 </tr>
                 <tr>
                   <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">Phone</td>
-                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${lead.phone}</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${esc(lead.phone)}</td>
                 </tr>
                 <tr>
                   <td style="padding:10px 0;font-size:13px;color:#555;">Annual filings</td>
-                  <td style="padding:10px 0;font-size:13px;color:#111;font-weight:600;">${lead.filings}</td>
+                  <td style="padding:10px 0;font-size:13px;color:#111;font-weight:600;">${esc(lead.filings)}</td>
                 </tr>
               </table>
               <a href="https://wa.me/91${lead.phone}" style="display:inline-block;margin-top:24px;padding:10px 20px;background:#25D366;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;">Reply on WhatsApp</a>
