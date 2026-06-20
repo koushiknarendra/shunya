@@ -152,3 +152,10 @@
 .pcc_cta_consult:hover{border-color:#fff;color:#fff;}
 .pcc_cta_wa{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;padding:14px 32px;border-radius:9999px;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#4ade80;text-decoration:none;transition:opacity .2s;}
 .pcc_cta_wa:hover{opacity:.9;}
+.sh_reviewed_badge{margin-top:20px;padding:14px 16px;background:rgba(20,110,255,.06);border:1px solid rgba(20,110,255,.18);border-radius:12px;}
+.sh_reviewed_badge_text{font-family:var(--font-inter),sans-serif;font-size:.8125rem;line-height:1.65;color:rgba(255,255,255,.45);margin:0 0 12px;}
+.sh_reviewed_badge_author{display:flex;align-items:center;gap:7px;}
+.sh_reviewed_badge_icon{color:#146EFF;flex-shrink:0;}
+.sh_reviewed_badge_byline{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.50);}
+.sh_reviewed_badge_link{color:#146EFF;text-decoration:none;}
+.sh_reviewed_badge_link:hover{text-decoration:underline;}
