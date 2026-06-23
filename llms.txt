@@ -1,0 +1,67 @@
+# Shunya
+
+> Shunya is an Indian CA services platform that simplifies company registration and corporate compliance. We help Indian businesses register Private Limited companies, LLPs, and OPCs online — fast, affordable, and 100% compliant. We also handle 15CA/15CB filings for foreign remittances and company closure (strike-off) through a CA-assisted online process.
+
+## Core Services
+
+- [Company Registration](https://shunya.so/): Register a Private Limited Company, LLP, or OPC in India online — end-to-end CA-assisted process.
+- [15CA/15CB Filing](https://shunya.so/15ca-15cb): Get Form 15CA and Form 15CB filed by a CA for foreign remittance payments — no office visit required.
+- [Company Closure](https://shunya.so/company-closure): Close a private limited company or LLP in India via Fast Track Exit (FTE) under Section 248 of the Companies Act.
+- [CCFS-2026 Company Closure](https://shunya.so/ccfs-2026-company-closure): MCA's CCFS-2026 scheme reduces the government fee for company closure to ₹2,500 (from ₹10,000) — CA-assisted, transparent pricing, no payment until you approve.
+- [Startup India Registration](https://shunya.so/startup-india): Get DPIIT recognition under the Startup India scheme.
+- [Free Consultation](https://shunya.so/consultation): Book a free call with a CA to discuss your compliance needs.
+- [How It Works](https://shunya.so/how-it-works): Step-by-step walkthrough of the Shunya process.
+
+## 15CA/15CB Guides
+
+- [Difference Between Form 15CA and 15CB](https://shunya.so/15ca-15cb/difference-between-form-15ca-and-15cb)
+- [Do I Need Form 15CA/15CB for Foreign Remittance?](https://shunya.so/15ca-15cb/do-i-need-form-15ca-15cb-foreign-remittance)
+- [Documents Required for Form 15CB](https://shunya.so/15ca-15cb/documents-required-form-15cb)
+- [15CA/15CB Online Process — No CA Visit](https://shunya.so/15ca-15cb/form-15ca-15cb-online-process-no-ca-visit)
+- [15CA for Payment to Foreign Software Company](https://shunya.so/15ca-15cb/form-15ca-payment-foreign-software-company-india)
+- [Form 15CB CA Fees and Cost in India](https://shunya.so/15ca-15cb/form-15cb-ca-fees-cost-india)
+- [Form 15CB Error Correction and Revision](https://shunya.so/15ca-15cb/form-15cb-error-correction-revision)
+- [How Long Does Form 15CB Take?](https://shunya.so/15ca-15cb/how-long-does-form-15cb-take)
+- [How to File Form 15CA Online](https://shunya.so/15ca-15cb/how-to-file-form-15ca-online)
+- [NRI NRO to NRE Transfer and Form 15CA](https://shunya.so/15ca-15cb/nri-nro-to-nre-transfer-form-15ca)
+- [Penalty for Not Filing Form 15CA](https://shunya.so/15ca-15cb/penalty-for-not-filing-form-15ca)
+- [Sending Money to Family Abroad — Form 15CA](https://shunya.so/15ca-15cb/sending-money-to-family-abroad-form-15ca)
+- [TCS on Foreign Remittance Under LRS](https://shunya.so/15ca-15cb/tcs-on-foreign-remittance-india-lrs)
+- [Who Files Form 15CA — Remitter or Bank?](https://shunya.so/15ca-15cb/who-files-form-15ca-remitter-bank)
+- [Google Ads and Meta Ads Payments from India — 15CA/15CB Requirements](https://shunya.so/15ca-15cb/15ca-15cb-google-ads-meta-ads-india)
+- [All 15CA/15CB Resources](https://shunya.so/15ca-15cb/resources)
+
+## Company Closure Guides
+
+- [How to Close a Private Limited Company in India](https://shunya.so/company-closure/how-to-close-private-limited-company-india)
+- [How to Close an LLP in India](https://shunya.so/company-closure/how-to-close-llp-india)
+- [Fast Track Exit — Company Closure in India](https://shunya.so/company-closure/fast-track-exit-company-closure-india)
+- [Cost of Closing a Company in India](https://shunya.so/company-closure/cost-of-closing-company-india)
+- [Documents Required for Company Strike-Off](https://shunya.so/company-closure/documents-required-company-strike-off-india)
+- [How Long Does Company Closure Take?](https://shunya.so/company-closure/how-long-does-company-closure-take-india)
+- [Can I Close a Company With Pending Dues?](https://shunya.so/company-closure/can-i-close-company-with-pending-dues-india)
+- [Strike-Off vs Winding Up](https://shunya.so/company-closure/strike-off-vs-winding-up-company-india)
+- [Section 248 Companies Act — Strike-Off](https://shunya.so/company-closure/section-248-companies-act-strike-off)
+- [ROC Suo Motu Strike-Off](https://shunya.so/company-closure/roc-suo-motu-strike-off-company-india)
+- [Tax Implications of Company Closure](https://shunya.so/company-closure/tax-implications-company-closure-india)
+- [Pending ROC Returns Before Closure](https://shunya.so/company-closure/pending-roc-returns-before-company-closure-india)
+- [LLP vs Private Limited Company Closure](https://shunya.so/company-closure/llp-vs-private-limited-company-closure-india)
+- [How to Close a Dormant/Inactive Company](https://shunya.so/company-closure/how-to-close-dormant-inactive-company-india)
+- [What Happens to Employees on Company Closure?](https://shunya.so/company-closure/what-happens-to-employees-company-closure-india)
+- [All Company Closure Resources](https://shunya.so/company-closure/resources)
+
+## Blog Articles
+
+- [All Blog Articles](https://shunya.so/blogs)
+- [How Does Business Registration Online Work in 2026?](https://shunya.so/blogs/how-does-business-registration-online-work-in-2026)
+- [How to Register a Business Name Online Legally in India](https://shunya.so/blogs/how-to-register-a-business-name-online-legally-in-india)
+- [How to Register a Company Legally with Required Documents](https://shunya.so/blogs/how-to-register-a-company-legally-with-required-documents)
+- [How to Trademark a Business Name and Protect Brand Identity](https://shunya.so/blogs/how-to-trademark-a-business-name-and-protect-brand-identity)
+- [What Is a Registered Agent and Why Your Business Needs One](https://shunya.so/blogs/what-is-a-registered-agent-and-why-your-business-needs-one)
+
+## About & Policies
+
+- [About Shunya](https://shunya.so/about)
+- [Privacy Policy](https://shunya.so/privacy-policy)
+- [Terms & Conditions](https://shunya.so/terms-conditions)
+- [Cancellation & Refund Policy](https://shunya.so/cancellation-refund)
