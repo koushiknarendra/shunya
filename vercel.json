@@ -5,6 +5,8 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/_next/image", "destination": "/api/next-image" },
+    { "source": "/startup-india/apply", "destination": "/api/startup-india/apply" },
+    { "source": "/transaction/verify", "destination": "/api/transaction/verify" },
     { "source": "/start-registration", "destination": "/start-registration.html" },
     { "source": "/blogs/:slug", "destination": "/blogs/:slug.html" },
     { "source": "/thank-you-ca", "destination": "/thank-you-ca.html" }
