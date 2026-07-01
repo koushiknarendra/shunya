@@ -8,6 +8,8 @@ const TODAY = new Date().toISOString().split("T")[0];
 // Pages excluded from the sitemap
 const EXCLUDE = new Set([
   "start-registration",
+  "how-it-works",
+  "about",
   "thank-you",
   "thank-you-ca",
   "thank-you-startup-india",
