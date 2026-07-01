@@ -5,6 +5,8 @@
 ## Core Services
 
 - [Company Registration](https://shunya.so/): Register a Private Limited Company, LLP, or OPC in India online — end-to-end CA-assisted process.
+- [GST Registration](https://shunya.so/gst-registration): Get GST registered online with a CA — GSTIN delivered in 5–7 working days, ₹1,499 one-time.
+- [GST Return Filing](https://shunya.so/gst-return-filing): Monthly GST return filing (GSTR-1, GSTR-3B, GSTR-9) by a CA, filed before every due date, ₹799/month.
 - [15CA/15CB Filing](https://shunya.so/15ca-15cb): Get Form 15CA and Form 15CB filed by a CA for foreign remittance payments — no office visit required.
 - [Company Closure](https://shunya.so/company-closure): Close a private limited company or LLP in India via Fast Track Exit (FTE) under Section 248 of the Companies Act.
 - [CCFS-2026 Company Closure](https://shunya.so/ccfs-2026-company-closure): MCA's CCFS-2026 scheme reduces the government fee for company closure to ₹2,500 (from ₹10,000) — CA-assisted, transparent pricing, no payment until you approve.
