@@ -371,7 +371,7 @@ async function handleLead() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, phone, page: 'Tax Audit - F&O Traders', url: window.location.href }),
     });
-    window.location.href = '/thank-you-tax-audit-callback';
+    window.location.href = '/thank-you-callback?service=tax-audit-44ab';
   } catch (err) {
     errEl.textContent = 'Something went wrong. Please try again or WhatsApp us.';
     errEl.style.display = 'block';
@@ -407,7 +407,7 @@ async function handlePayment() {
       name: 'Shunya', description: 'F&O Trader Tax Audit Package', order_id: data.orderId,
       prefill: { name, email, contact: phone },
       theme: { color: '#146EFF' },
-      handler: function () { window.location.href = '/thank-you-tax-audit'; },
+      handler: function () { window.location.href = '/thank-you-payment?service=tax-audit-44ab'; },
     });
     btn.style.opacity = ''; btn.style.cursor = ''; btn.disabled = false; btn.innerHTML = originalHTML;
     rzp.open();

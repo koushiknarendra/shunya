@@ -21,8 +21,6 @@ const EXCLUDE = new Set([
   "thank-you-gstr-9-gstr-9c-filing",
   "thank-you-callback",
   "thank-you-payment",
-  "thank-you-tax-audit",
-  "thank-you-tax-audit-callback",
   "15ca-15cb/15ca-15cb-google-ads-meta-ads-india",
   "15ca-15cb/index",
 ]);
