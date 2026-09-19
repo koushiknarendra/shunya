@@ -4,12 +4,24 @@ const PLAN_AMOUNTS = {
   business: 449900,
 };
 
-// Shared with Tax Audit (44AB) — separate plan keys, one endpoint, since the
-// Vercel Hobby plan caps serverless functions at 12 and that cap is already hit.
+// Shared with Tax Audit (44AB) and Lower TDS Certificate (NRI) — separate plan
+// keys, one endpoint, since the Vercel Hobby plan caps serverless functions
+// at 12 and that cap is already hit.
 const TAX_AUDIT_PLAN_AMOUNTS = {
   audit_only: 499900,
   audit_itr: 799900,
   fo_package: 599900,
+};
+
+const LOWER_TDS_PLAN_AMOUNTS = {
+  rental_interest: 499900,
+  property_sale: 999900,
+  other_income: 699900,
+};
+
+const SERVICE_CONFIG = {
+  tax_audit: { plans: TAX_AUDIT_PLAN_AMOUNTS, defaultPlan: 'audit_only', receiptPrefix: 'SHAUDIT', label: 'Tax Audit (44AB)' },
+  lower_tds_nri: { plans: LOWER_TDS_PLAN_AMOUNTS, defaultPlan: 'property_sale', receiptPrefix: 'SHLTC', label: 'Lower TDS Certificate (NRI)' },
 };
 
 export default async function handler(req, res) {
@@ -28,13 +40,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid phone number' });
   }
 
-  const isTaxAudit = service === 'tax_audit';
-  const PLANS = isTaxAudit ? TAX_AUDIT_PLAN_AMOUNTS : PLAN_AMOUNTS;
-  const defaultPlan = isTaxAudit ? 'audit_only' : 'salaried';
+  const config = SERVICE_CONFIG[service];
+  const PLANS = config ? config.plans : PLAN_AMOUNTS;
+  const defaultPlan = config ? config.defaultPlan : 'salaried';
   const selectedPlan = PLANS[plan] ? plan : defaultPlan;
   const amount = PLANS[selectedPlan];
 
-  const receipt = `${isTaxAudit ? 'SHAUDIT' : 'SHITR'}_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
+  const receipt = `${config ? config.receiptPrefix : 'SHITR'}_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 
   const credentials = Buffer.from(
     `${process.env.RAZORPAY_KEY_ID}:${process.env.RAZORPAY_KEY_SECRET}`
@@ -55,7 +67,7 @@ export default async function handler(req, res) {
         email,
         phone: cleanPhone,
         plan: selectedPlan,
-        service: isTaxAudit ? 'Tax Audit (44AB)' : 'ITR Filing',
+        service: config ? config.label : 'ITR Filing',
       },
     }),
   });

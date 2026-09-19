@@ -8,6 +8,7 @@
 - [GST Registration](https://shunya.so/gst-registration): Get GST registered online with a CA — GSTIN delivered in 5–7 working days, ₹1,499 one-time.
 - [GST Return Filing](https://shunya.so/gst-return-filing): Monthly GST return filing (GSTR-1, GSTR-3B, GSTR-9) by a CA, filed before every due date, ₹799/month.
 - [15CA/15CB Filing](https://shunya.so/15ca-15cb): Get Form 15CA and Form 15CB filed by a CA for foreign remittance payments — no office visit required.
+- [Lower TDS Certificate for NRIs](https://shunya.so/lower-tds-certificate-nri): Get a Lower or Nil TDS Certificate (Form 13) for NRI property sales, rent, or interest income — capital gains computed and filed by a CA, from ₹4,999.
 - [Company Closure](https://shunya.so/company-closure): Close a private limited company or LLP in India via Fast Track Exit (FTE) under Section 248 of the Companies Act.
 - [CCFS-2026 Company Closure](https://shunya.so/ccfs-2026-company-closure): MCA's CCFS-2026 scheme reduces the government fee for company closure to ₹2,500 (from ₹10,000) — CA-assisted, transparent pricing, no payment until you approve.
 - [Startup India Registration](https://shunya.so/startup-india): Get DPIIT recognition under the Startup India scheme.
@@ -32,6 +33,24 @@
 - [Who Files Form 15CA — Remitter or Bank?](https://shunya.so/15ca-15cb/who-files-form-15ca-remitter-bank)
 - [Google Ads and Meta Ads Payments from India — 15CA/15CB Requirements](https://shunya.so/15ca-15cb/15ca-15cb-google-ads-meta-ads-india)
 - [All 15CA/15CB Resources](https://shunya.so/15ca-15cb/resources)
+
+## Lower TDS Certificate (NRI) Guides
+
+- [What is a Lower TDS Certificate (Form 13) for NRIs?](https://shunya.so/lower-tds-certificate-nri/what-is-lower-tds-certificate-nri)
+- [Section 195 vs Section 197 — Why NRIs Are Taxed Differently](https://shunya.so/lower-tds-certificate-nri/section-197-vs-195-tds-nri)
+- [Lower TDS Certificate for NRIs Selling Property in India](https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-nri-property-sale)
+- [TDS on NRI Property Sale Without a Lower TDS Certificate](https://shunya.so/lower-tds-certificate-nri/tds-on-nri-property-sale-without-certificate)
+- [Documents Required for Form 13 (Lower TDS Certificate)](https://shunya.so/lower-tds-certificate-nri/documents-required-form-13-lower-tds)
+- [How to Apply for Form 13 Online](https://shunya.so/lower-tds-certificate-nri/how-to-apply-form-13-traces-online)
+- [How Long Does a Lower TDS Certificate Take?](https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-processing-time)
+- [Lower TDS Certificate vs Claiming a Refund in Your ITR](https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-vs-itr-refund-nri)
+- [Form 13 vs Form 15CA/15CB — What's the Difference](https://shunya.so/lower-tds-certificate-nri/form-13-vs-form-15ca-15cb-difference)
+- [TDS on NRO Account Interest — Can a Lower Deduction Certificate Help?](https://shunya.so/lower-tds-certificate-nri/tds-on-nro-interest-lower-deduction-certificate)
+- [Lower TDS Certificate for NRI Rental Income](https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-nri-rental-income)
+- [Buyer or Tenant Deducted Full TDS Despite Your Certificate — What to Do](https://shunya.so/lower-tds-certificate-nri/buyer-deducted-full-tds-despite-certificate)
+- [How Long Is a Lower TDS Certificate Valid?](https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-validity-period)
+- [Common Reasons Form 13 Applications Get Rejected or Delayed](https://shunya.so/lower-tds-certificate-nri/form-13-application-rejected-reasons)
+- [All Lower TDS Certificate Guides](https://shunya.so/lower-tds-certificate-nri/resources)
 
 ## GST Guides
 
