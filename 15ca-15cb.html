@@ -758,7 +758,7 @@ async function handlePayment() {
     const res = await fetch('/api/create-order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, company }),
+      body: JSON.stringify({ name, email, phone, company, service: '15ca_15cb' }),
     });
 
     const data = await res.json();

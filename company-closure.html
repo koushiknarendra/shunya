@@ -447,10 +447,10 @@ async function handlePaymentCC() {
   btn.innerHTML = 'Setting up payment…';
 
   try {
-    const res = await fetch('/api/create-order-cc', {
+    const res = await fetch('/api/create-order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, company }),
+      body: JSON.stringify({ name, email, phone, company, service: 'company_closure' }),
     });
     const data = await res.json();
     if (!res.ok || !data.orderId) throw new Error(data.error || 'Could not initiate payment. Please try again.');
