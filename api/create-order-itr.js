@@ -15,7 +15,7 @@ const TAX_AUDIT_PLAN_AMOUNTS = {
 
 const LOWER_TDS_PLAN_AMOUNTS = {
   rental_interest: 499900,
-  property_sale: 999900,
+  property_sale: 1199900,
   other_income: 699900,
 };
 
