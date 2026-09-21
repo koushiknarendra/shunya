@@ -25,10 +25,17 @@ const FSSAI_PLAN_AMOUNTS = {
   central_license: 999900,
 };
 
+const GST_LUT_PLAN_AMOUNTS = {
+  lut_only: 49900,
+  lut_iec: 199900,
+  export_compliance: 399900,
+};
+
 const SERVICE_CONFIG = {
   tax_audit: { plans: TAX_AUDIT_PLAN_AMOUNTS, defaultPlan: 'audit_only', receiptPrefix: 'SHAUDIT', label: 'Tax Audit (44AB)' },
   lower_tds_nri: { plans: LOWER_TDS_PLAN_AMOUNTS, defaultPlan: 'property_sale', receiptPrefix: 'SHLTC', label: 'Lower TDS Certificate (NRI)' },
   fssai_registration: { plans: FSSAI_PLAN_AMOUNTS, defaultPlan: 'state_license', receiptPrefix: 'SHFSSAI', label: 'FSSAI Registration & License' },
+  gst_lut: { plans: GST_LUT_PLAN_AMOUNTS, defaultPlan: 'lut_iec', receiptPrefix: 'SHLUT', label: 'GST LUT Filing' },
 };
 
 export default async function handler(req, res) {
