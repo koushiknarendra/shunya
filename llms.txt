@@ -9,6 +9,7 @@
 - [GST Return Filing](https://shunya.so/gst-return-filing): Monthly GST return filing (GSTR-1, GSTR-3B, GSTR-9) by a CA, filed before every due date, ₹799/month.
 - [15CA/15CB Filing](https://shunya.so/15ca-15cb): Get Form 15CA and Form 15CB filed by a CA for foreign remittance payments — no office visit required.
 - [Lower TDS Certificate for NRIs](https://shunya.so/lower-tds-certificate-nri): Get a Lower or Nil TDS Certificate — Form 13, now renamed Form 128 — for NRI property sales, rent, or interest income. Capital gains computed and filed by a CA, from ₹4,999.
+- [FSSAI Registration & License](https://shunya.so/fssai-registration): Get FSSAI Basic Registration, State License, or Central License filed on FoSCoS, with the 2026 turnover limits and perpetual validity built in. From ₹1,499.
 - [Company Closure](https://shunya.so/company-closure): Close a private limited company or LLP in India via Fast Track Exit (FTE) under Section 248 of the Companies Act.
 - [CCFS-2026 Company Closure](https://shunya.so/ccfs-2026-company-closure): MCA's CCFS-2026 scheme reduces the government fee for company closure to ₹2,500 (from ₹10,000) — CA-assisted, transparent pricing, no payment until you approve.
 - [Startup India Registration](https://shunya.so/startup-india): Get DPIIT recognition under the Startup India scheme.
@@ -52,6 +53,25 @@
 - [Common Reasons Form 13 Applications Get Rejected or Delayed](https://shunya.so/lower-tds-certificate-nri/form-13-application-rejected-reasons)
 - [Form 128 vs Form 13: What Changed in 2026](https://shunya.so/lower-tds-certificate-nri/form-128-vs-form-13-what-changed)
 - [All Lower TDS Certificate Guides](https://shunya.so/lower-tds-certificate-nri/resources)
+
+## FSSAI Registration & License Guides
+
+- [What is FSSAI Registration & License?](https://shunya.so/fssai-registration/what-is-fssai-registration-license)
+- [FSSAI Turnover Limits 2026: What Changed for Basic, State & Central](https://shunya.so/fssai-registration/fssai-turnover-limit-2026-basic-state-central)
+- [FSSAI Basic Registration vs State License](https://shunya.so/fssai-registration/fssai-basic-registration-vs-state-license)
+- [FSSAI State License vs Central License](https://shunya.so/fssai-registration/fssai-state-vs-central-license-difference)
+- [Documents Required for FSSAI Registration](https://shunya.so/fssai-registration/documents-required-fssai-registration)
+- [How to Apply for an FSSAI License on FoSCoS](https://shunya.so/fssai-registration/how-to-apply-fssai-license-foscos-online)
+- [FSSAI License Renewal: Why It's Perpetual Now (2026 Rules)](https://shunya.so/fssai-registration/fssai-license-renewal-perpetual-validity-2026)
+- [How Long Does FSSAI Registration Take?](https://shunya.so/fssai-registration/fssai-registration-processing-time)
+- [FSSAI License for Restaurants & Cloud Kitchens](https://shunya.so/fssai-registration/fssai-license-for-restaurant-cloud-kitchen)
+- [FSSAI Registration for E-commerce & Home-Based Food Businesses](https://shunya.so/fssai-registration/fssai-license-for-ecommerce-food-business)
+- [FSSAI Central License for Food Importers & Exporters](https://shunya.so/fssai-registration/fssai-central-license-import-export)
+- [Can You Get FSSAI Registration Without a GST Number?](https://shunya.so/fssai-registration/fssai-registration-without-gst-number)
+- [Penalty for Operating Without an FSSAI License](https://shunya.so/fssai-registration/penalty-for-not-having-fssai-license)
+- [Common Reasons FSSAI License Applications Get Rejected or Delayed](https://shunya.so/fssai-registration/fssai-license-rejected-reasons)
+- [FSSAI Registration for Street Food Vendors — 2026 Rules](https://shunya.so/fssai-registration/street-food-vendor-fssai-registration-2026)
+- [All FSSAI Registration Guides](https://shunya.so/fssai-registration/resources)
 
 ## GST Guides
 

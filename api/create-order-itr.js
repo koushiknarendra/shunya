@@ -19,9 +19,16 @@ const LOWER_TDS_PLAN_AMOUNTS = {
   other_income: 699900,
 };
 
+const FSSAI_PLAN_AMOUNTS = {
+  basic_registration: 149900,
+  state_license: 499900,
+  central_license: 999900,
+};
+
 const SERVICE_CONFIG = {
   tax_audit: { plans: TAX_AUDIT_PLAN_AMOUNTS, defaultPlan: 'audit_only', receiptPrefix: 'SHAUDIT', label: 'Tax Audit (44AB)' },
   lower_tds_nri: { plans: LOWER_TDS_PLAN_AMOUNTS, defaultPlan: 'property_sale', receiptPrefix: 'SHLTC', label: 'Lower TDS Certificate (NRI)' },
+  fssai_registration: { plans: FSSAI_PLAN_AMOUNTS, defaultPlan: 'state_license', receiptPrefix: 'SHFSSAI', label: 'FSSAI Registration & License' },
 };
 
 export default async function handler(req, res) {
