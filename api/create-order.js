@@ -1,7 +1,9 @@
+import { pushOrder } from './_lib/zoho.js';
+
 const SERVICE_CONFIG = {
   '15ca_15cb': {
     receiptPrefix: 'SH15CB',
-    label: '15CA/15CB Certificate',
+    label: 'Form 145 / 146 (15CA/15CB)',
     amount: 199900,
     notesExtra: ({ company }) => ({ company: company || 'Individual / NRI' }),
   },
@@ -48,6 +50,18 @@ const SERVICE_CONFIG = {
     label: 'Tax Audit (44AB)',
     plans: { audit_only: 499900, audit_itr: 799900, fo_package: 599900 },
     defaultPlan: 'audit_only',
+  },
+  fssai_registration: {
+    receiptPrefix: 'SHFSSAI',
+    label: 'FSSAI Registration & License',
+    plans: { basic_registration: 149900, state_license: 499900, central_license: 999900 },
+    defaultPlan: 'state_license',
+  },
+  gst_lut: {
+    receiptPrefix: 'SHLUT',
+    label: 'GST LUT Filing',
+    plans: { lut_only: 49900, lut_iec: 199900, export_compliance: 399900 },
+    defaultPlan: 'lut_iec',
   },
   lower_tds_nri: {
     receiptPrefix: 'SHLTC',
@@ -131,6 +145,7 @@ export default async function handler(req, res) {
   }
 
   const data = await rzRes.json();
+  await pushOrder(data, 'Pending');
   res.status(200).json({
     orderId: data.id,
     amount: data.amount,

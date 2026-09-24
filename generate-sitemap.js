@@ -28,7 +28,7 @@ const EXCLUDE = new Set([
 // Priority rules by slug pattern
 function getPriority(slug) {
   if (slug === "/") return 1.0;
-  if (slug === "/15ca-15cb" || slug === "/startup-india" || slug === "/company-closure" || slug === "/ccfs-2026-company-closure" || slug === "/gst-registration" || slug === "/gst-return-filing" || slug === "/itr-filing" || slug === "/gst-refund-filing" || slug === "/gstr-9-gstr-9c-filing" || slug === "/company-registration" || slug === "/tools" || slug === "/tax-audit-44ab" || slug === "/lower-tds-certificate-nri") return 0.9;
+  if (slug === "/15ca-15cb" || slug === "/startup-india" || slug === "/company-closure" || slug === "/ccfs-2026-company-closure" || slug === "/gst-registration" || slug === "/gst-return-filing" || slug === "/itr-filing" || slug === "/gst-refund-filing" || slug === "/gstr-9-gstr-9c-filing" || slug === "/company-registration" || slug === "/tools" || slug === "/tax-audit-44ab" || slug === "/lower-tds-certificate-nri" || slug === "/fssai-registration" || slug === "/gst-lut") return 0.9;
   if (slug === "/tax-audit-for-traders" || slug === "/tax-audit-due-date" || slug === "/form-3cd-filing" || slug === "/tax-audit-applicability-calculator") return 0.8;
   if (slug === "/consultation" || slug === "/how-it-works") return 0.8;
   if (slug === "/blogs" || slug === "/about") return 0.7;
@@ -50,6 +50,8 @@ function getPriority(slug) {
   if (slug.startsWith("/tools/")) return 0.7;
   if (slug.startsWith("/tax-audit-44ab/")) return 0.7;
   if (slug.startsWith("/lower-tds-certificate-nri/")) return 0.7;
+  if (slug.startsWith("/fssai-registration/")) return 0.7;
+  if (slug.startsWith("/gst-lut/")) return 0.7;
   return 0.5;
 }
 
@@ -68,7 +70,7 @@ function collectHtmlFiles(dir, rootDir) {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      if (entry.name === "blogs" || entry.name === "15ca-15cb" || entry.name === "company-closure" || entry.name === "gst-registration" || entry.name === "itr-filing" || entry.name === "startup-india" || entry.name === "gst-refund-filing" || entry.name === "gstr-9-gstr-9c-filing" || entry.name === "company-registration" || entry.name === "tools" || entry.name === "tax-audit-44ab" || entry.name === "lower-tds-certificate-nri") {
+      if (entry.name === "blogs" || entry.name === "15ca-15cb" || entry.name === "company-closure" || entry.name === "gst-registration" || entry.name === "itr-filing" || entry.name === "startup-india" || entry.name === "gst-refund-filing" || entry.name === "gstr-9-gstr-9c-filing" || entry.name === "company-registration" || entry.name === "tools" || entry.name === "tax-audit-44ab" || entry.name === "lower-tds-certificate-nri" || entry.name === "fssai-registration" || entry.name === "gst-lut") {
         urls.push(...collectHtmlFiles(fullPath, rootDir));
       }
       continue;

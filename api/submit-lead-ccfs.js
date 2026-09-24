@@ -1,3 +1,5 @@
+import { pushLead } from './_lib/zoho.js';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -24,6 +26,15 @@ export default async function handler(req, res) {
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
   console.log('CCFS-2026 Lead:', JSON.stringify(lead));
+
+  const zohoPush = pushLead({
+    name: lead.name,
+    phone: lead.phone,
+    company: lead.company,
+    source: 'CCFS-2026 company closure page',
+    service: 'Company Closure / Strike Off',
+    details: { 'Annual filings': lead.filings },
+  });
 
   const apiKey = process.env.RESEND_API_KEY;
   if (apiKey) {
@@ -69,6 +80,8 @@ export default async function handler(req, res) {
       console.error('Resend error:', e.message);
     }
   }
+
+  await zohoPush;
 
   return res.status(200).json({ success: true });
 }
