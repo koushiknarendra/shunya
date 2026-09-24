@@ -58,7 +58,7 @@ async function zohoPost(path, body) {
     timedFetch(`${API_URL}/crm/${API_VERSION}/${path}`, {
       method: 'POST',
       headers: { Authorization: `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
-      body: body === undefined ? undefined : JSON.stringify(body),
+      body: JSON.stringify(body),
     });
 
   let res = await send(await getAccessToken());
@@ -108,16 +108,6 @@ function serviceFromUrl(url) {
     return '';
   }
 }
-
-// Zoho tag names are short (25 chars), so the longest service labels get a compact tag.
-const TAG_BY_SERVICE = {
-  'Company Closure / Strike Off': 'Company Closure',
-  'Form 145 / 146 (15CA/15CB)': 'Form 145-146 (15CA-15CB)',
-  'Lower TDS Certificate (NRI)': 'Lower TDS (NRI)',
-  'FSSAI Registration & License': 'FSSAI',
-  'Startup India Registration': 'Startup India',
-};
-const tagFor = service => TAG_BY_SERVICE[service] || service.slice(0, 25);
 
 const rupees = paise => `₹${(paise / 100).toLocaleString('en-IN')}`;
 
@@ -188,16 +178,6 @@ export async function pushLead(lead) {
       return { ok: false };
     }
 
-    // A Tag inside the record body is silently ignored by Zoho, so tags go through the dedicated
-    // add_tags call (it appends, so a lead enquiring about two services collects two tags).
-    // Best effort: the lead is already saved, a tag failure only gets logged.
-    const leadId = result.details && result.details.id;
-    if (service && leadId) {
-      const tagRes = await zohoPost(`Leads/${leadId}/actions/add_tags?tag_names=${encodeURIComponent(tagFor(service))}`);
-      if (!tagRes.ok) {
-        console.error('Zoho tag error:', tagRes.status, (await tagRes.text().catch(() => '')).slice(0, 300));
-      }
-    }
     return { ok: true };
   } catch (e) {
     console.error('Zoho error:', e.message);
