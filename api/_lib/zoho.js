@@ -158,7 +158,7 @@ export async function pushLead(lead) {
       if (utm) record.UTM_Source = utm;
       if (pay) {
         record.Payment_Status = pay.status;
-        if (pay.amountPaise) record.Amount_Paid = pay.amountPaise / 100;
+        if (pay.status === 'Paid' && pay.amountPaise) record.Amount_Paid = pay.amountPaise / 100;
         if (pay.paymentId) record.Payment_ID = pay.paymentId;
         if (pay.orderId) record.Razorpay_Order_ID = pay.orderId;
         if (pay.paidAt) record.Paid_On = istIso(pay.paidAt);
