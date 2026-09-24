@@ -1,4 +1,4 @@
-import { pushOrder } from './_lib/zoho.js';
+import { pageUrlFromRequest, pushOrder } from './_lib/zoho.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -17,6 +17,7 @@ export default async function handler(req, res) {
   }
 
   const amount = 99900; // ₹999 in paise
+  const pageUrl = pageUrlFromRequest(req);
   const receipt = `SHCA_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 
   const credentials = Buffer.from(
@@ -33,7 +34,14 @@ export default async function handler(req, res) {
       amount,
       currency: 'INR',
       receipt,
-      notes: { name, email, phone: cleanPhone, city: city || '', service: 'CA Consultation' },
+      notes: {
+        name,
+        email,
+        phone: cleanPhone,
+        city: city || '',
+        service: 'CA Consultation',
+        ...(pageUrl ? { page_url: pageUrl } : {}),
+      },
     }),
   });
 

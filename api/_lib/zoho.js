@@ -113,6 +113,23 @@ function serviceFromUrl(url) {
 
 const rupees = paise => `₹${(paise / 100).toLocaleString('en-IN')}`;
 
+// Page a request came from (browsers send it as the Referer header on same-site fetches), shortened for
+// storage: origin + path + UTM params. Razorpay notes cap values at 256 chars, so long ad click IDs
+// (gclid etc.) are dropped. Returns '' when the header is missing or unparseable.
+export function pageUrlFromRequest(req) {
+  try {
+    const u = new URL(req.headers.referer || '');
+    const params = new URLSearchParams();
+    for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']) {
+      if (u.searchParams.get(k)) params.set(k, u.searchParams.get(k));
+    }
+    const query = params.toString();
+    return (u.origin + u.pathname + (query ? `?${query}` : '')).slice(0, 250);
+  } catch {
+    return '';
+  }
+}
+
 // lead: { name, phone, email?, company?, source, service?, gstin?, url?, details?: { label: value },
 //         payment?: { status: 'Pending' | 'Paid', amountPaise?, paymentId?, orderId?, paidAt?: Date } }
 // Never throws: a CRM outage must not break the visitor's form submit or payment.
@@ -207,6 +224,7 @@ const NOTE_KEYS = {
   company: ['company', 'business', 'startup_name'],
   gstin: ['gstin'],
   service: ['service'],
+  url: ['page_url'],
 };
 const PLACEHOLDERS = new Set(['Not provided', 'Not specified', 'Individual / NRI']);
 
@@ -232,6 +250,7 @@ export function pushOrder(order, status, extra = {}) {
     company: pick(NOTE_KEYS.company),
     gstin: pick(NOTE_KEYS.gstin),
     service,
+    url: pick(NOTE_KEYS.url),
     source: `Payment page — ${service || 'Website'}`,
     details,
     payment: { status, amountPaise: order.amount, orderId: order.id, ...extra },

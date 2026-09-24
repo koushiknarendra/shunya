@@ -1,4 +1,4 @@
-import { pushOrder } from './_lib/zoho.js';
+import { pageUrlFromRequest, pushOrder } from './_lib/zoho.js';
 
 const SERVICE_CONFIG = {
   '15ca_15cb': {
@@ -111,6 +111,8 @@ export default async function handler(req, res) {
 
   const receipt = `${config.receiptPrefix}_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 
+  const pageUrl = pageUrlFromRequest(req);
+
   const notes = {
     name,
     email,
@@ -118,6 +120,7 @@ export default async function handler(req, res) {
     service: config.label,
     ...(selectedPlan ? { plan: selectedPlan } : {}),
     ...(config.notesExtra ? config.notesExtra(req.body) : {}),
+    ...(pageUrl ? { page_url: pageUrl } : {}),
   };
 
   const credentials = Buffer.from(
