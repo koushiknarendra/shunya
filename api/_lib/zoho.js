@@ -21,7 +21,8 @@ const LEAD_SOURCE = 'Shunya Website';
 // Zoho ignores a picklist default set through its API, so new leads are given their first pipeline stage here.
 const FIRST_STAGE = 'Not Contacted';
 
-let cached = { token: null, expiresAt: 0 };
+// One cached access token per refresh token (the lead push and the read-only digest use different ones).
+const cached = new Map();
 
 export function zohoConfigured() {
   return !!(process.env.ZOHO_CLIENT_ID && process.env.ZOHO_CLIENT_SECRET && process.env.ZOHO_REFRESH_TOKEN);
@@ -37,11 +38,12 @@ export async function timedFetch(url, options) {
   }
 }
 
-async function getAccessToken(force = false) {
-  if (!force && cached.token && Date.now() < cached.expiresAt) return cached.token;
+async function getAccessToken(refreshToken, force = false) {
+  const hit = cached.get(refreshToken);
+  if (!force && hit && Date.now() < hit.expiresAt) return hit.token;
 
   const params = new URLSearchParams({
-    refresh_token: process.env.ZOHO_REFRESH_TOKEN,
+    refresh_token: refreshToken,
     client_id: process.env.ZOHO_CLIENT_ID,
     client_secret: process.env.ZOHO_CLIENT_SECRET,
     grant_type: 'refresh_token',
@@ -51,22 +53,24 @@ async function getAccessToken(force = false) {
   if (!data.access_token) throw new Error(`token error: ${data.error || res.status}`);
 
   // Refresh 5 minutes early so a token never expires mid-request.
-  cached = { token: data.access_token, expiresAt: Date.now() + (data.expires_in - 300) * 1000 };
-  return cached.token;
+  cached.set(refreshToken, { token: data.access_token, expiresAt: Date.now() + (data.expires_in - 300) * 1000 });
+  return data.access_token;
 }
 
-async function zohoPost(path, body, method = 'POST') {
+async function zohoRequest(method, path, body, refreshToken) {
   const send = async token =>
     timedFetch(`${API_URL}/crm/${API_VERSION}/${path}`, {
       method,
       headers: { Authorization: `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body: body === undefined ? undefined : JSON.stringify(body),
     });
 
-  let res = await send(await getAccessToken());
-  if (res.status === 401) res = await send(await getAccessToken(true));
+  let res = await send(await getAccessToken(refreshToken));
+  if (res.status === 401) res = await send(await getAccessToken(refreshToken, true));
   return res;
 }
+
+const zohoPost = (path, body, method = 'POST') => zohoRequest(method, path, body, process.env.ZOHO_REFRESH_TOKEN);
 
 // Zoho datetime fields want an ISO string with offset; IST has no DST so a fixed +05:30 is exact.
 function istIso(date) {
@@ -255,4 +259,22 @@ export function pushOrder(order, status, extra = {}) {
     details,
     payment: { status, amountPaise: order.amount, orderId: order.id, ...extra },
   });
+}
+
+// --- Read side, used by the daily abandoned-checkout digest ---------------------------------------
+// Separate read-only refresh token (scope ZohoCRM.modules.leads.READ) so reading can never affect the
+// lead push, and the push token never needs read access.
+export function digestConfigured() {
+  return !!(process.env.ZOHO_CLIENT_ID && process.env.ZOHO_CLIENT_SECRET && process.env.ZOHO_DIGEST_REFRESH_TOKEN);
+}
+
+// Leads matching a Zoho search criteria string, e.g. '(Lead_Status:equals:Payment Pending)'. Max 200.
+// Throws on failure: the caller (a cron job) should surface errors, unlike the lead push.
+export async function searchLeads(criteria, fields) {
+  const path = `Leads/search?criteria=${encodeURIComponent(criteria)}&fields=${encodeURIComponent(fields)}&per_page=200`;
+  const res = await zohoRequest('GET', path, undefined, process.env.ZOHO_DIGEST_REFRESH_TOKEN);
+  if (res.status === 204) return []; // Zoho's "no matches"
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(`Zoho search failed: ${res.status} ${JSON.stringify(body).slice(0, 300)}`);
+  return body.data || [];
 }

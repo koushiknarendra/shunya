@@ -19,6 +19,9 @@
     { "source": "/blogs/:slug", "destination": "/blogs/:slug.html" },
     { "source": "/thank-you-ca", "destination": "/thank-you-ca.html" }
   ],
+  "crons": [
+    { "path": "/api/cron/abandoned-checkouts", "schedule": "30 3 * * *" }
+  ],
   "headers": [
     {
       "source": "/_next/static/(.*)",
