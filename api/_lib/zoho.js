@@ -58,7 +58,7 @@ async function zohoPost(path, body) {
     timedFetch(`${API_URL}/crm/${API_VERSION}/${path}`, {
       method: 'POST',
       headers: { Authorization: `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body: body === undefined ? undefined : JSON.stringify(body),
     });
 
   let res = await send(await getAccessToken());
@@ -158,8 +158,6 @@ export async function pushLead(lead) {
     };
     if (lead.email) record.Email = lead.email;
     if (lead.company) record.Company = lead.company;
-    // Tags are filterable in Zoho on any plan; an enquiry for a second service adds a second tag.
-    if (service) record.Tag = [{ name: tagFor(service) }];
     // Only payment events touch Lead_Status, so a later popup submit never downgrades a Paid lead.
     if (pay) record.Lead_Status = pay.status === 'Paid' ? 'Paid' : 'Payment Pending';
 
@@ -179,26 +177,26 @@ export async function pushLead(lead) {
 
     // Email is Zoho's built-in duplicate key for Leads. Phone-only leads are plain inserts
     // until Phone is marked "no duplicates" in Zoho and added to duplicate_check_fields.
-    const send = async rec => {
-      const res = rec.Email
-        ? await zohoPost('Leads/upsert', { data: [rec], duplicate_check_fields: ['Email'] })
-        : await zohoPost('Leads', { data: [rec] });
-      const body = await res.json().catch(() => ({}));
-      const result = body.data && body.data[0];
-      const ok = res.ok && result && ['SUCCESS', 'DUPLICATE_DATA'].includes(result.code);
-      return { ok, res, body };
-    };
+    const res = lead.email
+      ? await zohoPost('Leads/upsert', { data: [record], duplicate_check_fields: ['Email'] })
+      : await zohoPost('Leads', { data: [record] });
 
-    let out = await send(record);
-    // A tag problem (permissions, name limits) must never cost us the lead itself.
-    if (!out.ok && record.Tag) {
-      console.error('Zoho lead error with tag, retrying without:', out.res.status, JSON.stringify(out.body).slice(0, 300));
-      const { Tag, ...withoutTag } = record;
-      out = await send(withoutTag);
-    }
-    if (!out.ok) {
-      console.error('Zoho lead error:', out.res.status, JSON.stringify(out.body).slice(0, 500));
+    const body = await res.json().catch(() => ({}));
+    const result = body.data && body.data[0];
+    if (!res.ok || !result || !['SUCCESS', 'DUPLICATE_DATA'].includes(result.code)) {
+      console.error('Zoho lead error:', res.status, JSON.stringify(body).slice(0, 500));
       return { ok: false };
+    }
+
+    // A Tag inside the record body is silently ignored by Zoho, so tags go through the dedicated
+    // add_tags call (it appends, so a lead enquiring about two services collects two tags).
+    // Best effort: the lead is already saved, a tag failure only gets logged.
+    const leadId = result.details && result.details.id;
+    if (service && leadId) {
+      const tagRes = await zohoPost(`Leads/${leadId}/actions/add_tags?tag_names=${encodeURIComponent(tagFor(service))}`);
+      if (!tagRes.ok) {
+        console.error('Zoho tag error:', tagRes.status, (await tagRes.text().catch(() => '')).slice(0, 300));
+      }
     }
     return { ok: true };
   } catch (e) {
