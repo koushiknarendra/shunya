@@ -1,3 +1,5 @@
+import { pushOrder } from './_lib/zoho.js';
+
 const G9C_PLAN_AMOUNTS = {
   gstr9: 199900,
   gstr9c: 599900,
@@ -76,6 +78,7 @@ export default async function handler(req, res) {
   }
 
   const data = await rzRes.json();
+  await pushOrder(data, 'Pending');
   res.status(200).json({
     orderId: data.id,
     amount: data.amount,

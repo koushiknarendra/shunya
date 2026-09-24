@@ -1,3 +1,5 @@
+import { pushOrder } from './_lib/zoho.js';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -46,6 +48,7 @@ export default async function handler(req, res) {
   }
 
   const data = await rzRes.json();
+  await pushOrder(data, 'Pending');
   res.status(200).json({
     orderId: data.id,
     amount: data.amount,

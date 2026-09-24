@@ -1,3 +1,5 @@
+import { pushOrder } from './_lib/zoho.js';
+
 const PLAN_AMOUNTS = {
   salaried: 99900,
   capital: 249900,
@@ -93,6 +95,7 @@ export default async function handler(req, res) {
   }
 
   const data = await rzRes.json();
+  await pushOrder(data, 'Pending');
   res.status(200).json({
     orderId: data.id,
     amount: data.amount,
