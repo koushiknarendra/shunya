@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     phone: lead.phone,
     company: lead.company,
     source: 'CCFS-2026 company closure page',
-    service: 'Company Closure (CCFS-2026)',
+    service: 'Company Closure / Strike Off',
     details: { 'Annual filings': lead.filings },
   });
 

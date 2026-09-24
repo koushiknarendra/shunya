@@ -79,6 +79,46 @@ function utmSource(url) {
   }
 }
 
+// Service a visitor was looking at, from the page URL. Labels match the `service` note the
+// create-order endpoints put on Razorpay orders, so popup leads and paid leads share one vocabulary.
+// Content-only pages (blogs, tools, about, home) return '' — no service to claim.
+const SERVICE_BY_PATH = [
+  [/^\/gst-registration/, 'GST Registration'],
+  [/^\/gst-return-filing/, 'GST Return Filing'],
+  [/^\/gst-refund-filing/, 'GST Refund Filing'],
+  [/^\/gstr-9-gstr-9c-filing/, 'GSTR-9 & GSTR-9C Filing'],
+  [/^\/gst-lut/, 'GST LUT Filing'],
+  [/^\/itr-filing/, 'ITR Filing'],
+  [/^\/(tax-audit|form-3cd)/, 'Tax Audit (44AB)'],
+  [/^\/lower-tds-certificate-nri/, 'Lower TDS Certificate (NRI)'],
+  [/^\/fssai-registration/, 'FSSAI Registration & License'],
+  [/^\/(company-closure|ccfs-2026-company-closure)/, 'Company Closure / Strike Off'],
+  [/^\/(company-registration|start-registration)/, 'Company Registration'],
+  [/^\/startup-india/, 'Startup India Registration'],
+  [/^\/15ca-15cb/, 'Form 145 / 146 (15CA/15CB)'],
+  [/^\/consultation/, 'CA Consultation'],
+];
+
+function serviceFromUrl(url) {
+  try {
+    const path = new URL(url).pathname;
+    const hit = SERVICE_BY_PATH.find(([re]) => re.test(path));
+    return hit ? hit[1] : '';
+  } catch {
+    return '';
+  }
+}
+
+// Zoho tag names are short (25 chars), so the longest service labels get a compact tag.
+const TAG_BY_SERVICE = {
+  'Company Closure / Strike Off': 'Company Closure',
+  'Form 145 / 146 (15CA/15CB)': 'Form 145-146 (15CA-15CB)',
+  'Lower TDS Certificate (NRI)': 'Lower TDS (NRI)',
+  'FSSAI Registration & License': 'FSSAI',
+  'Startup India Registration': 'Startup India',
+};
+const tagFor = service => TAG_BY_SERVICE[service] || service.slice(0, 25);
+
 const rupees = paise => `₹${(paise / 100).toLocaleString('en-IN')}`;
 
 // lead: { name, phone, email?, company?, source, service?, gstin?, url?, details?: { label: value },
@@ -90,10 +130,11 @@ export async function pushLead(lead) {
   try {
     const pay = lead.payment;
     const utm = lead.url ? utmSource(lead.url) : '';
+    const service = lead.service || (lead.url ? serviceFromUrl(lead.url) : '');
 
     const description = [
       `Source: ${lead.source}`,
-      lead.service && `Service: ${lead.service}`,
+      service && `Service: ${service}`,
       lead.gstin && `GSTIN: ${lead.gstin}`,
       lead.url && `URL: ${lead.url}`,
       utm && `UTM source: ${utm}`,
@@ -117,12 +158,14 @@ export async function pushLead(lead) {
     };
     if (lead.email) record.Email = lead.email;
     if (lead.company) record.Company = lead.company;
+    // Tags are filterable in Zoho on any plan; an enquiry for a second service adds a second tag.
+    if (service) record.Tag = [{ name: tagFor(service) }];
     // Only payment events touch Lead_Status, so a later popup submit never downgrades a Paid lead.
     if (pay) record.Lead_Status = pay.status === 'Paid' ? 'Paid' : 'Payment Pending';
 
     if (process.env.ZOHO_CUSTOM_FIELDS === '1') {
       record.Source_Page = lead.source;
-      if (lead.service) record.Service = lead.service;
+      if (service) record.Service = service;
       if (lead.gstin) record.GSTIN = lead.gstin;
       if (utm) record.UTM_Source = utm;
       if (pay) {
@@ -136,14 +179,25 @@ export async function pushLead(lead) {
 
     // Email is Zoho's built-in duplicate key for Leads. Phone-only leads are plain inserts
     // until Phone is marked "no duplicates" in Zoho and added to duplicate_check_fields.
-    const res = lead.email
-      ? await zohoPost('Leads/upsert', { data: [record], duplicate_check_fields: ['Email'] })
-      : await zohoPost('Leads', { data: [record] });
+    const send = async rec => {
+      const res = rec.Email
+        ? await zohoPost('Leads/upsert', { data: [rec], duplicate_check_fields: ['Email'] })
+        : await zohoPost('Leads', { data: [rec] });
+      const body = await res.json().catch(() => ({}));
+      const result = body.data && body.data[0];
+      const ok = res.ok && result && ['SUCCESS', 'DUPLICATE_DATA'].includes(result.code);
+      return { ok, res, body };
+    };
 
-    const body = await res.json().catch(() => ({}));
-    const result = body.data && body.data[0];
-    if (!res.ok || !result || !['SUCCESS', 'DUPLICATE_DATA'].includes(result.code)) {
-      console.error('Zoho lead error:', res.status, JSON.stringify(body).slice(0, 500));
+    let out = await send(record);
+    // A tag problem (permissions, name limits) must never cost us the lead itself.
+    if (!out.ok && record.Tag) {
+      console.error('Zoho lead error with tag, retrying without:', out.res.status, JSON.stringify(out.body).slice(0, 300));
+      const { Tag, ...withoutTag } = record;
+      out = await send(withoutTag);
+    }
+    if (!out.ok) {
+      console.error('Zoho lead error:', out.res.status, JSON.stringify(out.body).slice(0, 500));
       return { ok: false };
     }
     return { ok: true };
