@@ -18,6 +18,8 @@ const API_URL = process.env.ZOHO_API_URL || 'https://www.zohoapis.in';
 const API_VERSION = 'v8';
 const TIMEOUT_MS = 5000;
 const LEAD_SOURCE = 'Shunya Website';
+// Zoho ignores a picklist default set through its API, so new leads are given their first pipeline stage here.
+const FIRST_STAGE = 'Not Contacted';
 
 let cached = { token: null, expiresAt: 0 };
 
@@ -53,10 +55,10 @@ async function getAccessToken(force = false) {
   return cached.token;
 }
 
-async function zohoPost(path, body) {
+async function zohoPost(path, body, method = 'POST') {
   const send = async token =>
     timedFetch(`${API_URL}/crm/${API_VERSION}/${path}`, {
-      method: 'POST',
+      method,
       headers: { Authorization: `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
@@ -148,8 +150,10 @@ export async function pushLead(lead) {
     };
     if (lead.email) record.Email = lead.email;
     if (lead.company) record.Company = lead.company;
-    // Only payment events touch Lead_Status, so a later popup submit never downgrades a Paid lead.
+    // Payment events set their own status. Other submits never touch an existing lead's status, so a later
+    // popup submit cannot downgrade a Paid lead; a brand-new lead gets its first stage below.
     if (pay) record.Lead_Status = pay.status === 'Paid' ? 'Paid' : 'Payment Pending';
+    else if (!lead.email) record.Lead_Status = FIRST_STAGE; // phone-only leads are always plain inserts
 
     if (process.env.ZOHO_CUSTOM_FIELDS === '1') {
       record.Source_Page = lead.source;
@@ -178,6 +182,15 @@ export async function pushLead(lead) {
       return { ok: false };
     }
 
+    // Email upserts do not say up front whether the lead is new; the response does. Best effort, the lead is saved.
+    if (!pay && lead.email && result.action === 'insert' && result.details && result.details.id) {
+      try {
+        const stageRes = await zohoPost('Leads', { data: [{ id: result.details.id, Lead_Status: FIRST_STAGE }] }, 'PUT');
+        if (!stageRes.ok) console.error('Zoho first-stage error:', stageRes.status);
+      } catch (e) {
+        console.error('Zoho first-stage error:', e.message);
+      }
+    }
     return { ok: true };
   } catch (e) {
     console.error('Zoho error:', e.message);
