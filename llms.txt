@@ -11,8 +11,10 @@
 - [Lower TDS Certificate for NRIs](https://shunya.so/lower-tds-certificate-nri): Get a Lower or Nil TDS Certificate — Form 13, now renamed Form 128 — for NRI property sales, rent, or interest income. Capital gains computed and filed by a CA, from ₹4,999.
 - [FSSAI Registration & License](https://shunya.so/fssai-registration): Get FSSAI Basic Registration, State License, or Central License filed on FoSCoS, with the 2026 turnover limits and perpetual validity built in. From ₹1,499.
 - [GST LUT Filing](https://shunya.so/gst-lut): File your GST Letter of Undertaking — Form RFD-11 — and export goods or services without paying IGST upfront. CA-assisted, ARN same day. From ₹499.
-- [Company Closure](https://shunya.so/company-closure): Close a private limited company or LLP in India via Fast Track Exit (FTE) under Section 248 of the Companies Act.
-- [CCFS-2026 Company Closure](https://shunya.so/ccfs-2026-company-closure): MCA's CCFS-2026 scheme reduces the government fee for company closure to ₹2,500 (from ₹10,000) — CA-assisted, transparent pricing, no payment until you approve.
+- [Company Closure](https://shunya.so/company-closure): Close a private limited company, LLP or OPC in India with an MCA-registered CA. Pick your entity type; strike-off filing and ROC follow-up handled online. From ₹5,999.
+- [Private Limited Company Closure](https://shunya.so/company-closure-private-limited): Close a private limited company via Form STK-2 strike-off under Section 248(2) of the Companies Act. Typical total ₹7,999 – ₹15,999 depending on the case; exact quote before you pay.
+- [LLP Closure](https://shunya.so/company-closure-llp): Close an LLP via Form 24 strike-off under Rule 37 of the LLP Rules 2009. Typical total ₹5,999 – ₹11,999 depending on the case; exact quote before you pay.
+- [OPC Closure](https://shunya.so/company-closure-opc): Close a One Person Company via Form STK-2 strike-off, with a single-signatory resolution, bond and affidavit. Typical total ₹7,999 – ₹12,999 depending on the case; exact quote before you pay.
 - [Startup India Registration](https://shunya.so/startup-india): Get DPIIT recognition under the Startup India scheme.
 - [Free Consultation](https://shunya.so/consultation): Book a free call with a CA to discuss your compliance needs.
 - [How It Works](https://shunya.so/how-it-works): Step-by-step walkthrough of the Shunya process.

@@ -7,13 +7,6 @@ const SERVICE_CONFIG = {
     amount: 199900,
     notesExtra: ({ company }) => ({ company: company || 'Individual / NRI' }),
   },
-  company_closure: {
-    receiptPrefix: 'SHCC',
-    label: 'Company Closure / Strike Off',
-    amount: 999900,
-    requiredFields: ['company'],
-    notesExtra: ({ company }) => ({ company }),
-  },
   'gst-refund': {
     receiptPrefix: 'SHGRFD',
     label: 'GST Refund Filing',
