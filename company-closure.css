@@ -194,3 +194,10 @@ a.pcc_article_card:hover{border-color:rgba(20,110,255,.35);background:rgba(20,11
 .pcc_related_link:hover{color:#fff;border-color:#146EFF;background:rgba(20,110,255,.2);}
 .pcc_redirect_note{font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.45);margin:8px 0 0;}
 .pcc_redirect_note a{color:#7ab8ff;font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+select.pcc_select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23ffffff88' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+select.pcc_select option{background:#111;color:#fff;}
+.pcc_types_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:900px){.pcc_types_grid{grid-template-columns:1fr;}}
+.pcc_types_grid .pcc_type_row{flex-direction:column;align-items:flex-start;gap:14px;padding:22px;}
+.pcc_types_grid .pcc_type_price{text-align:left;}
+.pcc_types_grid .pcc_type_price_new{font-size:1.25rem;}

@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, phone, email, company, gstin, page, url } = req.body;
+  const { name, phone, email, company, entity, gstin, page, url } = req.body;
 
   if (!phone) {
     return res.status(400).json({ error: 'Please provide a phone number.' });
@@ -21,6 +21,7 @@ export default async function handler(req, res) {
     phone: cleanPhone,
     email: email ? String(email).trim() : '',
     company: company ? String(company).trim() : '',
+    entity: entity ? String(entity).trim().slice(0, 60) : '',
     gstin: gstin ? String(gstin).trim() : '',
     page: page ? String(page).trim() : 'Unknown page',
     url: url ? String(url).trim() : '',
@@ -38,6 +39,7 @@ export default async function handler(req, res) {
     source: `Website popup — ${lead.page}`,
     gstin: lead.gstin,
     url: lead.url,
+    details: { 'Company type': lead.entity },
   });
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -73,6 +75,10 @@ export default async function handler(req, res) {
                 ${lead.company ? `<tr>
                   <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">Company</td>
                   <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${esc(lead.company)}</td>
+                </tr>` : ''}
+                ${lead.entity ? `<tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">Company type</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#111;font-weight:600;">${esc(lead.entity)}</td>
                 </tr>` : ''}
                 ${lead.gstin ? `<tr>
                   <td style="padding:10px 0;border-bottom:1px solid #eee;font-size:13px;color:#555;">GSTIN</td>
