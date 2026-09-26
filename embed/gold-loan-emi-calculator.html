@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Gold Loan EMI Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free gold loan EMI calculator for India. Enter your loan amount, interest rate, and tenure to instantly see your monthly EMI, total payment, and total interest.">
+  <link rel="canonical" href="https://shunya.so/tools/gold-loan-emi-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Gold Loan EMI Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="gl-amount">Loan amount (₹)</label>
+        <input type="number" id="gl-amount" value="200000" min="0" step="1000">
+      </div>
+      <div class="calc-field">
+        <label for="gl-rate">Annual interest rate (%)</label>
+        <input type="number" id="gl-rate" value="9.5" min="0" step="0.1">
+        <div class="hint">Enter your lender's current gold loan rate — rates vary by bank/NBFC and by the tenure you choose.</div>
+      </div>
+      <div class="calc-field">
+        <label for="gl-tenure">Loan tenure (years)</label>
+        <input type="number" id="gl-tenure" value="2" min="0" step="0.5">
+        <div class="hint">Gold loans are typically shorter-tenure than home or car loans — commonly 6 months to 3 years.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Monthly EMI</div>
+        <div class="rvalue" id="gl-emi">₹9,183</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Loan amount</span><span class="rvalue" id="gl-principal">₹2,00,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Total interest</span><span class="rvalue" id="gl-interest">₹20,390</span></div>
+      <div class="calc-result-row"><span class="rlabel">Total payment</span><span class="rvalue" id="gl-total">₹2,20,390</span></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/gold-loan-emi-calculator" target="_blank" rel="noopener">Gold Loan EMI Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const amountEl = document.getElementById('gl-amount');
+  const rateEl = document.getElementById('gl-rate');
+  const tenureEl = document.getElementById('gl-tenure');
+  const emiEl = document.getElementById('gl-emi');
+  const principalEl = document.getElementById('gl-principal');
+  const interestEl = document.getElementById('gl-interest');
+  const totalEl = document.getElementById('gl-total');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const P = parseFloat(amountEl.value) || 0;
+    const annualRate = parseFloat(rateEl.value) || 0;
+    const years = parseFloat(tenureEl.value) || 0;
+
+    const r = annualRate / 12 / 100;
+    const n = Math.round(years * 12);
+
+    let emi;
+    if (n <= 0) {
+      emi = 0;
+    } else if (r === 0) {
+      emi = P / n;
+    } else {
+      const factor = Math.pow(1 + r, n);
+      emi = P * r * factor / (factor - 1);
+    }
+
+    const total = emi * n;
+    const interest = total - P;
+
+    emiEl.textContent = fmt(emi);
+    principalEl.textContent = fmt(P);
+    interestEl.textContent = fmt(interest);
+    totalEl.textContent = fmt(total);
+  }
+
+  amountEl.addEventListener('input', calculate);
+  rateEl.addEventListener('input', calculate);
+  tenureEl.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"gold-loan-emi-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

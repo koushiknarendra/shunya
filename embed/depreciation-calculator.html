@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Depreciation Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free depreciation calculator using Income Tax Act WDV method. Enter opening WDV and asset block for depreciation and closing WDV, with half-year rule applied.">
+  <link rel="canonical" href="https://shunya.so/tools/depreciation-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Depreciation Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="dep-wdv">Opening WDV / asset cost (₹)</label>
+        <input type="number" id="dep-wdv" value="500000" min="0" step="1">
+      </div>
+      <div class="calc-field">
+        <label for="dep-block">Asset block</label>
+        <select id="dep-block">
+          <option value="10">Buildings — 10%</option>
+          <option value="10">Furniture &amp; Fittings — 10%</option>
+          <option value="15" selected>Plant &amp; Machinery — 15%</option>
+          <option value="40">Computers &amp; Software — 40%</option>
+          <option value="25">Intangible Assets — 25%</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Used for 180 days or more this year?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="dep-used" value="full" checked> Yes</label>
+          <label><input type="radio" name="dep-used" value="half"> No</label>
+        </div>
+        <div class="hint">If an asset was used for less than 180 days in the year it was acquired, only half the normal depreciation rate applies.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Depreciation</div>
+        <div class="rvalue" id="dep-depreciation">₹75,000</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Opening WDV</span><span class="rvalue" id="dep-opening">₹5,00,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Depreciation rate applied</span><span class="rvalue" id="dep-rate-applied">15%</span></div>
+      <div class="calc-result-row"><span class="rlabel">Closing WDV</span><span class="rvalue" id="dep-closing">₹4,25,000</span></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/depreciation-calculator" target="_blank" rel="noopener">Depreciation Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const wdvEl = document.getElementById('dep-wdv');
+  const blockEl = document.getElementById('dep-block');
+  const depreciationEl = document.getElementById('dep-depreciation');
+  const openingEl = document.getElementById('dep-opening');
+  const rateAppliedEl = document.getElementById('dep-rate-applied');
+  const closingEl = document.getElementById('dep-closing');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const wdv = parseFloat(wdvEl.value) || 0;
+    const rate = parseFloat(blockEl.value) || 0;
+    const usedFull = document.querySelector('input[name="dep-used"]:checked').value === 'full';
+    const multiplier = usedFull ? 1 : 0.5;
+
+    const depreciation = wdv * (rate / 100) * multiplier;
+    const closing = wdv - depreciation;
+    const rateApplied = usedFull ? rate : rate / 2;
+
+    depreciationEl.textContent = fmt(depreciation);
+    openingEl.textContent = fmt(wdv);
+    rateAppliedEl.textContent = rateApplied + '%';
+    closingEl.textContent = fmt(closing);
+  }
+
+  wdvEl.addEventListener('input', calculate);
+  blockEl.addEventListener('change', calculate);
+  document.querySelectorAll('input[name="dep-used"]').forEach(el => el.addEventListener('change', calculate));
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"depreciation-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

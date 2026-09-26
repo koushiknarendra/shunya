@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Stock Split Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free stock split calculator. Enter shares held, price, and split ratio to instantly see your new share count and adjusted price per share. Value stays the same.">
+  <link rel="canonical" href="https://shunya.so/tools/stock-split-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Stock Split Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="split-shares">Current shares held</label>
+        <input type="number" id="split-shares" value="100" min="0" step="1">
+      </div>
+      <div class="calc-field">
+        <label for="split-price">Current price per share (₹)</label>
+        <input type="number" id="split-price" value="500" min="0" step="0.01">
+      </div>
+      <div class="calc-field">
+        <label>Split ratio</label>
+        <div class="ratio-inputs" style="display:flex; align-items:center; gap:0.5rem;">
+          <input type="number" id="split-from" value="1" min="1" step="1" style="width:5rem;">
+          <span>:</span>
+          <input type="number" id="split-to" value="5" min="1" step="1" style="width:5rem;">
+        </div>
+        <div class="hint">A 1:5 split means every 1 share becomes 5. Enter your company's announced split ratio.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">New Shares Held</div>
+        <div class="rvalue" id="split-new-shares">500</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">New price per share</span><span class="rvalue" id="split-new-price">₹100.00</span></div>
+      <div class="calc-result-row"><span class="rlabel">Total value before split</span><span class="rvalue" id="split-value-before">₹50,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Total value after split</span><span class="rvalue" id="split-value-after">₹50,000</span></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/stock-split-calculator" target="_blank" rel="noopener">Stock Split Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const sharesEl = document.getElementById('split-shares');
+  const priceEl = document.getElementById('split-price');
+  const fromEl = document.getElementById('split-from');
+  const toEl = document.getElementById('split-to');
+  const newSharesEl = document.getElementById('split-new-shares');
+  const newPriceEl = document.getElementById('split-new-price');
+  const valueBeforeEl = document.getElementById('split-value-before');
+  const valueAfterEl = document.getElementById('split-value-after');
+
+  function fmtNum(n) {
+    return Math.round(n).toLocaleString('en-IN');
+  }
+
+  function fmtMoney(n) {
+    return '₹' + n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function fmtRupee(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const shares = parseFloat(sharesEl.value) || 0;
+    const price = parseFloat(priceEl.value) || 0;
+    const from = parseFloat(fromEl.value) || 1;
+    const to = parseFloat(toEl.value) || 1;
+
+    const newShares = shares * (to / from);
+    const newPrice = price * (from / to);
+    const valueBefore = shares * price;
+    const valueAfter = newShares * newPrice;
+
+    newSharesEl.textContent = fmtNum(newShares);
+    newPriceEl.textContent = fmtMoney(newPrice);
+    valueBeforeEl.textContent = fmtRupee(valueBefore);
+    valueAfterEl.textContent = fmtRupee(valueAfter);
+  }
+
+  sharesEl.addEventListener('input', calculate);
+  priceEl.addEventListener('input', calculate);
+  fromEl.addEventListener('input', calculate);
+  toEl.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"stock-split-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

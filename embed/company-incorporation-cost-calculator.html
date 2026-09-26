@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Company Incorporation Cost Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Estimate the full cost of Pvt Ltd / OPC incorporation in India — Shunya's fee, MCA government fee, your state's stamp duty, and DSC cost, in one breakdown.">
+  <link rel="canonical" href="https://shunya.so/tools/company-incorporation-cost-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Company Incorporation Cost Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="ci-state">State of incorporation</label>
+        <select id="ci-state"></select>
+        <div class="hint">Stamp duty is set by each state and is the biggest reason this cost varies by location.</div>
+      </div>
+      <div class="calc-field">
+        <label for="ci-capital">Authorized capital (₹)</label>
+        <input type="number" id="ci-capital" value="100000" min="0" step="1000">
+        <div class="hint">MCA fee is waived up to ₹15 lakh. State stamp duty figures below are reference figures at ₹1 lakh authorized capital.</div>
+      </div>
+      <div class="calc-field">
+        <label for="ci-directors">Number of directors</label>
+        <input type="number" id="ci-directors" value="2" min="1" step="1">
+        <div class="hint">Used only to estimate total DSC (Digital Signature Certificate) cost — one DSC is needed per director.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel" id="ci-total-label">Estimated total, starting from</div>
+        <div class="rvalue" id="ci-total">₹0</div>
+      </div>
+      <div class="calc-note" id="ci-exclude-note" style="display:none;"></div>
+
+      <div class="calc-result-row"><span class="rlabel">Shunya's professional fee</span><span class="rvalue">₹1,999</span></div>
+
+      <div class="calc-result-row"><span class="rlabel">MCA government fee</span><span class="rvalue" id="ci-mca">₹0</span></div>
+
+      <div class="calc-result-row"><span class="rlabel">State stamp duty (<a id="ci-state-link" href="/company-registration/company-registration-cost-in-maharashtra">Maharashtra</a>)</span><span class="rvalue" id="ci-stamp">₹0</span></div>
+      <div class="calc-note" id="ci-stamp-note"></div>
+
+      <div class="calc-result-row"><span class="rlabel">DSC cost (<span id="ci-directors-count">2</span> director(s))</span><span class="rvalue" id="ci-dsc">₹0</span></div>
+      <div class="calc-note">₹800–₹2,500 per director (2-year validity) — total shown uses the ₹800 low end, starting from.</div>
+
+      <div class="calc-note" id="ci-capital-note" style="display:none;">This figure is for ₹1 lakh authorized capital — stamp duty scales with capital in some states. Confirm your exact figure during consultation.</div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/company-incorporation-cost-calculator" target="_blank" rel="noopener">Company Incorporation Cost Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  // State reference data — stamp duty at ₹1 lakh authorized capital, Pvt Ltd.
+  // type: 'range' | 'flagged' (wide range) | 'single' | 'flat' (confident exact) | 'unknown' (see guide) | 'caution' (don't state a number)
+  const STATES = [
+    { name: 'Andhra Pradesh', slug: 'andhra-pradesh', type: 'unknown' },
+    { name: 'Arunachal Pradesh', slug: 'arunachal-pradesh', type: 'unknown' },
+    { name: 'Assam', slug: 'assam', type: 'single', low: 525 },
+    { name: 'Bihar', slug: 'bihar', type: 'single', low: 1520 },
+    { name: 'Chhattisgarh', slug: 'chhattisgarh', type: 'single', low: 1510 },
+    { name: 'Delhi', slug: 'delhi', type: 'range', low: 350, high: 360 },
+    { name: 'Goa', slug: 'goa', type: 'single', low: 1200 },
+    { name: 'Gujarat', slug: 'gujarat', type: 'unknown' },
+    { name: 'Haryana', slug: 'haryana', type: 'single', low: 135 },
+    { name: 'Himachal Pradesh', slug: 'himachal-pradesh', type: 'unknown' },
+    { name: 'Jharkhand', slug: 'jharkhand', type: 'single', low: 173 },
+    { name: 'Karnataka', slug: 'karnataka', type: 'flagged', low: 6000, high: 10000 },
+    { name: 'Kerala', slug: 'kerala', type: 'single', low: 3025 },
+    { name: 'Madhya Pradesh', slug: 'madhya-pradesh', type: 'unknown' },
+    { name: 'Maharashtra', slug: 'maharashtra', type: 'range', low: 1200, high: 1400 },
+    { name: 'Manipur', slug: 'manipur', type: 'unknown' },
+    { name: 'Meghalaya', slug: 'meghalaya', type: 'single', low: 410 },
+    { name: 'Mizoram', slug: 'mizoram', type: 'single', low: 260 },
+    { name: 'Nagaland', slug: 'nagaland', type: 'flat', low: 100 },
+    { name: 'Odisha', slug: 'odisha', type: 'single', low: 610 },
+    { name: 'Puducherry', slug: 'puducherry', type: 'unknown' },
+    { name: 'Punjab', slug: 'punjab', type: 'caution' },
+    { name: 'Rajasthan', slug: 'rajasthan', type: 'unknown' },
+    { name: 'Sikkim', slug: 'sikkim', type: 'flat', low: 0 },
+    { name: 'Tamil Nadu', slug: 'tamil-nadu', type: 'unknown' },
+    { name: 'Telangana', slug: 'telangana', type: 'single', low: 1520 },
+    { name: 'Tripura', slug: 'tripura', type: 'single', low: 260 },
+    { name: 'Uttar Pradesh', slug: 'uttar-pradesh', type: 'unknown', bonus: 'Uttar Pradesh does not levy Professional Tax — a separate bonus saving on your ongoing compliance costs.' },
+    { name: 'Uttarakhand', slug: 'uttarakhand', type: 'unknown', bonus: 'Uttarakhand does not levy Professional Tax — a separate bonus saving on your ongoing compliance costs.' },
+    { name: 'West Bengal', slug: 'west-bengal', type: 'unknown' }
+  ];
+
+  const stateEl = document.getElementById('ci-state');
+  const capitalEl = document.getElementById('ci-capital');
+  const directorsEl = document.getElementById('ci-directors');
+
+  const totalEl = document.getElementById('ci-total');
+  const totalLabelEl = document.getElementById('ci-total-label');
+  const excludeNoteEl = document.getElementById('ci-exclude-note');
+  const mcaEl = document.getElementById('ci-mca');
+  const stateLinkEl = document.getElementById('ci-state-link');
+  const stampEl = document.getElementById('ci-stamp');
+  const stampNoteEl = document.getElementById('ci-stamp-note');
+  const dscEl = document.getElementById('ci-dsc');
+  const directorsCountEl = document.getElementById('ci-directors-count');
+  const capitalNoteEl = document.getElementById('ci-capital-note');
+
+  // Populate state dropdown (alphabetical), default Maharashtra selected.
+  STATES.forEach(st => {
+    const opt = document.createElement('option');
+    opt.value = st.slug;
+    opt.textContent = st.name;
+    if (st.slug === 'maharashtra') opt.selected = true;
+    stateEl.appendChild(opt);
+  });
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function stampDutyInfo(st) {
+    switch (st.type) {
+      case 'range':
+        return {
+          text: `approximately ${fmt(st.low)}–${fmt(st.high)}`,
+          low: st.low,
+          note: 'Approximate reference figure at ₹1 lakh authorized capital.'
+        };
+      case 'flagged':
+        return {
+          text: `approximately ${fmt(st.low)}–${fmt(st.high)}`,
+          low: st.low,
+          note: 'Wider range than most states — a wide reported range at ₹1 lakh authorized capital; confirm carefully during consultation.'
+        };
+      case 'single':
+        return {
+          text: `approximately ${fmt(st.low)}`,
+          low: st.low,
+          note: 'Approximate reference figure at ₹1 lakh authorized capital.'
+        };
+      case 'flat':
+        return {
+          text: st.low === 0 ? 'Nil — ₹0' : `${fmt(st.low)} flat`,
+          low: st.low,
+          note: st.low === 0 ? 'A confirmed state legal position, not an estimate.' : 'A flat figure, confirmed.'
+        };
+      case 'caution':
+        return {
+          text: 'Confirm during consultation',
+          low: null,
+          note: 'A single source puts this at a notably high figure — treat as a rough starting point only, confirm carefully during consultation.'
+        };
+      case 'unknown':
+      default:
+        return {
+          text: 'See full state guide',
+          low: null,
+          note: `The exact stamp duty figure for this state wasn't confirmed here — see the full ${st.name} cost guide for the current figure.`
+        };
+    }
+  }
+
+  function calculate() {
+    const st = STATES.find(s => s.slug === stateEl.value) || STATES.find(s => s.slug === 'maharashtra');
+    const capital = parseFloat(capitalEl.value) || 0;
+    let directors = parseInt(directorsEl.value, 10);
+    if (!directors || directors < 1) directors = 0;
+
+    // Shunya's fee (fixed)
+    const fee = 1999;
+
+    // MCA fee
+    let mcaFee;
+    if (capital <= 1500000) {
+      mcaFee = 0;
+      mcaEl.textContent = fmt(0);
+    } else {
+      mcaFee = null;
+      mcaEl.textContent = 'Confirm during consultation';
+    }
+
+    // Stamp duty
+    const sd = stampDutyInfo(st);
+    stateLinkEl.textContent = st.name;
+    stateLinkEl.href = `/company-registration/company-registration-cost-in-${st.slug}`;
+    stampEl.textContent = sd.text;
+    let stampNote = sd.note;
+    if (st.bonus) stampNote += ' ' + st.bonus;
+    stampNoteEl.textContent = stampNote;
+
+    // DSC
+    const dscLow = 800 * directors;
+    directorsCountEl.textContent = directors;
+    dscEl.textContent = directors > 0 ? fmt(dscLow) + '+' : fmt(0);
+
+    // Capital note
+    if (capital !== 100000) {
+      capitalNoteEl.style.display = '';
+    } else {
+      capitalNoteEl.style.display = 'none';
+    }
+
+    // Total
+    const total = fee + (mcaFee || 0) + (sd.low || 0) + dscLow;
+    totalEl.textContent = fmt(total);
+    totalLabelEl.textContent = 'Estimated total, starting from';
+
+    const missing = [];
+    if (mcaFee === null) missing.push('MCA fee');
+    if (sd.low === null) missing.push('stamp duty');
+    if (missing.length) {
+      excludeNoteEl.textContent = `Excludes ${missing.join(' and ')} — see the notes below for how to get the exact figure.`;
+      excludeNoteEl.style.display = '';
+    } else {
+      excludeNoteEl.style.display = 'none';
+    }
+  }
+
+  stateEl.addEventListener('change', calculate);
+  capitalEl.addEventListener('input', calculate);
+  directorsEl.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"company-incorporation-cost-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

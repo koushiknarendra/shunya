@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>SWP Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free SWP calculator for India. Simulate month-by-month withdrawals from your invested corpus and see your final balance, or exactly when the corpus runs out.">
+  <link rel="canonical" href="https://shunya.so/tools/swp-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">SWP Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="swp-corpus">Initial corpus (₹)</label>
+        <input type="number" id="swp-corpus" value="2000000" min="0" step="1000">
+      </div>
+      <div class="calc-field">
+        <label for="swp-withdrawal">Monthly withdrawal (₹)</label>
+        <input type="number" id="swp-withdrawal" value="15000" min="0" step="500">
+      </div>
+      <div class="calc-field">
+        <label for="swp-rate">Expected annual return (%)</label>
+        <input type="number" id="swp-rate" value="8" min="0" step="0.1">
+        <div class="hint">Enter your own expected rate — this depends on what the corpus is invested in and isn't guaranteed.</div>
+      </div>
+      <div class="calc-field">
+        <label for="swp-years">Withdrawal period (years)</label>
+        <input type="number" id="swp-years" value="10" min="1" step="1">
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel" id="swp-hero-label">Balance After Withdrawal Period</div>
+        <div class="rvalue" id="swp-hero-value">₹0</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Total withdrawn</span><span class="rvalue" id="swp-total-withdrawn">₹0</span></div>
+      <div class="calc-result-row"><span class="rlabel">Withdrawal period entered</span><span class="rvalue" id="swp-period">0 years (0 months)</span></div>
+      <div class="calc-result-row" id="swp-lasted-row"><span class="rlabel">Corpus lasted</span><span class="rvalue" id="swp-lasted">0 of 0 months</span></div>
+      <div class="calc-note" id="swp-note"></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/swp-calculator" target="_blank" rel="noopener">SWP Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const corpusEl = document.getElementById('swp-corpus');
+  const withdrawalEl = document.getElementById('swp-withdrawal');
+  const rateEl = document.getElementById('swp-rate');
+  const yearsEl = document.getElementById('swp-years');
+
+  const heroLabelEl = document.getElementById('swp-hero-label');
+  const heroValueEl = document.getElementById('swp-hero-value');
+  const totalWithdrawnEl = document.getElementById('swp-total-withdrawn');
+  const periodEl = document.getElementById('swp-period');
+  const lastedRow = document.getElementById('swp-lasted-row');
+  const lastedEl = document.getElementById('swp-lasted');
+  const noteEl = document.getElementById('swp-note');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const corpus = parseFloat(corpusEl.value) || 0;
+    const withdrawal = parseFloat(withdrawalEl.value) || 0;
+    const annualRate = parseFloat(rateEl.value) || 0;
+    const years = parseFloat(yearsEl.value) || 0;
+    const months = Math.max(1, Math.round(years * 12));
+    const monthlyRate = annualRate / 12 / 100;
+
+    let balance = corpus;
+    let depletedMonth = null;
+    let totalWithdrawn = 0;
+
+    for (let m = 1; m <= months; m++) {
+      balance = balance * (1 + monthlyRate) - withdrawal;
+      if (balance <= 0 && depletedMonth === null) {
+        depletedMonth = m;
+        totalWithdrawn = withdrawal * m;
+        balance = 0;
+        break;
+      }
+      totalWithdrawn += withdrawal;
+    }
+
+    periodEl.textContent = years + ' years (' + months + ' months)';
+    totalWithdrawnEl.textContent = fmt(totalWithdrawn);
+
+    if (depletedMonth !== null) {
+      heroLabelEl.textContent = 'Corpus Depletes In Month';
+      heroValueEl.textContent = depletedMonth;
+      lastedRow.style.display = '';
+      lastedEl.textContent = depletedMonth + ' of ' + months + ' months';
+      noteEl.textContent = 'Your corpus runs out before the end of your chosen withdrawal period — the monthly withdrawal exceeds what the corpus earns. Balance shown as ₹0 from that point.';
+    } else {
+      heroLabelEl.textContent = 'Balance After Withdrawal Period';
+      heroValueEl.textContent = fmt(balance);
+      lastedRow.style.display = 'none';
+      noteEl.textContent = 'Your corpus lasts the full withdrawal period at these inputs.';
+    }
+  }
+
+  corpusEl.addEventListener('input', calculate);
+  withdrawalEl.addEventListener('input', calculate);
+  rateEl.addEventListener('input', calculate);
+  yearsEl.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"swp-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

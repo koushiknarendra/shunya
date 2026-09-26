@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Margin Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free margin calculator for equity trading in India. Enter trade value and leverage to instantly see the margin required and the amount borrowed.">
+  <link rel="canonical" href="https://shunya.so/tools/margin-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Margin Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="margin-trade-value">Trade value (₹)</label>
+        <input type="number" id="margin-trade-value" value="100000" min="0" step="1">
+      </div>
+      <div class="calc-field">
+        <label for="margin-leverage">Leverage (x)</label>
+        <input type="number" id="margin-leverage" value="5" min="1" step="0.1">
+        <div class="hint">Enter your broker's offered leverage for this stock — leverage limits vary by broker, by stock, and by exchange/SEBI rules for the segment.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Margin Required</div>
+        <div class="rvalue" id="margin-required">₹20,000</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Trade value</span><span class="rvalue" id="margin-trade-out">₹1,00,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Borrowed amount</span><span class="rvalue" id="margin-borrowed">₹80,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Leverage used</span><span class="rvalue" id="margin-leverage-out">5.0x</span></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/margin-calculator" target="_blank" rel="noopener">Margin Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const tradeEl = document.getElementById('margin-trade-value');
+  const leverageEl = document.getElementById('margin-leverage');
+  const requiredEl = document.getElementById('margin-required');
+  const tradeOutEl = document.getElementById('margin-trade-out');
+  const borrowedEl = document.getElementById('margin-borrowed');
+  const leverageOutEl = document.getElementById('margin-leverage-out');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const trade = parseFloat(tradeEl.value) || 0;
+    let leverage = parseFloat(leverageEl.value) || 0;
+    if (leverage < 1) leverage = 1;
+
+    const marginRequired = trade / leverage;
+    const borrowed = trade - marginRequired;
+
+    requiredEl.textContent = fmt(marginRequired);
+    tradeOutEl.textContent = fmt(trade);
+    borrowedEl.textContent = fmt(borrowed);
+    leverageOutEl.textContent = leverage.toFixed(1) + 'x';
+  }
+
+  tradeEl.addEventListener('input', calculate);
+  leverageEl.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"margin-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

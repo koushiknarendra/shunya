@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Step-up SIP Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free step-up SIP calculator. See how annually increasing your monthly SIP grows your final corpus compared to a flat SIP. Instant, accurate, no signup.">
+  <link rel="canonical" href="https://shunya.so/tools/step-up-sip-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Step-up SIP Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="ss-monthly">Initial monthly investment (₹)</label>
+        <input type="number" id="ss-monthly" value="5000" min="0" step="100">
+      </div>
+      <div class="calc-field">
+        <label for="ss-stepup">Annual step-up (%)</label>
+        <input type="number" id="ss-stepup" value="10" min="0" max="100" step="0.5">
+        <div class="hint">The percentage by which your monthly SIP increases at the start of each new year.</div>
+      </div>
+      <div class="calc-field">
+        <label for="ss-rate">Expected annual return (%)</label>
+        <input type="number" id="ss-rate" value="12" min="0" max="50" step="0.1">
+        <div class="hint">An assumption you choose — mutual fund returns are market-linked and not guaranteed.</div>
+      </div>
+      <div class="calc-field">
+        <label for="ss-years">Investment period (years)</label>
+        <input type="number" id="ss-years" value="10" min="1" max="50" step="1">
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Estimated Future Value</div>
+        <div class="rvalue" id="ss-fv">₹16,39,933</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Total invested</span><span class="rvalue" id="ss-invested">₹9,56,245</span></div>
+      <div class="calc-result-row"><span class="rlabel">Estimated returns</span><span class="rvalue" id="ss-returns">₹6,83,687</span></div>
+      <div class="calc-result-row"><span class="rlabel">Final year's monthly SIP</span><span class="rvalue" id="ss-final-monthly">₹11,790</span></div>
+    </div>
+  </div><div id="ss-schedule-body" hidden></div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/step-up-sip-calculator" target="_blank" rel="noopener">Step-up SIP Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const monthlyEl = document.getElementById('ss-monthly');
+  const stepupEl = document.getElementById('ss-stepup');
+  const rateEl = document.getElementById('ss-rate');
+  const yearsEl = document.getElementById('ss-years');
+  const fvEl = document.getElementById('ss-fv');
+  const investedEl = document.getElementById('ss-invested');
+  const returnsEl = document.getElementById('ss-returns');
+  const finalMonthlyEl = document.getElementById('ss-final-monthly');
+  const scheduleBody = document.getElementById('ss-schedule-body');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const P = parseFloat(monthlyEl.value) || 0;
+    const stepupPct = parseFloat(stepupEl.value) || 0;
+    const ratePct = parseFloat(rateEl.value) || 0;
+    const years = Math.max(1, Math.round(parseFloat(yearsEl.value)) || 1);
+
+    const r = ratePct / 12 / 100;
+    // FV factor for 12 monthly deposits made at the start of each month, valued at that year's end
+    const sipFactor = r === 0 ? 12 : ((Math.pow(1 + r, 12) - 1) / r) * (1 + r);
+
+    let balance = 0;
+    let totalInvested = 0;
+    let lastMonthlyAmt = P;
+    const scheduleRows = [];
+
+    for (let y = 1; y <= years; y++) {
+      const monthlyAmt = P * Math.pow(1 + stepupPct / 100, y - 1);
+      const yearInvested = monthlyAmt * 12;
+      const yearFV = monthlyAmt * sipFactor;
+
+      // Grow the balance already accumulated by one more year, then add this
+      // year's contribution (already valued at this year's end). This makes
+      // each year's contribution compound for exactly the remaining years,
+      // matching: FV(year y) grown for (years - y) more years, summed across years.
+      balance = balance * (1 + ratePct / 100) + yearFV;
+
+      totalInvested += yearInvested;
+      lastMonthlyAmt = monthlyAmt;
+      scheduleRows.push({ y, monthlyAmt, yearInvested });
+    }
+
+    const returns = balance - totalInvested;
+
+    fvEl.textContent = fmt(balance);
+    investedEl.textContent = fmt(totalInvested);
+    returnsEl.textContent = fmt(returns);
+    finalMonthlyEl.textContent = fmt(lastMonthlyAmt);
+
+    scheduleBody.innerHTML = scheduleRows.slice(0, 15).map(row =>
+      '<tr><td>Year ' + row.y + '</td><td>' + fmt(row.monthlyAmt) + '/mo</td><td>' + fmt(row.yearInvested) + '</td></tr>'
+    ).join('');
+  }
+
+  [monthlyEl, stepupEl, rateEl, yearsEl].forEach(el => el.addEventListener('input', calculate));
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"step-up-sip-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

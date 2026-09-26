@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Advance Tax Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free advance tax calculator for India. Enter your tax liability and TDS deducted to see your 15/30/30/25% installment schedule with due dates.">
+  <link rel="canonical" href="https://shunya.so/tools/advance-tax-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Advance Tax Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="at-liability">Estimated total tax liability for the year (₹)</label>
+        <input type="number" id="at-liability" value="100000" min="0" step="1">
+      </div>
+      <div class="calc-field">
+        <label for="at-tds">TDS/TCS already deducted or expected (₹)</label>
+        <input type="number" id="at-tds" value="0" min="0" step="1">
+      </div>
+      <div class="calc-field">
+        <label>Are you a presumptive taxpayer under Section 44AD/44ADA?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="at-presumptive" value="no" checked> No — regular schedule</label>
+          <label><input type="radio" name="at-presumptive" value="yes"> Yes — single installment</label>
+        </div>
+        <div class="hint">Presumptive taxpayers under Section 44AD (business) or 44ADA (profession) pay their entire advance tax in one installment by 15 March instead of four quarterly ones.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Net Advance Tax Payable</div>
+        <div class="rvalue" id="at-net">₹1,00,000</div>
+      </div>
+      <div id="at-no-tax-msg" class="disclaimer" style="display:none; margin: 0.5rem 0 0;">No advance tax required — your liability after TDS is below the ₹10,000 threshold.</div>
+      <div id="at-schedule-wrap" class="rate-table-wrap" style="margin-top:1.25rem;">
+        <table class="rate-table">
+          <thead><tr><th>Due date</th><th>Cumulative %</th><th>Amount due</th></tr></thead>
+          <tbody id="at-schedule-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/advance-tax-calculator" target="_blank" rel="noopener">Advance Tax Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const liabilityEl = document.getElementById('at-liability');
+  const tdsEl = document.getElementById('at-tds');
+  const netEl = document.getElementById('at-net');
+  const noTaxMsg = document.getElementById('at-no-tax-msg');
+  const scheduleWrap = document.getElementById('at-schedule-wrap');
+  const scheduleBody = document.getElementById('at-schedule-body');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const liability = parseFloat(liabilityEl.value) || 0;
+    const tds = parseFloat(tdsEl.value) || 0;
+    const presumptive = document.querySelector('input[name="at-presumptive"]:checked').value;
+
+    const net = Math.max(0, liability - tds);
+    netEl.textContent = fmt(net);
+
+    scheduleBody.innerHTML = '';
+
+    if (net <= 10000) {
+      noTaxMsg.style.display = '';
+      scheduleWrap.style.display = 'none';
+      return;
+    }
+
+    noTaxMsg.style.display = 'none';
+    scheduleWrap.style.display = '';
+
+    let rows = [];
+    if (presumptive === 'yes') {
+      rows = [
+        { date: 'On or before 15 March', pct: '100%', amount: net }
+      ];
+    } else {
+      const cum15 = Math.round(net * 0.15);
+      const cum45 = Math.round(net * 0.45);
+      const cum75 = Math.round(net * 0.75);
+      const cum100 = net;
+      rows = [
+        { date: 'On or before 15 June', pct: '15%', amount: cum15 },
+        { date: 'On or before 15 September', pct: '45%', amount: cum45 - cum15 },
+        { date: 'On or before 15 December', pct: '75%', amount: cum75 - cum45 },
+        { date: 'On or before 15 March', pct: '100%', amount: cum100 - cum75 }
+      ];
+    }
+
+    rows.forEach(function(row) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + row.date + '</td><td>' + row.pct + '</td><td>' + fmt(row.amount) + '</td>';
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  liabilityEl.addEventListener('input', calculate);
+  tdsEl.addEventListener('input', calculate);
+  document.querySelectorAll('input[name="at-presumptive"]').forEach(el => el.addEventListener('change', calculate));
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"advance-tax-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

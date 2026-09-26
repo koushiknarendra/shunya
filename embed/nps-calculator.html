@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>NPS Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free NPS calculator for India. Estimate your National Pension System corpus at retirement based on your age, monthly contribution, and expected annual return.">
+  <link rel="canonical" href="https://shunya.so/tools/nps-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">NPS Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="nps-current-age">Current age (years)</label>
+        <input type="number" id="nps-current-age" value="30" min="18" max="69" step="1">
+      </div>
+      <div class="calc-field">
+        <label for="nps-retirement-age">Retirement age (years)</label>
+        <input type="number" id="nps-retirement-age" value="60" min="19" max="70" step="1">
+      </div>
+      <div class="calc-field">
+        <label for="nps-monthly">Monthly contribution (₹)</label>
+        <input type="number" id="nps-monthly" value="5000" min="0" step="500">
+      </div>
+      <div class="calc-field">
+        <label for="nps-rate">Expected annual return (%)</label>
+        <input type="number" id="nps-rate" value="10" min="0" step="0.5">
+        <div class="hint">NPS returns are market-linked; this is an assumption you're choosing, not a guarantee. Actual returns depend on your fund manager and asset allocation, and will vary year to year.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Corpus at Retirement</div>
+        <div class="rvalue" id="nps-corpus">₹0</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Total contribution</span><span class="rvalue" id="nps-invested">₹0</span></div>
+      <div class="calc-result-row"><span class="rlabel">Estimated growth</span><span class="rvalue" id="nps-growth">₹0</span></div>
+      <div class="calc-result-row"><span class="rlabel">Years to retirement</span><span class="rvalue" id="nps-years">0 years</span></div>
+      <div class="calc-note">By NPS rules, at least 40% of your corpus must be used to buy an annuity at retirement, and annuity payout rates vary by insurer and change over time — this calculator doesn't project your post-retirement monthly pension, only your accumulated corpus.</div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/nps-calculator" target="_blank" rel="noopener">NPS Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const ageEl = document.getElementById('nps-current-age');
+  const retireAgeEl = document.getElementById('nps-retirement-age');
+  const monthlyEl = document.getElementById('nps-monthly');
+  const rateEl = document.getElementById('nps-rate');
+  const corpusEl = document.getElementById('nps-corpus');
+  const investedEl = document.getElementById('nps-invested');
+  const growthEl = document.getElementById('nps-growth');
+  const yearsEl = document.getElementById('nps-years');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const currentAge = parseFloat(ageEl.value) || 0;
+    const retirementAge = parseFloat(retireAgeEl.value) || 0;
+    const monthly = parseFloat(monthlyEl.value) || 0;
+    const annualRate = parseFloat(rateEl.value) || 0;
+
+    const yearsToRetirement = retirementAge - currentAge;
+
+    if (yearsToRetirement <= 0) {
+      corpusEl.textContent = '₹0';
+      investedEl.textContent = '₹0';
+      growthEl.textContent = '₹0';
+      yearsEl.textContent = 'Retirement age must be after current age';
+      return;
+    }
+
+    const months = yearsToRetirement * 12;
+    const r = annualRate / 12 / 100;
+
+    let corpus;
+    if (r === 0) {
+      corpus = monthly * months;
+    } else {
+      corpus = monthly * ((Math.pow(1 + r, months) - 1) / r) * (1 + r);
+    }
+
+    const totalContribution = monthly * months;
+    const estGrowth = corpus - totalContribution;
+
+    corpusEl.textContent = fmt(corpus);
+    investedEl.textContent = fmt(totalContribution);
+    growthEl.textContent = fmt(estGrowth);
+    yearsEl.textContent = yearsToRetirement + ' years (' + months + ' months)';
+  }
+
+  [ageEl, retireAgeEl, monthlyEl, rateEl].forEach(el => el.addEventListener('input', calculate));
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"nps-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

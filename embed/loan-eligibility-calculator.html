@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Loan Eligibility Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free loan eligibility calculator for India. Enter your monthly income, existing EMIs, and FOIR to estimate the maximum EMI and loan amount you may qualify for.">
+  <link rel="canonical" href="https://shunya.so/tools/loan-eligibility-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Loan Eligibility Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="le-income">Monthly income (₹)</label>
+        <input type="number" id="le-income" value="100000" min="0" step="1000">
+      </div>
+      <div class="calc-field">
+        <label for="le-existing-emi">Existing monthly EMI obligations (₹)</label>
+        <input type="number" id="le-existing-emi" value="0" min="0" step="500">
+      </div>
+      <div class="calc-field">
+        <label for="le-foir">FOIR / max EMI-to-income ratio (%)</label>
+        <input type="number" id="le-foir" value="50" min="1" max="100" step="1">
+        <div class="hint">Most Indian lenders cap this at 40-50% of income for salaried applicants, sometimes higher for high earners. Edit this to match your lender's policy.</div>
+      </div>
+      <div class="calc-field">
+        <label for="le-rate">Interest rate (% p.a.)</label>
+        <input type="number" id="le-rate" value="9" min="0" step="0.05">
+        <div class="hint">Enter the interest rate you expect to be offered — this varies by lender and loan type.</div>
+      </div>
+      <div class="calc-field">
+        <label for="le-tenure">Loan tenure (years)</label>
+        <input type="number" id="le-tenure" value="20" min="1" step="1">
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Maximum Loan Amount</div>
+        <div class="rvalue" id="le-max-loan">₹44,45,798</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Maximum affordable EMI</span><span class="rvalue" id="le-max-emi">₹40,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Monthly income considered</span><span class="rvalue" id="le-income-out">₹1,00,000</span></div>
+      <div class="calc-result-row"><span class="rlabel">Existing EMI obligations</span><span class="rvalue" id="le-existing-out">₹10,000</span></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/loan-eligibility-calculator" target="_blank" rel="noopener">Loan Eligibility Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const incomeEl = document.getElementById('le-income');
+  const existingEmiEl = document.getElementById('le-existing-emi');
+  const foirEl = document.getElementById('le-foir');
+  const rateEl = document.getElementById('le-rate');
+  const tenureEl = document.getElementById('le-tenure');
+
+  const maxLoanEl = document.getElementById('le-max-loan');
+  const maxEmiEl = document.getElementById('le-max-emi');
+  const incomeOutEl = document.getElementById('le-income-out');
+  const existingOutEl = document.getElementById('le-existing-out');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const income = parseFloat(incomeEl.value) || 0;
+    const existingEmi = parseFloat(existingEmiEl.value) || 0;
+    const foir = parseFloat(foirEl.value) || 0;
+    const rate = parseFloat(rateEl.value) || 0;
+    const years = parseFloat(tenureEl.value) || 0;
+
+    const maxEmi = Math.max(0, (income * foir / 100) - existingEmi);
+
+    const r = rate / 12 / 100;
+    const n = years * 12;
+
+    let maxLoan = 0;
+    if (maxEmi > 0 && n > 0) {
+      if (r > 0) {
+        maxLoan = maxEmi * ((Math.pow(1 + r, n) - 1) / (r * Math.pow(1 + r, n)));
+      } else {
+        maxLoan = maxEmi * n;
+      }
+    }
+
+    maxLoanEl.textContent = fmt(maxLoan);
+    maxEmiEl.textContent = fmt(maxEmi);
+    incomeOutEl.textContent = fmt(income);
+    existingOutEl.textContent = fmt(existingEmi);
+  }
+
+  [incomeEl, existingEmiEl, foirEl, rateEl, tenureEl].forEach(el => {
+    el.addEventListener('input', calculate);
+    el.addEventListener('change', calculate);
+  });
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"loan-eligibility-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

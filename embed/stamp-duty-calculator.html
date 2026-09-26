@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Stamp Duty Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Look up approximate stamp duty for Pvt Ltd company incorporation across all 30 Indian states and UTs — from ₹0 in Sikkim to state-specific figures.">
+  <link rel="canonical" href="https://shunya.so/tools/stamp-duty-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Stamp Duty Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="sd-state">State / Union Territory</label>
+        <select id="sd-state">
+          <option value="andhra-pradesh">Andhra Pradesh</option>
+          <option value="arunachal-pradesh">Arunachal Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="bihar">Bihar</option>
+          <option value="chhattisgarh">Chhattisgarh</option>
+          <option value="delhi">Delhi</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="haryana">Haryana</option>
+          <option value="himachal-pradesh">Himachal Pradesh</option>
+          <option value="jharkhand">Jharkhand</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="madhya-pradesh">Madhya Pradesh</option>
+          <option value="maharashtra" selected>Maharashtra</option>
+          <option value="manipur">Manipur</option>
+          <option value="meghalaya">Meghalaya</option>
+          <option value="mizoram">Mizoram</option>
+          <option value="nagaland">Nagaland</option>
+          <option value="odisha">Odisha</option>
+          <option value="puducherry">Puducherry</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="sikkim">Sikkim</option>
+          <option value="tamil-nadu">Tamil Nadu</option>
+          <option value="telangana">Telangana</option>
+          <option value="tripura">Tripura</option>
+          <option value="uttar-pradesh">Uttar Pradesh</option>
+          <option value="uttarakhand">Uttarakhand</option>
+          <option value="west-bengal">West Bengal</option>
+        </select>
+        <div class="hint">Reference figures are for a Private Limited Company's MOA/AOA at ₹1 lakh authorized capital. Select your state to see its figure and full cost guide.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel" id="sd-hero-label">Approximate stamp duty — Maharashtra</div>
+        <div class="rvalue" id="sd-value">₹1,200 – ₹1,400</div>
+      </div>
+      <div class="calc-result-row" id="sd-extra-row" style="display:none;">
+        <span class="rlabel">Note</span><span class="rvalue" id="sd-extra"></span>
+      </div>
+      <div class="calc-result-row">
+        <span class="rlabel">Full breakdown</span>
+        <span class="rvalue"><a id="sd-guide-link" href="/company-registration/company-registration-cost-in-maharashtra">Maharashtra cost guide &rarr;</a></span>
+      </div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/stamp-duty-calculator" target="_blank" rel="noopener">Stamp Duty Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  var stateEl = document.getElementById('sd-state');
+  var heroLabelEl = document.getElementById('sd-hero-label');
+  var valueEl = document.getElementById('sd-value');
+  var extraRow = document.getElementById('sd-extra-row');
+  var extraEl = document.getElementById('sd-extra');
+  var guideLinkEl = document.getElementById('sd-guide-link');
+
+  var DATA = {
+    'andhra-pradesh': { name: 'Andhra Pradesh', figure: '₹1,520 (approx.)', extra: null },
+    'arunachal-pradesh': { name: 'Arunachal Pradesh', figure: '₹710 (approx.)', extra: null },
+    'assam': { name: 'Assam', figure: '₹525 (approx.)', extra: null },
+    'bihar': { name: 'Bihar', figure: '₹1,520 (approx.)', extra: null },
+    'chhattisgarh': { name: 'Chhattisgarh', figure: '₹1,510 (approx.)', extra: null },
+    'delhi': { name: 'Delhi', figure: '₹350 – ₹360 (approx.)', extra: null },
+    'goa': { name: 'Goa', figure: '₹1,200 (approx.)', extra: null },
+    'gujarat': { name: 'Gujarat', figure: '₹600 – ₹620 (approx.)', extra: null },
+    'haryana': { name: 'Haryana', figure: '₹135 (approx.)', extra: 'One of the lowest stamp duty figures in the country.' },
+    'himachal-pradesh': { name: 'Himachal Pradesh', figure: '₹123 (approx.)', extra: 'Among the lowest in India.' },
+    'jharkhand': { name: 'Jharkhand', figure: '₹173 (approx.)', extra: null },
+    'karnataka': { name: 'Karnataka', figure: '₹6,000 – ₹10,000 (approx.)', extra: 'A wider range than most states — confirm carefully for your exact authorized capital.' },
+    'kerala': { name: 'Kerala', figure: '₹3,025 (approx.)', extra: 'One of the higher figures among states.' },
+    'madhya-pradesh': { name: 'Madhya Pradesh', figure: '₹7,550 (approx.)', extra: 'Notably higher than most states.' },
+    'maharashtra': { name: 'Maharashtra', figure: '₹1,200 – ₹1,400 (approx.)', extra: null },
+    'manipur': { name: 'Manipur', figure: '₹260 (approx.)', extra: 'A flat, comparatively low figure.' },
+    'meghalaya': { name: 'Meghalaya', figure: '₹410 (approx.)', extra: null },
+    'mizoram': { name: 'Mizoram', figure: '₹260 (approx.)', extra: null },
+    'nagaland': { name: 'Nagaland', figure: '₹100 (flat)', extra: 'One of the simplest and lowest structures in the country.' },
+    'odisha': { name: 'Odisha', figure: '₹610 (approx.)', extra: null },
+    'puducherry': { name: 'Puducherry', figure: '₹510 (approx.)', extra: 'Flat ₹200 on the MOA + flat ₹300 on the AOA. LLP stamp duty specifically was not clearly documented in our research for this UT — confirm separately if registering an LLP.' },
+    'punjab': { name: 'Punjab', figure: 'Confirm during consultation', extra: 'A single source puts this at a notably high figure — treat this as a rough starting point only, and confirm carefully during your consultation.' },
+    'rajasthan': { name: 'Rajasthan', figure: '₹1,010 (approx., at ₹1L capital)', extra: 'Flat ₹500 plus 0.5% of authorized capital — this figure scales up as your authorized capital increases.' },
+    'sikkim': { name: 'Sikkim', figure: '₹0', extra: 'Nil stamp duty — a confirmed state legal position, not an estimate.' },
+    'tamil-nadu': { name: 'Tamil Nadu', figure: '₹700 – ₹720 (approx.)', extra: null },
+    'telangana': { name: 'Telangana', figure: '₹1,520 (approx.)', extra: null },
+    'tripura': { name: 'Tripura', figure: '₹260 (approx.)', extra: null },
+    'uttar-pradesh': { name: 'Uttar Pradesh', figure: '₹1,010 (approx.)', extra: 'Uttar Pradesh does not levy Professional Tax.' },
+    'uttarakhand': { name: 'Uttarakhand', figure: '₹1,010 (approx.)', extra: 'Uttarakhand does not levy Professional Tax.' },
+    'west-bengal': { name: 'West Bengal', figure: '₹370 (approx.)', extra: 'A flat structure for typical authorized capital.' }
+  };
+
+  function updateResult() {
+    var slug = stateEl.value;
+    var data = DATA[slug];
+    if (!data) return;
+
+    heroLabelEl.textContent = 'Approximate stamp duty — ' + data.name;
+    valueEl.textContent = data.figure;
+
+    if (data.extra) {
+      extraEl.textContent = data.extra;
+      extraRow.style.display = '';
+    } else {
+      extraEl.textContent = '';
+      extraRow.style.display = 'none';
+    }
+
+    guideLinkEl.href = '/company-registration/company-registration-cost-in-' + slug;
+    guideLinkEl.textContent = data.name + ' cost guide →';
+  }
+
+  stateEl.addEventListener('change', updateResult);
+  updateResult();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"stamp-duty-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>BOI Home Loan EMI Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Free Bank of India home loan EMI calculator. Enter loan amount, tenure, and BOI current rate to get your monthly EMI, total interest, and total payment.">
+  <link rel="canonical" href="https://shunya.so/tools/boi-home-loan-emi-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">BOI Home Loan EMI Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="boi-principal">Loan amount (₹)</label>
+        <input type="number" id="boi-principal" value="4000000" min="0" step="1000">
+      </div>
+      <div class="calc-field">
+        <label for="boi-rate">Interest rate (% per annum)</label>
+        <input type="number" id="boi-rate" value="8.6" min="0" step="0.01">
+        <div class="hint">This calculator does not know BOI's current rate — enter the interest rate applicable to your loan. Check <strong>bankofindia.co.in</strong> for BOI's latest published home loan rate. 8.6% here is only an illustrative example, not Bank of India's actual rate.</div>
+      </div>
+      <div class="calc-field">
+        <label for="boi-tenure">Loan tenure (years)</label>
+        <input type="number" id="boi-tenure" value="20" min="1" step="1">
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Monthly EMI</div>
+        <div class="rvalue" id="boi-emi">₹0</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">Principal amount</span><span class="rvalue" id="boi-principal-out">₹0</span></div>
+      <div class="calc-result-row"><span class="rlabel">Total interest payable</span><span class="rvalue" id="boi-interest">₹0</span></div>
+      <div class="calc-result-row"><span class="rlabel">Total payment (principal + interest)</span><span class="rvalue" id="boi-total">₹0</span></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/boi-home-loan-emi-calculator" target="_blank" rel="noopener">BOI Home Loan EMI Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const principalEl = document.getElementById('boi-principal');
+  const rateEl = document.getElementById('boi-rate');
+  const tenureEl = document.getElementById('boi-tenure');
+  const emiEl = document.getElementById('boi-emi');
+  const principalOutEl = document.getElementById('boi-principal-out');
+  const interestEl = document.getElementById('boi-interest');
+  const totalEl = document.getElementById('boi-total');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const principal = parseFloat(principalEl.value) || 0;
+    const annualRate = parseFloat(rateEl.value) || 0;
+    const years = parseFloat(tenureEl.value) || 0;
+
+    const r = annualRate / 12 / 100;
+    const n = years * 12;
+
+    let emi = 0;
+    if (principal > 0 && n > 0) {
+      if (r > 0) {
+        const factor = Math.pow(1 + r, n);
+        emi = principal * r * factor / (factor - 1);
+      } else {
+        emi = principal / n;
+      }
+    }
+
+    const totalPayment = emi * n;
+    const totalInterest = totalPayment - principal;
+
+    emiEl.textContent = fmt(emi);
+    principalOutEl.textContent = fmt(principal);
+    interestEl.textContent = fmt(totalInterest);
+    totalEl.textContent = fmt(totalPayment);
+  }
+
+  principalEl.addEventListener('input', calculate);
+  rateEl.addEventListener('input', calculate);
+  tenureEl.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"boi-home-loan-emi-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

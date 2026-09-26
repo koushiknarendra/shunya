@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node generate-sitemap.js && node generate-llms.js",
+  "buildCommand": "node generate-embeds.js && node generate-sitemap.js && node generate-llms.js",
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,

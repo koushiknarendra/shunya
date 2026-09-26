@@ -179,3 +179,12 @@ main.tools-main .cta-hard { margin: 0 5rem 5rem; }
   main.tools-main .cta-hard { margin: 0 1.5rem 3rem; }
   .cta-hard { padding: 1.75rem 1.25rem; }
 }
+
+/* ─── Embed box ─── */
+.embed-box { margin: 2.5rem 0; padding: 1.5rem; border: 1px solid #313235; border-radius: 1rem; background: linear-gradient(180deg, #0C1F31, #060F19); }
+.embed-box h2 { margin-top: 0; }
+.embed-box p { margin-bottom: 1rem; }
+.embed-box code { background: rgba(255,255,255,0.08); padding: 0.1rem 0.35rem; border-radius: 0.3rem; font-size: 0.85em; }
+.embed-box textarea { width: 100%; background: #060F19; border: 1px solid #313235; border-radius: 0.6rem; color: #d4e8f8; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8125rem; line-height: 1.5; padding: 0.8rem 0.9rem; resize: vertical; }
+.embed-box .embed-copy { margin-top: 0.75rem; background: #146eff; color: #fff; border: 0; border-radius: 2rem; padding: 0.6rem 1.4rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+.embed-box .embed-copy:hover { background: #2a7fff; }

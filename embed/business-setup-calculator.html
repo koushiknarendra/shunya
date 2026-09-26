@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Business Setup Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Estimate India business setup costs. Compare Pvt Ltd, LLP, OPC, and Sole Proprietorship registration costs by state, with GST and trademark flagged.">
+  <link rel="canonical" href="https://shunya.so/tools/business-setup-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">Business Setup Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="bsc-structure">Business structure</label>
+        <select id="bsc-structure">
+          <option value="pvt" selected>Private Limited Company</option>
+          <option value="llp">LLP</option>
+          <option value="opc">OPC (One Person Company)</option>
+          <option value="sole">Sole Proprietorship</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label for="bsc-state">State</label>
+        <select id="bsc-state"></select>
+        <div class="hint">Used to reference approximate stamp duty on your incorporation documents.</div>
+      </div>
+      <div class="calc-field" id="bsc-capital-field">
+        <label for="bsc-capital">Authorized share capital (₹)</label>
+        <input type="number" id="bsc-capital" value="100000" min="0" step="1000">
+      </div>
+      <div class="calc-field" id="bsc-contribution-field" style="display:none;">
+        <label for="bsc-contribution">Total partner contribution (₹)</label>
+        <input type="number" id="bsc-contribution" value="100000" min="0" step="1000">
+      </div>
+      <div class="calc-field" id="bsc-directors-field">
+        <label for="bsc-directors">Number of directors</label>
+        <input type="number" id="bsc-directors" value="2" min="1" step="1">
+        <div class="hint">Used only to estimate total DSC (Digital Signature Certificate) cost.</div>
+      </div>
+      <div class="calc-field">
+        <label>Add-on services</label>
+        <div class="radio-group">
+          <label><input type="checkbox" id="bsc-gst"> Need GST registration</label>
+          <label><input type="checkbox" id="bsc-trademark"> Need trademark filed</label>
+        </div>
+        <div class="hint">These are priced separately — this calculator won't guess a figure for either.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel" id="bsc-total-label">Total estimate (starting from)</div>
+        <div class="rvalue" id="bsc-total">₹4,799</div>
+      </div>
+      <div id="bsc-breakdown"></div>
+      <div id="bsc-addons"></div>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/business-setup-calculator" target="_blank" rel="noopener">Business Setup Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  var STATES = [
+    { slug: 'andhra-pradesh', name: 'Andhra Pradesh', kind: 'unknown', note: 'Broadly similar range to Maharashtra — check the state guide for the precise current figure.' },
+    { slug: 'arunachal-pradesh', name: 'Arunachal Pradesh', kind: 'unknown', note: 'Comparatively low — check the state guide for the exact figure.' },
+    { slug: 'assam', name: 'Assam', kind: 'flat', low: 525 },
+    { slug: 'bihar', name: 'Bihar', kind: 'flat', low: 1520 },
+    { slug: 'chhattisgarh', name: 'Chhattisgarh', kind: 'flat', low: 1510 },
+    { slug: 'delhi', name: 'Delhi', kind: 'range', low: 350, high: 360 },
+    { slug: 'goa', name: 'Goa', kind: 'flat', low: 1200 },
+    { slug: 'gujarat', name: 'Gujarat', kind: 'unknown', note: 'Check the state guide for the exact current figure.' },
+    { slug: 'haryana', name: 'Haryana', kind: 'flat', low: 135, note: 'One of the lowest stamp duty figures in the country.' },
+    { slug: 'himachal-pradesh', name: 'Himachal Pradesh', kind: 'unknown', note: 'Comparatively low — check the state guide for the exact figure.' },
+    { slug: 'jharkhand', name: 'Jharkhand', kind: 'flat', low: 173 },
+    { slug: 'karnataka', name: 'Karnataka', kind: 'range', low: 6000, high: 10000, note: 'A wider range than most states — confirm carefully during consultation.' },
+    { slug: 'kerala', name: 'Kerala', kind: 'flat', low: 3025, note: 'One of the higher figures among the states we cover.' },
+    { slug: 'madhya-pradesh', name: 'Madhya Pradesh', kind: 'unknown', note: 'Described as higher-end in our research — check the state guide for the exact figure.' },
+    { slug: 'maharashtra', name: 'Maharashtra', kind: 'range', low: 1200, high: 1400 },
+    { slug: 'manipur', name: 'Manipur', kind: 'unknown', note: 'Flat and comparatively low — check the state guide for the exact figure.' },
+    { slug: 'meghalaya', name: 'Meghalaya', kind: 'flat', low: 410 },
+    { slug: 'mizoram', name: 'Mizoram', kind: 'flat', low: 260 },
+    { slug: 'nagaland', name: 'Nagaland', kind: 'flat', low: 100, note: 'A flat figure — one of the lowest in the country.' },
+    { slug: 'odisha', name: 'Odisha', kind: 'flat', low: 610 },
+    { slug: 'puducherry', name: 'Puducherry', kind: 'unknown', note: 'Check the state guide for the figure — LLP stamp duty specifically was not clearly documented in our research for this UT.' },
+    { slug: 'punjab', name: 'Punjab', kind: 'caution', note: 'A single source puts this at a notably high figure — treat as a rough starting point only, confirm carefully during consultation.' },
+    { slug: 'rajasthan', name: 'Rajasthan', kind: 'unknown', note: 'A flat ₹500 plus a percentage component — check the state guide for the exact formula.' },
+    { slug: 'sikkim', name: 'Sikkim', kind: 'nil', note: 'Nil stamp duty — a confirmed state legal position, not an estimate.' },
+    { slug: 'tamil-nadu', name: 'Tamil Nadu', kind: 'unknown', note: 'Varies with authorized capital — see the full state guide for the current figure.' },
+    { slug: 'telangana', name: 'Telangana', kind: 'flat', low: 1520 },
+    { slug: 'tripura', name: 'Tripura', kind: 'flat', low: 260 },
+    { slug: 'uttar-pradesh', name: 'Uttar Pradesh', kind: 'unknown', note: 'No Professional Tax in this state (a bonus saving) — check the state guide for the stamp duty figure.' },
+    { slug: 'uttarakhand', name: 'Uttarakhand', kind: 'unknown', note: 'No Professional Tax in this state (a bonus saving) — check the state guide for the stamp duty figure.' },
+    { slug: 'west-bengal', name: 'West Bengal', kind: 'unknown', note: 'Check the state guide for the exact current figure.' }
+  ];
+
+  var structureEl = document.getElementById('bsc-structure');
+  var stateEl = document.getElementById('bsc-state');
+  var capitalField = document.getElementById('bsc-capital-field');
+  var capitalEl = document.getElementById('bsc-capital');
+  var contributionField = document.getElementById('bsc-contribution-field');
+  var contributionEl = document.getElementById('bsc-contribution');
+  var directorsField = document.getElementById('bsc-directors-field');
+  var directorsEl = document.getElementById('bsc-directors');
+  var gstEl = document.getElementById('bsc-gst');
+  var trademarkEl = document.getElementById('bsc-trademark');
+  var totalLabelEl = document.getElementById('bsc-total-label');
+  var totalEl = document.getElementById('bsc-total');
+  var breakdownEl = document.getElementById('bsc-breakdown');
+  var addonsEl = document.getElementById('bsc-addons');
+
+  // Populate state dropdown
+  STATES.forEach(function(s){
+    var opt = document.createElement('option');
+    opt.value = s.slug;
+    opt.textContent = s.name;
+    if (s.slug === 'maharashtra') opt.selected = true;
+    stateEl.appendChild(opt);
+  });
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+  function fmtRange(a, b) {
+    return '₹' + Math.round(a).toLocaleString('en-IN') + '–₹' + Math.round(b).toLocaleString('en-IN');
+  }
+  function row(label, value) {
+    return '<div class="calc-result-row"><span class="rlabel">' + label + '</span><span class="rvalue">' + value + '</span></div>';
+  }
+  function note(text) {
+    return '<p class="calc-note">' + text + '</p>';
+  }
+  function stateGuideLink(slug, text) {
+    return '<a href="/company-registration/company-registration-cost-in-' + slug + '">' + (text || 'View the full state guide') + '</a>';
+  }
+
+  function mcaFee(capital) {
+    if (capital <= 1500000) {
+      return { numeric: 0, text: fmt(0), hint: 'MCA filing fee is waived for authorized capital up to ₹15 lakh.' };
+    }
+    return { numeric: null, text: 'Confirm during consultation', hint: 'MCA fee applies on a slab basis above ₹15 lakh authorized capital — your CA confirms the exact amount during your free consultation.' };
+  }
+
+  function stampDuty(state) {
+    if (state.kind === 'flat') return { numeric: state.low, text: fmt(state.low), note: state.note || null };
+    if (state.kind === 'range') return { numeric: state.low, text: fmtRange(state.low, state.high) + ' (starting from)', note: state.note || null };
+    if (state.kind === 'nil') return { numeric: 0, text: '₹0 (nil stamp duty)', note: state.note };
+    if (state.kind === 'caution') return { numeric: null, text: 'Confirm during consultation', note: state.note };
+    return { numeric: null, text: 'See full state guide', note: state.note };
+  }
+
+  function fillipFee(contribution) {
+    if (contribution <= 100000) return 500;
+    if (contribution <= 500000) return 1000;
+    if (contribution <= 1000000) return 2000;
+    if (contribution <= 2500000) return 4000;
+    return 5000;
+  }
+
+  function calculate() {
+    var structure = structureEl.value;
+    var stateSlug = stateEl.value;
+    var state = STATES.filter(function(s){ return s.slug === stateSlug; })[0] || STATES[0];
+
+    // Toggle field visibility
+    var isPvtOpc = (structure === 'pvt' || structure === 'opc');
+    var isLLP = structure === 'llp';
+    var isSole = structure === 'sole';
+    capitalField.style.display = isPvtOpc ? '' : 'none';
+    contributionField.style.display = isLLP ? '' : 'none';
+    directorsField.style.display = isPvtOpc ? '' : 'none';
+
+    var breakdownHtml = '';
+    var totalKnown = 0;
+    var excludedNote = '';
+
+    if (isPvtOpc) {
+      var capital = parseFloat(capitalEl.value) || 0;
+      var directors = Math.max(1, parseInt(directorsEl.value, 10) || 1);
+
+      var fee = 1999;
+      var mca = mcaFee(capital);
+      var stamp = stampDuty(state);
+      var dscLow = 800 * directors;
+      var dscHigh = 2500 * directors;
+
+      totalKnown = fee + (mca.numeric || 0) + (stamp.numeric !== null ? stamp.numeric : 0) + dscLow;
+
+      breakdownHtml += row("Shunya's professional fee", fmt(fee));
+      breakdownHtml += row('MCA government fee', mca.text);
+      breakdownHtml += note(mca.hint);
+      breakdownHtml += row('State stamp duty (' + state.name + ')', stamp.text);
+      if (stamp.note) breakdownHtml += note(stamp.note);
+      if (capital !== 100000 && (state.kind === 'flat' || state.kind === 'range')) {
+        breakdownHtml += note('This figure is for ₹1 lakh authorized capital — stamp duty scales with capital in some states. Confirm your exact figure during consultation.');
+      }
+      breakdownHtml += note(stateGuideLink(state.slug));
+      breakdownHtml += row('DSC (' + directors + ' director' + (directors !== 1 ? 's' : '') + ')', fmtRange(dscLow, dscHigh));
+      breakdownHtml += note('DSC cost is a range (2-year validity, varies by certifying authority) — the low end is used in the total below.');
+
+      if (mca.numeric === null || stamp.numeric === null) {
+        excludedNote = 'Items marked "confirm during consultation" above are not included in the total — ask your CA for the exact figure.';
+      }
+    } else if (isLLP) {
+      var contribution = parseFloat(contributionEl.value) || 0;
+      var fillip = fillipFee(contribution);
+      var runLLP = 200;
+      var form3Low = 50;
+      var form3High = 200;
+      var shunyaFee = 1999;
+
+      totalKnown = fillip + runLLP + form3Low + shunyaFee;
+
+      breakdownHtml += row('FiLLiP incorporation fee', fmt(fillip));
+      breakdownHtml += row('RUN-LLP name reservation', fmt(runLLP));
+      breakdownHtml += row('Form 3 (LLP Agreement filing)', fmtRange(form3Low, form3High) + ' (low end used in total)');
+      breakdownHtml += row("Shunya's professional fee", fmt(shunyaFee));
+      breakdownHtml += note('LLP Agreement stamp duty is separate and state-specific — not included in the total above. ' + stateGuideLink(state.slug, 'See the LLP registration guide') );
+
+      excludedNote = 'LLP Agreement stamp duty (state-specific) is excluded from the total above.';
+    } else if (isSole) {
+      totalKnown = 0;
+      breakdownHtml += '<p class="calc-note">No separate registration fee — Sole Proprietorship has no MCA filing. You may still want GST or Udyam registration depending on your business. <a href="/company-registration/sole-proprietorship-registration">See the Sole Proprietorship registration guide &rarr;</a></p>';
+    }
+
+    breakdownEl.innerHTML = breakdownHtml;
+
+    // Add-ons: never a computed figure
+    var addonsHtml = '';
+    if (gstEl.checked) {
+      addonsHtml += row('GST registration', 'Priced separately');
+      addonsHtml += note('Confirm with Shunya — not included in total, price on request.');
+    }
+    if (trademarkEl.checked) {
+      addonsHtml += row('Trademark filing', 'Priced separately');
+      addonsHtml += note('Confirm with Shunya — not included in total, price on request.');
+    }
+    addonsEl.innerHTML = addonsHtml;
+
+    if (excludedNote) {
+      breakdownEl.innerHTML += note(excludedNote);
+    }
+
+    totalLabelEl.textContent = isSole ? 'Total registration cost' : 'Total estimate (starting from)';
+    totalEl.textContent = fmt(totalKnown);
+  }
+
+  structureEl.addEventListener('change', calculate);
+  stateEl.addEventListener('change', calculate);
+  capitalEl.addEventListener('input', calculate);
+  contributionEl.addEventListener('input', calculate);
+  directorsEl.addEventListener('input', calculate);
+  gstEl.addEventListener('change', calculate);
+  trademarkEl.addEventListener('change', calculate);
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"business-setup-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>

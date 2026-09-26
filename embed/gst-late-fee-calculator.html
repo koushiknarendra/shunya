@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>GST Late Fee Calculator — embeddable calculator | Shunya</title>
+  <meta name="description" content="Calculate your GST return late filing fee instantly. ₹50/day (capped ₹10,000) for normal returns, ₹20/day (capped ₹500) for nil returns, with CGST/SGST split.">
+  <link rel="canonical" href="https://shunya.so/tools/gst-late-fee-calculator">
+  <link rel="preload" href="/_next/static/media/4c9affa5bc8f420e-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/9d5a263311222317-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2">
+  <link rel="stylesheet" href="/_next/static/css/53eb92ac5724aa26.css">
+  <link rel="stylesheet" href="/_next/static/css/7017a777ad079023.css">
+  <link rel="stylesheet" href="/_next/static/css/8002659398f13b1a.css">
+  <link rel="stylesheet" href="/_next/static/css/b279820883e3123c.css">
+  <link rel="stylesheet" href="/_next/static/css/b76d1406afc2b6f2.css">
+  <link rel="stylesheet" href="/tools/shared.css">
+  <style>
+html,body{margin:0;background:transparent}
+body{padding:12px}
+.embed-wrap{max-width:720px;margin:0 auto}
+.embed-title{font-family:var(--font-bricolage);font-weight:600;font-size:1.15rem;color:#bcd9f5;margin:0 0 .75rem}
+.embed-wrap .calc-card{margin-bottom:.75rem;padding:1.25rem;gap:1.25rem}
+.embed-credit{font-family:var(--font-inter);font-size:.8125rem;color:#82848e;text-align:center;margin:0}
+.embed-credit a{color:#146eff;text-decoration:none;font-weight:600}
+.embed-credit a:hover{text-decoration:underline}
+html[data-theme=light] body{background:#fff}
+html[data-theme=light] .embed-title{color:#0b2540}
+html[data-theme=light] .embed-wrap .calc-card{background:#f5f8ff;border-color:#d9e3f5}
+html[data-theme=light] .calc-field label{color:#0b2540}
+html[data-theme=light] .calc-field input[type=number],html[data-theme=light] .calc-field input[type=text],html[data-theme=light] .calc-field select{background:#fff;border-color:#c9d6ee;color:#0b2540}
+html[data-theme=light] .calc-field .radio-group label{background:#fff;border-color:#c9d6ee;color:#3b4a63}
+html[data-theme=light] .calc-field .radio-group label:has(input:checked){background:rgba(20,110,255,.08);color:#0b2540}
+html[data-theme=light] .calc-results{background:#eaf1ff;border-color:#c9d9f7}
+html[data-theme=light] .calc-result-row .rvalue,html[data-theme=light] .calc-result-hero .rvalue{color:#0b2540;text-shadow:none}
+html[data-theme=light] .calc-result-row .rlabel,html[data-theme=light] .calc-result-hero .rlabel,html[data-theme=light] .calc-field .hint,html[data-theme=light] .calc-note,html[data-theme=light] .embed-credit{color:#5b6b85}
+html[data-theme=light] .calc-result-hero{border-bottom-color:#c9d9f7}
+</style>
+  <script>try{if(/[?&]theme=light/.test(location.search))document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
+<div class="embed-wrap">
+  <h1 class="embed-title">GST Late Fee Calculator</h1>
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="fee-days">Number of days late</label>
+        <input type="number" id="fee-days" value="30" min="0" step="1">
+      </div>
+      <div class="calc-field">
+        <label>Return type</label>
+        <div class="radio-group">
+          <label><input type="radio" name="fee-return-type" value="normal" checked> Normal return with tax liability</label>
+          <label><input type="radio" name="fee-return-type" value="nil"> Nil return</label>
+        </div>
+        <div class="hint">Normal returns are charged ₹50/day (capped at ₹10,000). Nil returns are charged ₹20/day (capped at ₹500) — nil doesn't mean fee-free.</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-hero">
+        <div class="rlabel">Total Late Fee</div>
+        <div class="rvalue" id="fee-total">₹1,500</div>
+      </div>
+      <div class="calc-result-row"><span class="rlabel">CGST</span><span class="rvalue" id="fee-cgst">₹750</span></div>
+      <div class="calc-result-row"><span class="rlabel">SGST</span><span class="rvalue" id="fee-sgst">₹750</span></div>
+      <p class="hint" id="fee-cap-note" style="display:none;"></p>
+    </div>
+  </div>
+  <p class="embed-credit">Free <a href="https://shunya.so/tools/gst-late-fee-calculator" target="_blank" rel="noopener">GST Late Fee Calculator</a> by <a href="https://shunya.so" target="_blank" rel="noopener">Shunya</a> · <a href="https://shunya.so/tools" target="_blank" rel="noopener">More free tools</a></p>
+</div>
+<script>
+(function(){
+  const daysEl = document.getElementById('fee-days');
+  const totalEl = document.getElementById('fee-total');
+  const cgstEl = document.getElementById('fee-cgst');
+  const sgstEl = document.getElementById('fee-sgst');
+  const capNote = document.getElementById('fee-cap-note');
+
+  function fmt(n) {
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+
+  function calculate() {
+    const days = Math.max(0, parseFloat(daysEl.value) || 0);
+    const returnType = document.querySelector('input[name="fee-return-type"]:checked').value;
+
+    let perDay, cap;
+    if (returnType === 'normal') {
+      perDay = 50;
+      cap = 10000;
+    } else {
+      perDay = 20;
+      cap = 500;
+    }
+
+    const rawFee = days * perDay;
+    const fee = Math.min(rawFee, cap);
+    const half = fee / 2;
+
+    totalEl.textContent = fmt(fee);
+    cgstEl.textContent = fmt(half);
+    sgstEl.textContent = fmt(half);
+
+    if (rawFee > cap) {
+      capNote.style.display = '';
+      capNote.textContent = 'Capped at the maximum late fee of ' + fmt(cap) + ' for this return type.';
+    } else {
+      capNote.style.display = 'none';
+    }
+  }
+
+  daysEl.addEventListener('input', calculate);
+  document.querySelectorAll('input[name="fee-return-type"]').forEach(el => el.addEventListener('change', calculate));
+  calculate();
+})();
+</script>
+<script>(function(){function s(){try{parent.postMessage({shunyaEmbed:"gst-late-fee-calculator",height:Math.ceil(document.querySelector(".embed-wrap").getBoundingClientRect().bottom+12)},'*')}catch(e){}}addEventListener('load',s);addEventListener('input',function(){setTimeout(s,50)});addEventListener('change',function(){setTimeout(s,50)})})()</script>
+</body>
+</html>
