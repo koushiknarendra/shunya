@@ -172,6 +172,21 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Private Limited company?","acceptedAnswer":{"@type":"Answer","text":"A Private Limited Company is a business structure registered under the Companies Act, 2013, with limited liability for its shareholders, a separate legal identity from its owners, and restrictions on transferring shares to the public. It is the most common structure for startups planning to raise funding."}},{"@type":"Question","name":"How many directors and shareholders does a Private Limited company need?","acceptedAnswer":{"@type":"Answer","text":"A minimum of 2 directors and 2 shareholders (they can be the same people), up to a maximum of 15 directors and 200 shareholders. At least one director must be a resident of India — someone who has stayed in India for 182+ days in the previous financial year."}},{"@type":"Question","name":"What is the minimum capital required to register a Private Limited company?","acceptedAnswer":{"@type":"Answer","text":"There is no minimum paid-up capital requirement under current law. You can incorporate with any authorised capital you choose — most first-time founders start with ₹1 lakh to ₹10 lakh, since MCA fees are nil up to ₹15 lakh authorised capital and only state stamp duty applies."}},{"@type":"Question","name":"How much does Private Limited company registration cost with Shunya?","acceptedAnswer":{"@type":"Answer","text":"₹1,999 is Shunya's professional fee. Government fees and stamp duty are billed separately and depend on your authorised capital and the state you're incorporating in — we confirm the exact total on your first call."}},{"@type":"Question","name":"How long does Private Limited registration take?","acceptedAnswer":{"@type":"Answer","text":"7–10 working days once your documents are complete and verified. If incorporation isn't complete within 15 working days of full document submission, Shunya waives its professional fee, for standard incorporations up to ₹10 lakh authorised capital."}},{"@type":"Question","name":"Can I convert my Private Limited company to another structure later?","acceptedAnswer":{"@type":"Answer","text":"Yes, a Private Limited company can convert to a Public Limited company as it scales, though converting to an LLP or proprietorship is more restrictive and rarely done in practice. Most founders choose Private Limited specifically because it doesn't need to be converted later — it already suits fundraising and scaling."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Private Limited Company Registration", "serviceType": "Private Limited Company Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "Private Limited company registration handled by a qualified CA — SPICe+ filed, Certificate of Incorporation delivered in 7–10 working days.", "offers": {"@type": "Offer", "price": "1999", "priceCurrency": "INR", "url": "https://shunya.so/company-registration/private-limited-company-registration"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "Private Limited Company Registration"}]}</script></head>
@@ -442,6 +457,76 @@
           View profile on LinkedIn →
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>Private Limited</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/private-limited-company-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Private Limited Company Registration Cost and Fees in India: What You Actually Pay in Total (2026)</h3>
+          <p class="creg_article_excerpt">Line-by-line total cost: the flat ₹1,999 professional fee, MCA fee, name fee, state stamp duty, DSC and what is not included.</p>
+        </div>
+      </a>
+      <a href="/company-registration/private-limited-company-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Documents Required for Private Limited Company Registration: The Exact Checklist (2026)</h3>
+          <p class="creg_article_excerpt">The exact checklist for directors, shareholders, registered office and name, plus the mismatches that make MCA send the file back.</p>
+        </div>
+      </a>
+      <a href="/company-registration/private-limited-company-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Private Limited Company Registration Process and Timeline: Step by Step After You Hire a CA</h3>
+          <p class="creg_article_excerpt">What happens after you hire a CA, in order, with realistic working-day ranges and what you do versus what the CA does.</p>
+        </div>
+      </a>
+      <a href="/company-registration/private-limited-company-registration-online-with-ca-vs-diy" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">CA vs DIY</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Private Limited Company Registration Online: With a CA or DIY on the MCA Portal?</h3>
+          <p class="creg_article_excerpt">Can you do it yourself on the MCA V3 portal? What DIY needs, where it breaks, and the honest cost and time trade-off.</p>
+        </div>
+      </a>
+      <a href="/company-registration/private-limited-company-registration-rejection-reasons" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Rejections</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Why Private Limited Company Registration Gets Rejected (SPICe+ Resubmission Reasons and Fixes)</h3>
+          <p class="creg_article_excerpt">The real reasons SPICe+ applications are sent back for resubmission, and a reason-to-fix table for each.</p>
+        </div>
+      </a>
+      <a href="/company-registration/private-limited-company-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Shunya's Private Limited Company Registration Package: What the ₹1,999 Fee Covers</h3>
+          <p class="creg_article_excerpt">What the ₹1,999 covers, what government fee and stamp duty are billed separately, the 7-10 day timeline and how to start.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/private-limited-company-registration-guides">view all 12 Private Limited guides &rarr;</a>
     </div>
   </div>
 </section>

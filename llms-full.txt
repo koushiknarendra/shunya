@@ -14,15 +14,15 @@ Get GST registered online with a CA — GSTIN delivered in 5–7 working days, �
 https://shunya.so/gst-return-filing
 Monthly GST return filing (GSTR-1, GSTR-3B, GSTR-9) by a CA, filed before every due date, ₹799/month.
 
-## Form 15CA & 15CB (Now Form 145 & Form 146) Filing Online — Shunya
+## Form 15CA/15CB (Now Form 145/146) Online Filing
 https://shunya.so/15ca-15cb
 Form 15CA and 15CB — renamed Form 145 and Form 146 from 1 April 2026 — filed by a CA for foreign remittance payments, no office visit required.
 
-## Lower TDS Certificate for NRIs (Now Form 128) Online | Form 13 Filing
+## Lower TDS Certificate for NRIs (Form 13/128)
 https://shunya.so/lower-tds-certificate-nri
 Lower or Nil TDS Certificate — Form 13, now renamed Form 128 — for NRI property sales, rent or interest income. Capital gains computed and filed by a CA, from ₹4,999.
 
-## FSSAI Registration & Food License Online | Basic, State, Central
+## FSSAI Registration & Food License Online
 https://shunya.so/fssai-registration
 FSSAI Basic Registration, State License or Central License filed on FoSCoS, with the 2026 turnover limits and perpetual validity built in. From ₹1,499.
 
@@ -48,11 +48,11 @@ Close a One Person Company via Form STK-2 strike-off, with a single-signatory re
 
 ## ITR Filing Online With a CA
 https://shunya.so/itr-filing
-File your Income Tax Return online with a qualified CA before the 31 July 2026 deadline. Salaried, capital gains, freelancer income. From ₹999.
+File your Income Tax Return online with a CA. Missed the deadline? You can still file a belated return for AY 2026-27 until 31 December 2026. From ₹999.
 
 ## Tax Audit u/s 44AB Online | Form 3CD Filing
 https://shunya.so/tax-audit-44ab
-Tax audit under Section 44AB filed by a Chartered Accountant — Form 3CA/3CB and 3CD, UDIN-tagged, before the 30 September 2026 deadline. From ₹4,999. F&O traders, professionals, businesses.
+Tax audit under Section 44AB filed by a CA: Form 3CA/3CB and 3CD, UDIN-tagged, before the 30 September 2026 deadline. From ₹4,999.
 
 ## GST Refund Filing Online: CA-Assisted RFD-01
 https://shunya.so/gst-refund-filing
@@ -422,15 +422,15 @@ Every regular taxpayer is generally covered by GSTR-9, but exemptions and option
 https://shunya.so/gst-lut/documents-required-for-gst-lut-filing
 The GST registration certificate, PAN, signatory ID, and witness details needed before filing Form RFD-11.
 
-## Exporting without a GST LUT — paying IGST and claiming it back
+## Exporting Without a GST LUT: Pay IGST, Claim It Back
 https://shunya.so/gst-lut/exporting-without-lut-igst-refund-process
 The alternative to filing an LUT — paying IGST on export invoices and claiming a refund through Form RFD-01.
 
-## GST LUT application rejected or stuck — common reasons and fixes
+## GST LUT Application Rejected or Stuck: Reasons and Fixes
 https://shunya.so/gst-lut/gst-lut-application-rejected-reasons
 The most common reasons a GST LUT filing gets stuck or rejected, from mismatched details to eligibility issues.
 
-## Who is eligible to file a GST LUT? Eligibility criteria explained
+## Who Can File a GST LUT? Eligibility Explained
 https://shunya.so/gst-lut/gst-lut-eligibility-who-can-file
 Which exporters and SEZ suppliers can file a GST LUT, and the one disqualifying condition under Notification 37/2017-Central Tax.
 
@@ -438,23 +438,23 @@ Which exporters and SEZ suppliers can file a GST LUT, and the one disqualifying 
 https://shunya.so/gst-lut/gst-lut-for-ecommerce-exporters
 How a GST LUT applies to sellers shipping internationally through marketplaces and their own online stores.
 
-## GST LUT for service exporters — IT freelancers, consultants & SaaS founders
+## GST LUT for Service Exporters, Freelancers and SaaS
 https://shunya.so/gst-lut/gst-lut-for-service-exporters-freelancers
 Why billing an overseas client counts as an export under GST, and how LUT applies to freelancers, consultants, and SaaS businesses.
 
-## GST LUT for SEZ supplies — is it the same as exporting goods abroad?
+## GST LUT for SEZ Supplies: Same as Exporting Goods?
 https://shunya.so/gst-lut/gst-lut-for-sez-supplies
 How supplies to a Special Economic Zone unit or developer are treated as zero-rated, and where LUT fits in.
 
-## GST LUT validity and renewal — the 31 March deadline explained
+## GST LUT Validity and Renewal: The 31 March Deadline
 https://shunya.so/gst-lut/gst-lut-validity-renewal-deadline
 Why a GST LUT only lasts one financial year, and what happens if you file it mid-year instead of before it starts.
 
-## How to file LUT on the GST portal — step-by-step Form RFD-11 guide
+## How to File LUT on the GST Portal (Form RFD-11)
 https://shunya.so/gst-lut/how-to-file-lut-on-gst-portal-rfd-11
 The exact steps to file Form RFD-11 on the GST portal, from login to the ARN you receive at the end.
 
-## LUT vs Bond with bank guarantee — what's the difference under GST
+## LUT vs Bond With Bank Guarantee Under GST
 https://shunya.so/gst-lut/lut-vs-bond-bank-guarantee-gst
 Why most exporters use an LUT instead of a bond, and when the bond-plus-bank-guarantee route still applies.
 
@@ -462,19 +462,19 @@ Why most exporters use an LUT instead of a bond, and when the bond-plus-bank-gua
 https://shunya.so/gst-lut/lut-vs-iec-code-gst-export
 Two separate registrations that solve different problems for exporters — and why most goods exporters end up needing both.
 
-## Penalty for not exporting within 3 months of a GST LUT invoice
+## Penalty for Not Exporting Within 3 Months of GST LUT
 https://shunya.so/gst-lut/penalty-for-not-exporting-within-3-months-lut
 What the RFD-11 self-declaration commits you to, and the 18% annual interest charged if the export deadline is missed.
 
 ## GST LUT Filing (Letter of Undertaking): Complete Guide
 https://shunya.so/gst-lut/resources
-Complete guide to GST LUT filing — Form RFD-11. 14 expert articles on eligibility, documents, the online process, validity, and export compliance for goods, services, and SEZ suppliers.
+Complete guide to GST LUT filing (Form RFD-11): 14 articles on eligibility, documents, the online process, validity and export compliance.
 
-## What is a GST LUT (Letter of Undertaking)? Form RFD-11 explained
+## What Is a GST LUT? Form RFD-11 Explained
 https://shunya.so/gst-lut/what-is-gst-lut-rfd-11
 What Section 16 of the IGST Act and Form RFD-11 are, and how a GST LUT lets exporters skip paying IGST upfront on export invoices.
 
-## Zero-rated supply under GST — how LUT and export refunds fit together
+## Zero-Rated Supply Under GST: LUT and Export Refunds
 https://shunya.so/gst-lut/zero-rated-supply-gst-export-refund-explained
 What Section 16 of the IGST Act means by zero-rated supply, and the two routes — LUT and refund — for exports.
 
@@ -562,17 +562,17 @@ Form 3CA, Form 3CB, and Form 3CD explained in detail — which applies to you, w
 https://shunya.so/tax-audit-44ab/how-to-choose-a-ca-for-tax-audit-online
 Choosing a CA for your tax audit online — what to verify, why location doesn't matter for e-filing, and questions worth asking before you hire.
 
-## The 44AD Opt-Out Trap — When Presumptive Taxation Triggers a Mandatory Audit
+## The 44AD Opt-Out Trap: When Audit Becomes Mandatory
 https://shunya.so/tax-audit-44ab/presumptive-taxation-44ad-opt-out-audit-trap
 How Section 44AD presumptive taxation works, the 5-year rule, and why declaring lower profit after using it can force a mandatory tax audit.
 
 ## Tax Audit u/s 44AB: Complete Guide
 https://shunya.so/tax-audit-44ab/resources
-Complete guide to tax audit under Section 44AB — 14 expert articles on applicability, turnover limits, F&O trader turnover, Form 3CD, penalties, and deadlines for AY 2026-27.
+Complete guide to tax audit under Section 44AB: 14 articles on applicability, turnover limits, F&O traders, Form 3CD, penalties and AY 2026-27 deadlines.
 
 ## Tax Audit Applicability Under Section 44AB for AY 2026-27
 https://shunya.so/tax-audit-44ab/tax-audit-applicability-ay-2026-27
-Who needs a tax audit for AY 2026-27 — turnover thresholds for businesses and professionals, the presumptive opt-out exception, and what happens once it applies.
+Who needs a tax audit for AY 2026-27: turnover thresholds for businesses and professionals, the presumptive opt-out exception, and what follows.
 
 ## Tax Audit Documents Checklist — What to Keep Ready
 https://shunya.so/tax-audit-44ab/tax-audit-documents-checklist
@@ -586,7 +586,7 @@ Tax audit report due 30 September 2026, ITR due 31 October 2026 — how the two 
 https://shunya.so/tax-audit-44ab/tax-audit-fees-ca-charges
 What a tax audit typically costs in India, what drives the fee up or down, and why fixed pricing beats hourly billing for most small businesses.
 
-## How the Tax Audit Process Works Online — From Documents to Filing
+## How the Tax Audit Process Works Online
 https://shunya.so/tax-audit-44ab/tax-audit-online-process
 The step-by-step online tax audit process — what a CA reviews, how UDIN and portal filing work, and realistic timelines.
 
@@ -594,25 +594,25 @@ The step-by-step online tax audit process — what a CA reviews, how UDIN and po
 https://shunya.so/tax-audit-44ab/tax-audit-penalty-section-271b
 Section 271B penalty for a missing or late tax audit report — how much it costs, when reasonable cause applies, and how it interacts with belated filing.
 
-## Tax Audit for Professionals — Section 44ADA and the Rs 50 Lakh Limit
+## Tax Audit for Professionals: Section 44ADA, Rs 50 Lakh
 https://shunya.so/tax-audit-44ab/tax-audit-professionals-44ada
-How tax audit applies to doctors, consultants, and other professionals — the Rs 50 lakh threshold, Section 44ADA presumptive taxation, and when audit still applies below it.
+How tax audit applies to doctors, consultants and other professionals: the Rs 50 lakh threshold, Section 44ADA, and when audit still applies.
 
 ## Tax Audit for Proprietorships and Partnership Firms
 https://shunya.so/tax-audit-44ab/tax-audit-proprietorship-partnership-firms
 How tax audit works for proprietorships and partnership/LLP firms — Form 3CB specifics, partner remuneration disclosure, and common mistakes.
 
-## Tax Audit Turnover Limit — Rs 1 Crore, Rs 10 Crore, Rs 50 Lakh Explained
+## Tax Audit Turnover Limit: Rs 1 Cr, Rs 10 Cr, Rs 50 Lakh
 https://shunya.so/tax-audit-44ab/tax-audit-turnover-limit-44ab
 How the Section 44AB turnover limit works — the Rs 1 crore default, the Rs 10 crore digital relaxation, and the Rs 50 lakh limit for professionals.
 
 # Lower TDS Certificate (NRI) Guides
 
-## Buyer or tenant deducted full TDS despite your lower TDS certificate — what to do
+## Buyer Deducted Full TDS Despite Your Certificate?
 https://shunya.so/lower-tds-certificate-nri/buyer-deducted-full-tds-despite-certificate
 Practical troubleshooting when a lower TDS certificate doesn't reach the deductor in time, or gets ignored — and your fallback options.
 
-## Documents required for Form 13 (lower TDS certificate) application
+## Documents Required for Form 13 Lower TDS Certificate
 https://shunya.so/lower-tds-certificate-nri/documents-required-form-13-lower-tds
 A checklist by scenario — property sale, rental income, and interest income — of exactly what to keep ready for a Form 13 application.
 
@@ -620,51 +620,51 @@ A checklist by scenario — property sale, rental income, and interest income �
 https://shunya.so/lower-tds-certificate-nri/form-128-vs-form-13-what-changed
 Form 13 was renamed Form 128 from 1 April 2026 under India's new Income Tax Act. Here's what changed in law — and what didn't.
 
-## Common reasons Form 13 (lower TDS certificate) applications get rejected or delayed
+## Why Form 13 Lower TDS Applications Get Rejected
 https://shunya.so/lower-tds-certificate-nri/form-13-application-rejected-reasons
 The most common failure modes in a Form 13 application — incomplete computations, missing prior ITRs, mismatched details, and unanswered queries.
 
-## Form 13 (lower TDS certificate) vs Form 15CA/15CB — what's the difference
+## Form 13 vs Form 15CA/15CB: What's the Difference?
 https://shunya.so/lower-tds-certificate-nri/form-13-vs-form-15ca-15cb-difference
 Reducing tax deducted when you're paid in India versus certifying compliance when you remit money out — and why many NRIs need both.
 
-## How to apply for Form 13 online — the lower TDS certificate process
+## How to Apply for Form 13 (Lower TDS Certificate) Online
 https://shunya.so/lower-tds-certificate-nri/how-to-apply-form-13-traces-online
 The mechanics of filing a Form 13 application on the e-filing portal, what the Assessing Officer reviews, and how queries get resolved.
 
-## Lower TDS certificate for NRIs selling property in India — step by step
+## Lower TDS Certificate for NRI Property Sale: Steps
 https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-nri-property-sale
 Why buyers over-withhold by default, what goes into the capital gains computation, and the Form 13 application flow for an NRI property sale.
 
-## Lower TDS certificate for NRI rental income — reducing the default deduction
+## Lower TDS Certificate for NRI Rental Income
 https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-nri-rental-income
-Tenants' withholding obligation under Section 195 on rent paid to NRI landlords, and how a lower TDS certificate brings it down to the landlord's real liability.
+Tenants must withhold tax under Section 195 on rent paid to NRI landlords. A lower TDS certificate cuts it to the landlord's real liability.
 
-## How long does a lower TDS certificate take? Form 13 processing timeline
+## How Long Does a Lower TDS Certificate Take?
 https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-processing-time
 Rule 28AA's one-month disposal target versus realistic timelines, and why applying early — before signing a sale agreement — matters.
 
-## How long is a lower TDS certificate valid? Renewal and multiple transactions
+## Lower TDS Certificate Validity and Renewal
 https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-validity-period
 Why certificates are issued per financial year, transaction, and deductor — and what renewal actually means in practice.
 
-## Lower TDS certificate vs claiming a refund in your ITR — which is better for NRIs
+## Lower TDS Certificate vs ITR Refund for NRIs
 https://shunya.so/lower-tds-certificate-nri/lower-tds-certificate-vs-itr-refund-nri
 Comparing the proactive certificate route against waiting for a refund after filing your ITR — cash flow, timing, and when each makes sense.
 
-## Lower TDS Certificate for NRIs (Now Form 128): Complete Guide
+## Lower TDS Certificate for NRIs (Form 128): Guide
 https://shunya.so/lower-tds-certificate-nri/resources
-Complete guide to the lower/nil TDS certificate — Form 13, now renamed Form 128 — for NRIs. 15 expert articles on property sale TDS, rental income, NRO interest, documents, process, and timelines.
+Complete guide to the lower/nil TDS certificate (Form 13, now Form 128) for NRIs: property sale, rent, NRO interest, documents and timelines.
 
-## Section 195 vs Section 197 — why NRIs are taxed differently in India
+## Section 195 vs 197: Why NRIs Are Taxed Differently
 https://shunya.so/lower-tds-certificate-nri/section-197-vs-195-tds-nri
 How Section 195's default withholding regime for non-residents works, and why Section 197/Form 13 exists as the relief valve.
 
-## TDS on NRI property sale without a lower TDS certificate — how much buyers deduct by default
+## TDS on NRI Property Sale Without a Lower TDS Certificate
 https://shunya.so/lower-tds-certificate-nri/tds-on-nri-property-sale-without-certificate
 Why buyers tend to withhold on the full sale value rather than just the gain, and the cash-flow problem this creates for NRI sellers.
 
-## TDS on NRO account interest for NRIs — can a lower deduction certificate help?
+## TDS on NRO Interest: Can a Lower Certificate Help?
 https://shunya.so/lower-tds-certificate-nri/tds-on-nro-interest-lower-deduction-certificate
 How banks withhold on NRO interest by default, and how a lower deduction certificate adjusts it to an NRI's real slab-based liability.
 
@@ -674,19 +674,19 @@ What Section 197 and Form 13 are, who can apply, and how a lower TDS certificate
 
 # FSSAI Registration & License Guides
 
-## Documents Required for FSSAI Registration — Basic, State & Central
+## Documents Required for FSSAI Registration & License
 https://shunya.so/fssai-registration/documents-required-fssai-registration
 A category-by-category checklist of what you need for FSSAI Basic Registration, State License, or Central License applications.
 
-## FSSAI Basic Registration vs State License — What's the Difference?
+## FSSAI Basic Registration vs State License: Differences
 https://shunya.so/fssai-registration/fssai-basic-registration-vs-state-license
 Basic Registration and State License differ in eligibility, documentation, inspection, and cost. Here's how to tell which one your business needs.
 
-## FSSAI Central License for Food Importers & Exporters
+## FSSAI Central License for Food Importers &amp; Exporters
 https://shunya.so/fssai-registration/fssai-central-license-import-export
 Why any business importing or exporting food needs a Central License regardless of turnover, and how it connects to your IEC.
 
-## FSSAI Registration for E-commerce & Home-Based Food Businesses
+## FSSAI for E-commerce & Home-Based Food Businesses
 https://shunya.so/fssai-registration/fssai-license-for-ecommerce-food-business
 How home bakers, D2C food brands, and online sellers get FSSAI registered, and when turnover pushes you into a State License.
 
@@ -694,7 +694,7 @@ How home bakers, D2C food brands, and online sellers get FSSAI registered, and w
 https://shunya.so/fssai-registration/fssai-license-for-restaurant-cloud-kitchen
 Which FSSAI tier a restaurant or cloud kitchen typically needs, and the category-specific documents involved.
 
-## Common Reasons FSSAI License Applications Get Rejected or Delayed
+## Why FSSAI License Applications Get Rejected or Delayed
 https://shunya.so/fssai-registration/fssai-license-rejected-reasons
 The recurring mistakes — wrong category, mismatched documents, incomplete layout plans — that hold up FSSAI approval.
 
@@ -710,11 +710,11 @@ Realistic FSSAI processing timelines for Basic, State, and Central applications 
 https://shunya.so/fssai-registration/fssai-registration-without-gst-number
 GST and FSSAI are separate compliances. Here's when GST becomes relevant to your FSSAI application, and when it doesn't.
 
-## FSSAI State License vs Central License — Which One Do You Need?
+## FSSAI State vs Central License: Which Do You Need?
 https://shunya.so/fssai-registration/fssai-state-vs-central-license-difference
 Central License isn't just about turnover — importers, exporters, and multi-state operators need one regardless. Here's how to tell which applies.
 
-## FSSAI Turnover Limits 2026: What Changed for Basic, State & Central
+## FSSAI Turnover Limits 2026: Basic, State & Central
 https://shunya.so/fssai-registration/fssai-turnover-limit-2026-basic-state-central
 The March 2026 FSSAI reform raised turnover thresholds — Basic Registration now covers up to ₹1.5 crore. Here's exactly what changed and why.
 
@@ -808,7 +808,7 @@ DPIIT recognition is the official status that unlocks Startup India benefits - t
 
 ## 12A & 80G Registration for NGOs
 https://shunya.so/company-registration/12a-80g-registration
-CA-filed 12A income tax exemption and 80G donor-deduction registration for Section 8 companies, Trusts, and Societies. Custom quote.
+CA-filed 12A income tax exemption and 80G donor-deduction registration for Section 8 companies, Trusts, and Societies. Professional fee ₹1,999.
 
 ## Company Registration Cost in Andhra Pradesh
 https://shunya.so/company-registration/company-registration-cost-in-andhra-pradesh
@@ -942,7 +942,7 @@ Farmer collective or agri-processing business? See which structure fits — Prod
 https://shunya.so/company-registration/company-registration-for-bookstore-business
 Starting a bookstore in India? See which structure fits, why books are GST-exempt but stationery isn't, and Shunya's flat ₹1,999 registration fee.
 
-## Company Registration for a Clothing Brand or Boutique in India
+## Company Registration for a Clothing Brand or Boutique
 https://shunya.so/company-registration/company-registration-for-boutique-clothing-brand
 Starting a boutique or clothing label? Get the right structure, know when GST kicks in on Myntra or Amazon Fashion, and register with Shunya for ₹1,999.
 
@@ -958,7 +958,7 @@ Starting a self-drive car rental business? Get the right structure, the Rent-a-C
 https://shunya.so/company-registration/company-registration-for-catering-business
 Register your catering business as a Sole Proprietorship, OPC, LLP, or Pvt Ltd. FSSAI is mandatory. Shunya's flat professional fee is ₹1,999.
 
-## Company Registration for a Clinic or Healthcare Practice in India
+## Company Registration for a Clinic or Healthcare Practice
 https://shunya.so/company-registration/company-registration-for-clinic-healthcare-practice
 Starting a clinic or healthcare practice? Get the right structure and know your state's Clinical Establishment rules — register with Shunya, ₹1,999 flat fee.
 
@@ -966,7 +966,7 @@ Starting a clinic or healthcare practice? Get the right structure and know your 
 https://shunya.so/company-registration/company-registration-for-cloud-kitchen
 Starting a cloud kitchen? Get the right structure, FSSAI tier, and what Zomato/Swiggy need before listing. Shunya's flat fee starts at ₹1,999.
 
-## Company Registration for a Coaching or Tuition Centre in India
+## Company Registration for a Coaching or Tuition Centre
 https://shunya.so/company-registration/company-registration-for-coaching-tuition-centre
 Register your coaching or tuition centre the right way — pick the right structure, understand GST rules, and get started with Shunya's flat ₹1,999 fee.
 
@@ -1010,7 +1010,7 @@ Register your dropshipping business the right way — pick OPC, Sole Prop, or Pv
 https://shunya.so/company-registration/company-registration-for-ecommerce-business
 Selling on Amazon, Flipkart, or your own site? Here's the right structure, the GST rule you can't skip, and how Shunya gets you registered for ₹1,999.
 
-## Company Registration for an Event Management Company in India
+## Company Registration for an Event Management Company
 https://shunya.so/company-registration/company-registration-for-event-management-company
 Planning to register an event management company in India? See which structure fits, GST rules for event services, and how Shunya's ₹1,999 flat fee works.
 
@@ -1042,7 +1042,7 @@ Opening a hotel or resort in India? See the right entity structure, FSSAI, Fire 
 https://shunya.so/company-registration/company-registration-for-import-export-business
 Register your import-export company, get your DGFT-issued IEC, and sort GST — Shunya handles company registration for a flat ₹1,999 professional fee.
 
-## Company Registration for an Interior Design Business in India
+## Company Registration for an Interior Design Business
 https://shunya.so/company-registration/company-registration-for-interior-design-business
 Setting up an interior design business in India? Compare LLP, OPC, and Pvt Ltd, understand GST rules, and register with Shunya for a flat ₹1,999.
 
@@ -1086,7 +1086,7 @@ Register your real estate agency with Shunya for a flat ₹1,999 fee, and see wh
 https://shunya.so/company-registration/company-registration-for-recruitment-agency
 Register your recruitment or staffing agency as an LLP or Pvt Ltd with Shunya's flat ₹1,999 fee. GST, structure, and overseas-placement rules explained.
 
-## Company Registration for a Restaurant or Food Business in India
+## Company Registration for a Restaurant or Food Business
 https://shunya.so/company-registration/company-registration-for-restaurant-food-business
 Starting a restaurant, cloud kitchen, or café? Compare structures, learn the 2026 FSSAI license tiers, and register with Shunya — flat ₹1,999 professional fee.
 
@@ -1118,7 +1118,7 @@ IATA accreditation and Ministry of Tourism recognition are both optional for a t
 https://shunya.so/company-registration/company-registration-for-warehouse-business
 Register your warehousing business with Shunya — Pvt Ltd or LLP, when WDRA registration actually applies, ₹1,999 flat professional fee. Start today.
 
-## Company Registration for a Wedding Planning Business in India
+## Company Registration for a Wedding Planning Business
 https://shunya.so/company-registration/company-registration-for-wedding-planning-business
 Solo planner or team with a vendor network? See which structure fits, GST rules for planning services, and how Shunya's ₹1,999 flat fee works.
 
@@ -1130,13 +1130,21 @@ How company registration works in India via SPICe+: DSC, name reservation, SPICe
 https://shunya.so/company-registration/company-registration-vs-incorporation
 Are company registration and incorporation the same thing in India? Yes, for most founders - here's what the terms mean and when the distinction matters.
 
+## Convert OPC to Private Limited Company in India
+https://shunya.so/company-registration/convert-opc-to-private-limited-company
+Convert OPC to Private Limited company: voluntary since 2021, needs 2 members and 2 directors, filed on INC-6. Steps, documents, what changes. Sept 2026.
+
+## Convert Partnership Firm to LLP in India
+https://shunya.so/company-registration/convert-partnership-firm-to-llp
+Convert a partnership firm to an LLP: why partners do it, Form 17, 19 and 14 steps, documents, tax and PAN/GST questions, and when a fresh LLP is simpler.
+
 ## Documents Required for Company Registration in India
 https://shunya.so/company-registration/documents-required-for-company-registration-in-india
 Complete document checklist for registering a Private Limited Company, LLP, or OPC in India - identity proof, address proof, registered office proof, and more.
 
 ## FCRA Registration for NGOs Online
 https://shunya.so/company-registration/fcra-registration
-CA-guided FCRA registration for NGOs receiving foreign donations — Normal or Prior Permission route, filed on fcraonline.nic.in. Custom quote.
+CA-guided FCRA registration for NGOs receiving foreign donations — Normal or Prior Permission route, filed on fcraonline.nic.in. Professional fee ₹1,999.
 
 ## How Long Does Company Registration Take in India?
 https://shunya.so/company-registration/how-long-does-company-registration-take-in-india
@@ -1144,27 +1152,167 @@ Company registration in India takes 7 to 10 working days for Pvt Ltd, LLP, or OP
 
 ## Indian Subsidiary (WOS) Registration Online
 https://shunya.so/company-registration/indian-subsidiary-registration
-CA-assisted Indian Subsidiary (WOS) registration, SPICe+ filed with FEMA/RBI compliance included. Custom quote based on your shareholding structure.
+CA-assisted Indian Subsidiary (WOS) registration, SPICe+ filed with FEMA/RBI compliance included. Professional fee ₹1,999.
+
+## LLP Agreement Format and Form 3 Filing Guide
+https://shunya.so/company-registration/llp-agreement-format-and-form-3-filing
+LLP agreement format, clause checklist, stamp duty basics and Form 3 filing within 30 days of incorporation. Shunya drafts it with ₹1,999 LLP registration.
+
+## LLP Annual Compliance: Form 11 and Form 8
+https://shunya.so/company-registration/llp-annual-compliance-form-8-and-form-11
+LLP annual compliance in India: Form 11 by 30 May, Form 8 by 30 October, audit limits, ITR-5 dates and a calendar. What an LLP really costs to run. Sept 2026.
+
+## LLP Partner and Designated Partner Requirements
+https://shunya.so/company-registration/llp-partner-and-designated-partner-requirements
+LLP needs 2 partners and 2 designated partners, one resident in India. See who can be a partner, DPIN rules and DP duties. Register from ₹1,999.
 
 ## LLP Registration Online in India
 https://shunya.so/company-registration/llp-registration
 Register your LLP online with a CA. ₹1,999 professional fee, govt charges shown separately, LLP incorporated in 7–10 days.
 
+## LLP Registration Cost and Fees in India (2026)
+https://shunya.so/company-registration/llp-registration-cost-and-fees
+LLP registration cost in India: Shunya's ₹1,999 professional fee plus MCA fees and state stamp duty, itemised as of September 2026. See the full breakdown.
+
+## LLP Registration Documents Required in India
+https://shunya.so/company-registration/llp-registration-documents-required
+LLP registration documents required in India: partner KYC, DSC, office proof, name and LLP agreement inputs, plus the mismatches that get FiLLiP rejected.
+
+## LLP Registration for NRIs and Foreign Partners
+https://shunya.so/company-registration/llp-registration-for-nri-and-foreign-partners
+Can NRIs, foreign nationals or foreign companies be LLP partners? FDI route, resident designated partner rule and documents. Register from ₹1,999.
+
+## LLP Registration for Professionals and Consultants
+https://shunya.so/company-registration/llp-registration-for-professionals-and-consultants
+Should consultants, agencies and professionals register an LLP? Compare liability, tax, audit limits and funding with Pvt Ltd. Register from ₹1,999.
+
+## LLP Registration Guides
+https://shunya.so/company-registration/llp-registration-guides
+11 guides on LLP registration in India: total cost, documents, timeline, partner rules, LLP agreement and Form 3, annual compliance and CA vs DIY.
+
+## LLP Registration Online: With a CA vs DIY
+https://shunya.so/company-registration/llp-registration-online-with-ca-vs-diy
+LLP registration online with a CA or DIY? An honest look at what DIY needs, where it breaks, and Shunya's CA-led route at a flat ₹1,999 professional fee.
+
+## LLP Registration Package: ₹1,999 Inclusions
+https://shunya.so/company-registration/llp-registration-package-shunya-fee-and-inclusions
+LLP registration package from Shunya: ₹1,999 flat fee covers CA verification, name check, DSC/DPIN, LLP agreement, FiLLiP and Form 3. See exclusions.
+
+## LLP Registration Process and Timeline in India
+https://shunya.so/company-registration/llp-registration-process-and-timeline
+LLP registration process and timeline in India: name, FiLLiP, Certificate of Incorporation, then LLP agreement and Form 3 within 30 days. 7-10 working days.
+
 ## Nidhi Company Registration Online
 https://shunya.so/company-registration/nidhi-company-registration
-CA-assisted Nidhi company registration for member savings & lending. SPICe+ filed on the MCA portal, Nidhi Rules compliant. Custom quote.
+CA-assisted Nidhi company registration for member savings & lending. SPICe+ filed on the MCA portal, Nidhi Rules compliant. Professional fee ₹1,999.
+
+## OPC Annual Compliance and Filings in India
+https://shunya.so/company-registration/opc-annual-compliance-and-filings
+OPC annual compliance in India: audit, AOC-4, MGT-7A, DIR-3 KYC and ITR-6, with a calendar and what a sole-director OPC can skip. As of September 2026.
+
+## OPC Eligibility and Nominee Requirements
+https://shunya.so/company-registration/opc-eligibility-and-nominee-requirements
+OPC eligibility and nominee requirements in India: who can form a One Person Company, the one-OPC rule, nominee consent and INC-4 changes. Sept 2026.
 
 ## OPC Registration Online — One Person Company
 https://shunya.so/company-registration/opc-registration
 Register your One Person Company online with a CA. ₹1,999 professional fee, govt charges shown separately, incorporated in 7–10 days.
 
+## OPC Registration Cost in India: Full Fee Breakdown
+https://shunya.so/company-registration/opc-registration-cost-and-fees
+OPC registration cost in India: Shunya's professional fee is a flat ₹1,999. See the government fee, state stamp duty and what is not included, before you pay.
+
+## OPC Registration Documents Required: Checklist
+https://shunya.so/company-registration/opc-registration-documents-required
+OPC registration documents required: PAN, Aadhaar, nominee details, address proof and more. Use this checklist to avoid rejections. Shunya fee ₹1,999.
+
+## OPC Registration for Freelancers & Solo Founders
+https://shunya.so/company-registration/opc-registration-for-freelancers-and-solo-founders
+Is OPC registration worth it for a freelancer or solo founder? Limited liability vs mandatory audit and ROC filings, and when a proprietorship is enough.
+
+## OPC Registration for NRIs and Non-Residents
+https://shunya.so/company-registration/opc-registration-for-nri-and-non-residents
+Can an NRI register an OPC in India? Yes, if you are an Indian citizen. Foreign nationals and OCIs cannot. Director, FEMA and document points. Sept 2026.
+
+## OPC Registration Guides
+https://shunya.so/company-registration/opc-registration-guides
+11 guides on One Person Company registration in India: total cost, documents, timeline, nominee rules, NRI eligibility, compliance and converting later.
+
+## OPC Registration Online: With a CA or DIY?
+https://shunya.so/company-registration/opc-registration-online-with-ca-vs-diy
+OPC registration online: what DIY on the MCA portal requires, where it breaks, and when a CA-led route at ₹1,999 makes sense. Honest cost and time trade-offs.
+
+## OPC Registration Package: ₹1,999 Fee and Inclusions
+https://shunya.so/company-registration/opc-registration-package-shunya-fee-and-inclusions
+Shunya's OPC registration package: ₹1,999 flat professional fee. See what is included, what is billed at actual cost, the 7-10 day timeline and fee waiver.
+
+## OPC Registration Process and Timeline in India
+https://shunya.so/company-registration/opc-registration-process-and-timeline
+OPC registration process and timeline: the steps after you hire a CA, realistic working days, what causes delays, and what you do vs what the CA does.
+
+## OPC vs Sole Proprietorship: Which Should You Pick?
+https://shunya.so/company-registration/opc-vs-sole-proprietorship
+OPC vs sole proprietorship in India: liability, audit, compliance, tax, funding and cost compared in one table, with a verdict by situation. Sept 2026.
+
 ## Partnership Firm Registration Online
 https://shunya.so/company-registration/partnership-firm-registration
-CA-drafted Partnership Deed, PAN application, and Registrar of Firms filing — Partnership Firm registration. Custom quote, no hidden fees.
+CA-drafted Partnership Deed, PAN application, and Registrar of Firms filing — Partnership Firm registration. Professional fee ₹1,999, no hidden fees.
+
+## Private Limited Company Eligibility Rules
+https://shunya.so/company-registration/private-limited-company-eligibility-directors-and-shareholders
+Private Limited company eligibility: 2-15 directors, 2-200 shareholders, one resident director, no minimum capital. CA-filed for a flat ₹1,999 fee.
+
+## Private Limited Company Name Availability Check
+https://shunya.so/company-registration/private-limited-company-name-availability-and-approval
+Private Limited company name availability: naming rules, ₹1,000 Part A reservation, 20-day validity and what to do if rejected. CA-checked, ₹1,999 flat.
+
+## Private Limited Post-Incorporation Compliance
+https://shunya.so/company-registration/private-limited-company-post-incorporation-compliance
+What a new Private Limited company must file after incorporation: INC-20A, first auditor, DIR-3 KYC, AOC-4, MGT-7, DPT-3 and MSME-1, with due dates.
+
+## Private Limited Company Registered Office Rules
+https://shunya.so/company-registration/private-limited-company-registered-office-requirements
+Registered office requirements for a Private Limited company: owned, rented or residential address, utility bill, owner NOC and INC-22. CA-filed, ₹1,999.
 
 ## Private Limited Company Registration Online
 https://shunya.so/company-registration/private-limited-company-registration
 Register your Private Limited company online with a CA. ₹1,999 professional fee, govt charges shown separately, Certificate of Incorporation in 7–10 days.
+
+## Private Limited Company Registration Cost & Fees
+https://shunya.so/company-registration/private-limited-company-registration-cost-and-fees
+Private limited company registration cost: Shunya's professional fee is a flat ₹1,999. See MCA fee, name fee, stamp duty and DSC line by line.
+
+## Documents Required for Private Limited Registration
+https://shunya.so/company-registration/private-limited-company-registration-documents-required
+Documents required for private limited company registration: PAN, Aadhaar, address proof, office bill and NOC. Checklist and mismatch traps. ₹1,999 CA-led.
+
+## Private Limited Company Registration for NRIs
+https://shunya.so/company-registration/private-limited-company-registration-for-nri-and-foreign-nationals
+NRIs and foreign nationals can own and direct an Indian Private Limited company. Resident director, FC-GPR, apostilled papers, timeline; ₹1,999 CA fee.
+
+## Private Limited Company Registration for Startups
+https://shunya.so/company-registration/private-limited-company-registration-for-startups
+Registering a startup as a Private Limited company: investor fit, ESOPs, DPIIT eligibility, LLP/OPC trade-offs and the ₹1,999 CA-assisted fee.
+
+## Private Limited Registration Guides
+https://shunya.so/company-registration/private-limited-company-registration-guides
+12 guides on Private Limited company registration in India: total cost, documents, timeline, eligibility, name approval, compliance and CA vs DIY.
+
+## Private Limited Registration Online: CA vs DIY
+https://shunya.so/company-registration/private-limited-company-registration-online-with-ca-vs-diy
+Private limited company registration online: CA vs DIY on MCA. A CA, CS, CMA or advocate must sign SPICe+ anyway. Shunya's CA-led route is a flat ₹1,999.
+
+## Private Limited Registration Package: ₹1,999
+https://shunya.so/company-registration/private-limited-company-registration-package-shunya-fee-and-inclusions
+What Shunya's flat ₹1,999 Private Limited registration fee covers, what is billed separately, the 7-10 working day timeline and how to start.
+
+## Private Limited Registration Process & Timeline
+https://shunya.so/company-registration/private-limited-company-registration-process-and-timeline
+Private limited company registration process and timeline: 8 steps from name check to Certificate of Incorporation, PAN and TAN. 7-10 working days, ₹1,999.
+
+## Private Limited Registration Rejection Reasons
+https://shunya.so/company-registration/private-limited-company-registration-rejection-reasons
+Why Private Limited registration gets rejected: name, address proof, DSC, MOA objects, PAN mismatch, capital errors, and the fix for each. ₹1,999 CA filing.
 
 ## Private Limited vs LLP vs OPC: Which Should You Choose?
 https://shunya.so/company-registration/private-limited-vs-llp-vs-opc-which-to-choose
@@ -1172,11 +1320,11 @@ Private Limited Company, LLP, or OPC? Compare compliance burden, fundraising abi
 
 ## Producer Company Registration Online
 https://shunya.so/company-registration/producer-company-registration
-CA-assisted Producer Company registration for farmers & primary producers. SPICe+ filed under Part IXA of the Companies Act. Custom quote.
+CA-assisted Producer Company registration for farmers & primary producers. SPICe+ filed under Part IXA of the Companies Act. Professional fee ₹1,999.
 
 ## Public Limited Company Registration Online
 https://shunya.so/company-registration/public-limited-company-registration
-CA-assisted Public Limited company registration, SPICe+ filed on the MCA portal. Custom quote based on your capital and shareholder structure.
+CA-assisted Public Limited company registration, SPICe+ filed on the MCA portal. Professional fee ₹1,999.
 
 ## Company Registration in India: Complete Guide
 https://shunya.so/company-registration/resources
@@ -1184,7 +1332,7 @@ https://shunya.so/company-registration/resources
 
 ## Section 8 Company Registration Online
 https://shunya.so/company-registration/section-8-company-registration
-CA-assisted Section 8 company registration for non-profits and NGOs. License + SPICe+ filed on the MCA portal. Custom quote based on your objects.
+CA-assisted Section 8 company registration for non-profits and NGOs. License + SPICe+ filed on the MCA portal. Professional fee ₹1,999.
 
 ## Shunya vs IncorpX: Company Registration Compared
 https://shunya.so/company-registration/shunya-vs-incorpx
@@ -1200,7 +1348,7 @@ Vakilsearch advertises ₹999 starting price vs Shunya's flat ₹1,999 for Priva
 
 ## Sole Proprietorship Registration Online
 https://shunya.so/company-registration/sole-proprietorship-registration
-Udyam, GST, and Shop & Establishment registration for sole proprietors — CA-guided, filed correctly the first time. Custom quote.
+Udyam, GST, and Shop & Establishment registration for sole proprietors — CA-guided, filed correctly the first time. Professional fee ₹1,999.
 
 # Calculators & Tools
 
@@ -1220,7 +1368,7 @@ Free Bank of India home loan EMI calculator. Enter loan amount, tenure, and BOI 
 https://shunya.so/tools/business-setup-calculator
 Estimate India business setup costs. Compare Pvt Ltd, LLP, OPC, and Sole Proprietorship registration costs by state, with GST and trademark flagged.
 
-## CAGR Calculator — Calculate Compound Annual Growth Rate Online
+## CAGR Calculator: Compound Annual Growth Rate
 https://shunya.so/tools/cagr-calculator
 Free CAGR calculator. Enter a starting value, ending value, and time period to find the compound annual growth rate — instant, accurate, no signup.
 
@@ -1248,7 +1396,7 @@ Free EMI calculator for any loan. Enter your loan amount, interest rate, and ten
 https://shunya.so/tools/fd-calculator
 Free FD calculator for India. Calculate your fixed deposit maturity amount and interest earned with quarterly, monthly, or annual compounding.
 
-## Goal Planning Calculator — Inflation-Adjusted SIP for Any Goal
+## Goal Planning Calculator: Inflation-Adjusted SIP
 https://shunya.so/tools/goal-planning-calculator
 Free goal planning calculator for India. Adjust any savings goal for inflation and find the required monthly SIP to reach it. Instant, accurate, no signup.
 
@@ -1284,7 +1432,7 @@ Free inflation calculator for India. See what today amount will cost in future, 
 https://shunya.so/tools/kvp-calculator
 Free KVP (Kisan Vikas Patra) calculator. See your investment's maturity value — it doubles in 115 months (9 years 7 months) at the current 7.5% rate.
 
-## LLP Cost Calculator — Estimate LLP Registration Cost in India
+## LLP Cost Calculator: LLP Registration Cost in India
 https://shunya.so/tools/llp-cost-calculator
 Free LLP cost calculator for India. Estimate FiLLiP fee, RUN-LLP name reservation, Form 3 filing, and professional fee based on partner contribution.
 
@@ -1336,7 +1484,7 @@ Free PPF calculator for India. Estimate your Public Provident Fund maturity valu
 https://shunya.so/tools/rd-calculator
 Free RD (Recurring Deposit) calculator for India. Estimate your monthly deposit's maturity value at your bank's interest rate. Instant, accurate, no signup.
 
-## Retirement Planning Calculator — Estimate Your Required Corpus
+## Retirement Planning Calculator: Required Corpus
 https://shunya.so/tools/retirement-planning-calculator
 Free retirement planning calculator for India. Inflation-adjust today monthly expenses to your retirement year and estimate the corpus you will need.
 
@@ -1348,7 +1496,7 @@ Free ROC fee calculator for India. Compute AOC-4 and MGT-7 annual filing fees by
 https://shunya.so/tools/savings-goal-calculator
 Free savings goal calculator for India. Find out how many months to reach your savings target based on current savings, monthly savings, and return.
 
-## SBI Home Loan Eligibility Calculator — Check Your Max Loan Amount
+## SBI Home Loan Eligibility Calculator
 https://shunya.so/tools/sbi-home-loan-eligibility-calculator
 Estimate your SBI home loan eligibility based on income, existing EMIs, and FOIR. Enter SBI's current rate from sbi.co.in for an accurate max loan estimate.
 
@@ -1360,7 +1508,7 @@ Free simple interest calculator. Enter principal, rate, and time to get your int
 https://shunya.so/tools/sip-calculator
 Free SIP calculator for India. Estimate the future value of your monthly mutual fund SIP, total invested amount, and estimated returns. No signup.
 
-## Stamp Duty Calculator — Company Incorporation Stamp Duty by State
+## Stamp Duty Calculator: Incorporation Stamp Duty by State
 https://shunya.so/tools/stamp-duty-calculator
 Look up approximate stamp duty for Pvt Ltd company incorporation across all 30 Indian states and UTs — from ₹0 in Sikkim to state-specific figures.
 
