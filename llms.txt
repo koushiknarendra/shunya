@@ -22,7 +22,6 @@
 - [Startup India (DPIIT) Registration](https://shunya.so/startup-india): DPIIT recognition under the Startup India scheme.
 - [Free Business, Tax & Loan Calculators](https://shunya.so/tools): About 50 free calculators — GST, TDS, advance tax, EMI, SIP/SWP, CAGR, business setup cost and more.
 - [Free Consultation](https://shunya.so/consultation): Book a call with a CA to discuss your compliance needs.
-- [How It Works](https://shunya.so/how-it-works): Step-by-step walkthrough of the Shunya process.
 
 ## Form 15CA/15CB (Form 145/146) Guides
 

@@ -28,7 +28,6 @@ const SERVICES = [
   { slug: "startup-india", name: "Startup India (DPIIT) Registration", desc: "DPIIT recognition under the Startup India scheme." },
   { slug: "tools", name: "Free Business, Tax & Loan Calculators", desc: "About 50 free calculators — GST, TDS, advance tax, EMI, SIP/SWP, CAGR, business setup cost and more." },
   { slug: "consultation", name: "Free Consultation", desc: "Book a call with a CA to discuss your compliance needs." },
-  { slug: "how-it-works", name: "How It Works", desc: "Step-by-step walkthrough of the Shunya process." },
 ];
 
 // Clusters: folder -> heading. `all:false` lists only the hub in llms.txt (still fully in llms-full.txt).
