@@ -100,9 +100,9 @@ One missing document can delay your remittance by 2-3 days. The exact checklist 
 https://shunya.so/15ca-15cb/form-145-146-faq-nri-businesses
 Form 145 and Form 146 replaced Form 15CA and 15CB from 1 April 2026. This FAQ answers common NRI and business questions on remittance compliance.
 
-## Form 145/146 vs 15CA/15CB: What Changed in 2026
+## Form 145 & 146: New Names of 15CA/15CB (2026 Change)
 https://shunya.so/15ca-15cb/form-145-form-146-vs-15ca-15cb-what-changed
-Form 15CA and 15CB were renamed Form 145 and 146 from 1 April 2026 under India's new Income Tax Act. Here's what changed in law, and what didn't.
+Form 15CA is now Form 145 and Form 15CB is Form 146 from 1 April 2026 under the Income Tax Act 2025. What changed in law and what stayed the same.
 
 ## Form 15CA/15CB (Now 145/146): Fully Online
 https://shunya.so/15ca-15cb/form-15ca-15cb-online-process-no-ca-visit
@@ -124,9 +124,9 @@ Form 15CB (now 146) can be revised before you file 15CA (now 145) against it. Af
 https://shunya.so/15ca-15cb/how-long-does-form-15cb-take
 Form 15CB (now 146) takes 1-3 working days for most remittances, plus Form 15CA filing on the portal. What causes delays and how to plan for them.
 
-## How to File Form 145 Online: Step-by-Step (2026)
+## How to File Form 145 on the Income Tax Portal (2026)
 https://shunya.so/15ca-15cb/how-to-file-form-145-online
-A practical guide to filing Form 145 (successor to 15CA) on the e-filing portal - the steps, documents needed, and common mistakes to avoid.
+Step-by-step guide to filing Form 145 (successor to 15CA) on the income tax e-filing portal: the steps, documents needed and common mistakes.
 
 ## File Form 15CA (Now 145) Online: Step-by-Step
 https://shunya.so/15ca-15cb/how-to-file-form-15ca-online
@@ -152,13 +152,13 @@ Most family remittances under LRS don't need Form 15CA (now 145). But certain st
 https://shunya.so/15ca-15cb/tcs-on-foreign-remittance-india-lrs
 Banks collect TCS on LRS remittances above Rs 7 lakh a year. Current rates, how the threshold tracks, the ITR claim process, and Form 145/146 rules.
 
-## What Is Form 145? Replaced Form 15CA in 2026
+## Form 145 Income Tax Act 2025: What It Is (Replaces 15CA)
 https://shunya.so/15ca-15cb/what-is-form-145-explained
-Form 145 is the new online declaration remitters file before a foreign payment, replacing Form 15CA from 1 April 2026 under the Income Tax Act 2025.
+Form 145 is the online declaration remitters file before a foreign payment under the Income Tax Act, 2025, replacing Form 15CA from 1 April 2026.
 
-## What Is Form 146? Replaced Form 15CB
+## Form 146 Income Tax: What It Is and How It Replaces 15CB
 https://shunya.so/15ca-15cb/what-is-form-146-explained
-Form 146 is the new CA-issued compliance certificate for foreign remittances, replacing Form 15CB from 1 April 2026. What changed, what stayed the same.
+Form 146 is the CA-issued certificate for foreign remittances under the Income Tax Act, 2025, replacing Form 15CB from 1 April 2026. What changed.
 
 ## Who Files Form 15CA (Now 145): Remitter or Bank?
 https://shunya.so/15ca-15cb/who-files-form-15ca-remitter-bank
@@ -190,9 +190,9 @@ Complete STK-2 document checklist for closing a Private Limited Company - board 
 https://shunya.so/company-closure/fast-track-exit-company-closure-india
 The Fast Track Exit scheme was the predecessor to today's STK-2 process under the Companies Act 2013. What changed, and how closure works today.
 
-## How Long Does It Take to Close a Company in India?
+## How Long Does STK-2 Company Closure Take in India?
 https://shunya.so/company-closure/how-long-does-company-closure-take-india
-STK-2 strike off takes 3-6 months from application to gazette notification. Every stage, what causes delays, and how to avoid getting stuck at the ROC.
+A clean STK-2 strike-off takes about 3–4 months to gazette notification; cases with pending filings or ROC queries take 5–7. Stage-by-stage timeline.
 
 ## How to Close a Dormant or Inactive Company in India
 https://shunya.so/company-closure/how-to-close-dormant-inactive-company-india
@@ -272,9 +272,9 @@ Selling on Amazon, Flipkart, or your own site triggers different GST rules than 
 https://shunya.so/gst-registration/gst-registration-freelancers-service-providers
 Freelancers and consultants cross the GST threshold faster than expected once export earnings and platform fees add up. How the rules apply to you.
 
-## GSTIN Application Rejected — Common Reasons
+## GST Registration Rejected? Common Reasons and What to Do
 https://shunya.so/gst-registration/gst-registration-rejected-common-reasons
-Most GST registration rejections come down to a handful of recurring, avoidable mistakes. Know the common triggers and the correct way to reapply.
+Most GST registration rejections come from address-proof mismatches, unanswered REG-03 queries or failed verification. Know the triggers and how to reapply.
 
 ## GST Registration Turnover Limit
 https://shunya.so/gst-registration/gst-registration-turnover-limit
@@ -392,7 +392,7 @@ A plain-English walkthrough of what goes into each table of GSTR-9 — from basi
 https://shunya.so/gstr-9-gstr-9c-filing/gstr-9-vs-gstr-9c-what-is-the-difference
 GSTR-9 is the annual return that consolidates a year's GST filings. GSTR-9C reconciles those figures against audited books. How they differ.
 
-## GSTR-9C Applicability and Turnover Limit
+## GSTR-9C Turnover Limit: Applicability Above Rs 5 Crore
 https://shunya.so/gstr-9-gstr-9c-filing/gstr-9c-applicability-turnover-limit
 GSTR-9C applies once aggregate turnover crosses Rs 5 crore in a financial year, and has been self-certified since FY 2020-21, no separate CA sign-off.
 
@@ -554,7 +554,7 @@ How to file a belated tax audit report after missing 30 September, and how a rev
 https://shunya.so/tax-audit-44ab/fo-turnover-calculation-tax-audit
 F&O and intraday turnover isn't your contract value or net profit — it's the sum of profit and loss per trade. Here's how it's actually calculated.
 
-## Form 3CA vs Form 3CB vs Form 3CD — Complete Guide
+## Form 3CA vs 3CB vs 3CD: Difference and Which to File
 https://shunya.so/tax-audit-44ab/form-3ca-3cb-3cd-difference
 Form 3CA, Form 3CB, and Form 3CD explained in detail — which applies to you, what's inside 3CD, and how they're filed together for your tax audit.
 
@@ -590,9 +590,9 @@ What a tax audit typically costs in India, what drives the fee up or down, and w
 https://shunya.so/tax-audit-44ab/tax-audit-online-process
 The step-by-step online tax audit process — what a CA reviews, how UDIN and portal filing work, and realistic timelines.
 
-## Penalty for Not Filing Tax Audit — Section 271B Explained
+## Late Tax Audit Penalty: Section 271B Explained
 https://shunya.so/tax-audit-44ab/tax-audit-penalty-section-271b
-Section 271B penalty for a missing or late tax audit report — how much it costs, when reasonable cause applies, and how it interacts with belated filing.
+A missing or late tax audit report attracts a Section 271B fee of 0.5% of turnover, capped at Rs 1,50,000, unless you show reasonable cause.
 
 ## Tax Audit for Professionals: Section 44ADA, Rs 50 Lakh
 https://shunya.so/tax-audit-44ab/tax-audit-professionals-44ada
@@ -810,43 +810,43 @@ DPIIT recognition is the official status that unlocks Startup India benefits - t
 https://shunya.so/company-registration/12a-80g-registration
 CA-filed 12A income tax exemption and 80G donor-deduction registration for Section 8 companies, Trusts, and Societies. Professional fee ₹1,999.
 
-## Company Registration Cost in Andhra Pradesh
+## Pvt Ltd Company Registration Fees in Andhra Pradesh
 https://shunya.so/company-registration/company-registration-cost-in-andhra-pradesh
 Company registration cost in Andhra Pradesh: ₹1,999 flat professional fee + AP stamp duty (~₹1,520) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Arunachal Pradesh
+## Pvt Ltd Company Registration Fees in Arunachal Pradesh
 https://shunya.so/company-registration/company-registration-cost-in-arunachal-pradesh
 Company registration cost in Arunachal Pradesh: ₹1,999 flat professional fee + stamp duty (~₹710), no Professional Tax. Get an exact quote.
 
-## Company Registration Cost in Assam
+## Pvt Ltd Company Registration Fees in Assam
 https://shunya.so/company-registration/company-registration-cost-in-assam
 Company registration cost in Assam: ₹1,999 flat professional fee + Assam stamp duty (~₹525) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Bihar
+## Pvt Ltd Company Registration Fees in Bihar
 https://shunya.so/company-registration/company-registration-cost-in-bihar
 Company registration cost in Bihar: ₹1,999 flat professional fee + Bihar stamp duty (~₹1,520) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Chhattisgarh
+## Pvt Ltd Company Registration Fees in Chhattisgarh
 https://shunya.so/company-registration/company-registration-cost-in-chhattisgarh
 Company registration cost in Chhattisgarh: ₹1,999 flat professional fee + stamp duty (~₹1,510) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Delhi
+## Pvt Ltd Company Registration Fees in Delhi
 https://shunya.so/company-registration/company-registration-cost-in-delhi
 Company registration cost in Delhi: ₹1,999 flat professional fee + Delhi stamp duty (~₹350–360), no Professional Tax. Get an exact quote.
 
-## Company Registration Cost in Goa
+## Pvt Ltd Company Registration Fees in Goa
 https://shunya.so/company-registration/company-registration-cost-in-goa
 Company registration cost in Goa: ₹1,999 flat professional fee + Goa stamp duty (~₹1,200), no Professional Tax. Get an exact quote.
 
-## Company Registration Cost in Gujarat
+## Pvt Ltd Company Registration Fees in Gujarat
 https://shunya.so/company-registration/company-registration-cost-in-gujarat
 Company registration cost in Gujarat: ₹1,999 flat professional fee + Gujarat stamp duty (~₹600–620) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Haryana
+## Pvt Ltd Company Registration Fees in Haryana
 https://shunya.so/company-registration/company-registration-cost-in-haryana
 Company registration cost in Haryana: ₹1,999 flat professional fee + low stamp duty (~₹135), no Professional Tax. Get an exact quote.
 
-## Company Registration Cost in Himachal Pradesh
+## Pvt Ltd Company Registration Fees in Himachal Pradesh
 https://shunya.so/company-registration/company-registration-cost-in-himachal-pradesh
 Company registration cost in Himachal Pradesh: ₹1,999 flat professional fee + low stamp duty (~₹123), no Professional Tax.
 
@@ -854,85 +854,85 @@ Company registration cost in Himachal Pradesh: ₹1,999 flat professional fee + 
 https://shunya.so/company-registration/company-registration-cost-in-india
 Company registration cost in India breaks into three parts: professional fee, MCA government fees, and state stamp duty. Shunya charges a flat ₹1,999.
 
-## Company Registration Cost in Jharkhand
+## Pvt Ltd Company Registration Fees in Jharkhand
 https://shunya.so/company-registration/company-registration-cost-in-jharkhand
 Company registration cost in Jharkhand: ₹1,999 flat professional fee + low stamp duty (~₹173) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Karnataka
+## Pvt Ltd Company Registration Fees in Karnataka
 https://shunya.so/company-registration/company-registration-cost-in-karnataka
 Company registration cost in Karnataka: ₹1,999 flat professional fee + Karnataka stamp duty (approx. ₹6,000–10,000) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Kerala
+## Pvt Ltd Company Registration Fees in Kerala
 https://shunya.so/company-registration/company-registration-cost-in-kerala
 Company registration cost in Kerala: ₹1,999 flat professional fee + Kerala stamp duty (~₹3,025) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Madhya Pradesh
+## Pvt Ltd Company Registration Fees in Madhya Pradesh
 https://shunya.so/company-registration/company-registration-cost-in-madhya-pradesh
 Company registration cost in Madhya Pradesh: ₹1,999 flat professional fee + stamp duty (~₹7,550) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Maharashtra
+## Pvt Ltd Company Registration Fees in Maharashtra
 https://shunya.so/company-registration/company-registration-cost-in-maharashtra
 Company registration cost in Maharashtra: ₹1,999 flat professional fee + Maharashtra stamp duty (~₹1,200–1,400) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Manipur
+## Pvt Ltd Company Registration Fees in Manipur
 https://shunya.so/company-registration/company-registration-cost-in-manipur
 Company registration cost in Manipur: ₹1,999 flat professional fee + low stamp duty (~₹260) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Meghalaya
+## Pvt Ltd Company Registration Fees in Meghalaya
 https://shunya.so/company-registration/company-registration-cost-in-meghalaya
 Company registration cost in Meghalaya: ₹1,999 flat professional fee + Meghalaya stamp duty (~₹410) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Mizoram
+## Pvt Ltd Company Registration Fees in Mizoram
 https://shunya.so/company-registration/company-registration-cost-in-mizoram
 Company registration cost in Mizoram: ₹1,999 flat professional fee + low stamp duty (~₹260) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Nagaland
+## Pvt Ltd Company Registration Fees in Nagaland
 https://shunya.so/company-registration/company-registration-cost-in-nagaland
 Company registration cost in Nagaland: ₹1,999 flat professional fee + low stamp duty (~₹260) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Odisha
+## Pvt Ltd Company Registration Fees in Odisha
 https://shunya.so/company-registration/company-registration-cost-in-odisha
 Company registration cost in Odisha: ₹1,999 flat professional fee + Odisha stamp duty (~₹610) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Puducherry
+## Pvt Ltd Company Registration Fees in Puducherry
 https://shunya.so/company-registration/company-registration-cost-in-puducherry
 Company registration cost in Puducherry: ₹1,999 flat professional fee + stamp duty (~₹510) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Punjab
+## Pvt Ltd Company Registration Fees in Punjab
 https://shunya.so/company-registration/company-registration-cost-in-punjab
 Company registration cost in Punjab: ₹1,999 flat professional fee + stamp duty (confirm exact figure) and MCA fees. Get a quote.
 
-## Company Registration Cost in Rajasthan
+## Pvt Ltd Company Registration Fees in Rajasthan
 https://shunya.so/company-registration/company-registration-cost-in-rajasthan
 Company registration cost in Rajasthan: ₹1,999 flat professional fee + stamp duty (~₹1,010), no Professional Tax.
 
-## Company Registration Cost in Sikkim
+## Pvt Ltd Company Registration Fees in Sikkim
 https://shunya.so/company-registration/company-registration-cost-in-sikkim
 Company registration cost in Sikkim: ₹1,999 flat professional fee, no stamp duty on incorporation. Get an exact quote.
 
-## Company Registration Cost in Tamil Nadu
+## Pvt Ltd Company Registration Fees in Tamil Nadu
 https://shunya.so/company-registration/company-registration-cost-in-tamil-nadu
 Company registration cost in Tamil Nadu: ₹1,999 flat professional fee + Tamil Nadu stamp duty (~₹700–720) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Telangana
+## Pvt Ltd Company Registration Fees in Telangana
 https://shunya.so/company-registration/company-registration-cost-in-telangana
 Company registration cost in Telangana: ₹1,999 flat professional fee + Telangana stamp duty (~₹1,520) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Tripura
+## Pvt Ltd Company Registration Fees in Tripura
 https://shunya.so/company-registration/company-registration-cost-in-tripura
 Company registration cost in Tripura: ₹1,999 flat professional fee + low stamp duty (~₹260) and MCA fees. Get an exact quote.
 
-## Company Registration Cost in Uttar Pradesh
+## Pvt Ltd Company Registration Fees in Uttar Pradesh
 https://shunya.so/company-registration/company-registration-cost-in-uttar-pradesh
 Company registration cost in Uttar Pradesh: ₹1,999 flat professional fee + UP stamp duty (~₹1,010), no Professional Tax. Get an exact quote.
 
-## Company Registration Cost in Uttarakhand
+## Pvt Ltd Company Registration Fees in Uttarakhand
 https://shunya.so/company-registration/company-registration-cost-in-uttarakhand
 Company registration cost in Uttarakhand: ₹1,999 flat professional fee + stamp duty (~₹1,010), no Professional Tax.
 
-## Company Registration Cost in West Bengal
+## Pvt Ltd Company Registration Fees in West Bengal
 https://shunya.so/company-registration/company-registration-cost-in-west-bengal
-Company registration cost in West Bengal: ₹1,999 flat professional fee + West Bengal stamp duty (~₹370) and MCA fees. Get an exact quote.
+Company registration cost in West Bengal: ₹1,999 professional fee plus state stamp duty and MCA fees. Get an exact quote.
 
 ## Company Registration for an Agriculture Business in India
 https://shunya.so/company-registration/company-registration-for-agriculture-business
@@ -950,9 +950,9 @@ Starting a boutique or clothing label? Get the right structure, know when GST ki
 https://shunya.so/company-registration/company-registration-for-cafe-business
 Registering a cafe in India? See which structure fits, FSSAI licensing tiers, local trade license needs, and how Shunya's ₹1,999 flat fee works.
 
-## Company Registration for a Car Rental Business in India
+## Car Rental Business Registration & Rent-a-Cab License
 https://shunya.so/company-registration/company-registration-for-car-rental-business
-Starting a self-drive car rental business? Get the right structure, the Rent-a-Cab license requirement explained, and Shunya's flat ₹1,999 registration fee.
+Starting a self-drive car rental business? Register as a Pvt Ltd or LLP and get the Rent-a-Cab license from your State Transport Authority. ₹1,999 fee.
 
 ## Company Registration for a Catering Business in India
 https://shunya.so/company-registration/company-registration-for-catering-business
@@ -1026,9 +1026,9 @@ Taking a franchise? India has no separate franchise registration — just compan
 https://shunya.so/company-registration/company-registration-for-freelancers
 Most freelancers are already a Sole Proprietorship by default. See when to upgrade to OPC or Pvt Ltd, GST rules, and the 44ADA tax break for consultants.
 
-## Company Registration for a Gym or Fitness Center in India
+## Gym License in India: Registration, GST & Local Licences
 https://shunya.so/company-registration/company-registration-for-gym-fitness-center
-Register your gym or fitness center as a Sole Prop, OPC, LLP, or Pvt Ltd. No central gym license needed — just GST and a local trade license. ₹1,999 flat fee.
+There is no single central gym license in India: you need the right business structure, GST above the threshold and local registrations. Shunya fee ₹1,999.
 
 ## Company Registration for a Handicraft Business in India
 https://shunya.so/company-registration/company-registration-for-handicraft-business
@@ -1042,9 +1042,9 @@ Opening a hotel or resort in India? See the right entity structure, FSSAI, Fire 
 https://shunya.so/company-registration/company-registration-for-import-export-business
 Register your import-export company, get your DGFT-issued IEC, and sort GST — Shunya handles company registration for a flat ₹1,999 professional fee.
 
-## Company Registration for an Interior Design Business
+## Interior Design Business Registration: OPC, LLP or Pvt Ltd
 https://shunya.so/company-registration/company-registration-for-interior-design-business
-Setting up an interior design business in India? Compare LLP, OPC, and Pvt Ltd, understand GST rules, and register with Shunya for a flat ₹1,999.
+No special central license exists for interior design in India. Compare OPC, LLP and Pvt Ltd, understand GST rules and register for a flat ₹1,999.
 
 ## Company Registration for IT / Software Company in India
 https://shunya.so/company-registration/company-registration-for-it-software-company
@@ -1102,9 +1102,9 @@ Starting a security guard agency? Get the right structure, the mandatory PSARA l
 https://shunya.so/company-registration/company-registration-for-spice-business
 FSSAI is mandatory for every spice business; Spices Board CRES is required only if you export. Register with Shunya for a flat ₹1,999 fee.
 
-## Company Registration for a Taxi Business in India
+## How to Register a Taxi or Cab Business in India
 https://shunya.so/company-registration/company-registration-for-taxi-business
-Starting a taxi or cab aggregator business? Learn which structure fits, when the aggregator license applies, and Shunya's ₹1,999 flat registration fee.
+Starting a taxi or cab aggregator business? Which structure fits, when the aggregator license under the 2025 guidelines applies, and the ₹1,999 fee.
 
 ## Company Registration for a Trading Business in India
 https://shunya.so/company-registration/company-registration-for-trading-business
@@ -1126,9 +1126,9 @@ Solo planner or team with a vendor network? See which structure fits, GST rules 
 https://shunya.so/company-registration/company-registration-process-step-by-step
 How company registration works in India via SPICe+: DSC, name reservation, SPICe+ Part B filing, ROC review, and Certificate of Incorporation.
 
-## Company Registration vs Incorporation
+## Company Registration vs Incorporation: Are They the Same?
 https://shunya.so/company-registration/company-registration-vs-incorporation
-Are company registration and incorporation the same thing in India? Yes, for most founders - here's what the terms mean and when the distinction matters.
+For most Indian founders they are the same: filing SPICe+ with the MCA and getting a Certificate of Incorporation. Here's when the terms differ.
 
 ## Convert OPC to Private Limited Company in India
 https://shunya.so/company-registration/convert-opc-to-private-limited-company
