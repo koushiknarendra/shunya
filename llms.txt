@@ -267,7 +267,6 @@
 
 ## About & Policies
 
-- [About Shunya](https://shunya.so/about)
 - [Privacy Policy](https://shunya.so/privacy-policy)
 - [Terms & Conditions](https://shunya.so/terms-conditions)
 - [Cancellation & Refund Policy](https://shunya.so/cancellation-refund)

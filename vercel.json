@@ -4,6 +4,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/about", "destination": "/", "permanent": true },
     { "source": "/company-registration/shunya-vs-incorpx", "destination": "/company-registration", "permanent": true },
     { "source": "/company-registration/shunya-vs-indiafilings", "destination": "/company-registration", "permanent": true },
     { "source": "/company-registration/shunya-vs-vakilsearch", "destination": "/company-registration", "permanent": true },
