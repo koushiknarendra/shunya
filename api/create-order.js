@@ -20,6 +20,12 @@ const SERVICE_CONFIG = {
     defaultPlan: 'gstr9',
     notesExtra: ({ gstin }) => ({ gstin: gstin || 'Not provided' }),
   },
+  company_registration: {
+    receiptPrefix: 'SHCREG',
+    label: 'Company Registration',
+    amount: 199900,
+    notesExtra: ({ entity }) => ({ entity: entity ? String(entity).slice(0, 60) : 'Not specified' }),
+  },
   gst_registration: {
     receiptPrefix: 'SHGSTR',
     label: 'GST Registration',
