@@ -106,7 +106,7 @@ for (const file of fs.readdirSync(TOOLS).filter((f) => f.endsWith(".html"))) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,follow">
-  <title>${esc(name)} — embeddable calculator | Shunya</title>
+  <title>${esc(name)} (embed)</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${BASE}/tools/${slug}">
 ${links}
