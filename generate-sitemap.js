@@ -17,8 +17,6 @@ function lastmodFor(slug) {
 
 // Pages excluded from the sitemap
 const EXCLUDE = new Set([
-  "how-it-works",
-  "about",
   "thank-you",
   "thank-you-ca",
   "thank-you-startup-india",

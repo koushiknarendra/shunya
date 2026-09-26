@@ -188,3 +188,8 @@ main.tools-main .cta-hard { margin: 0 5rem 5rem; }
 .embed-box textarea { width: 100%; background: #060F19; border: 1px solid #313235; border-radius: 0.6rem; color: #d4e8f8; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8125rem; line-height: 1.5; padding: 0.8rem 0.9rem; resize: vertical; }
 .embed-box .embed-copy { margin-top: 0.75rem; background: #146eff; color: #fff; border: 0; border-radius: 2rem; padding: 0.6rem 1.4rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
 .embed-box .embed-copy:hover { background: #2a7fff; }
+
+/* Quick answer (same as the guide clusters) — used on /how-it-works */
+.quick-answer { background: rgba(20, 110, 255, 0.08); border-left: 4px solid #146eff; padding: 1.25rem 1.5rem; margin-bottom: 2.25rem; border-radius: 0 10px 10px 0; }
+.quick-answer .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #146eff; margin-bottom: 0.6rem; }
+.quick-answer p { color: #bcd9f5; font-weight: 500; margin-bottom: 0; }
