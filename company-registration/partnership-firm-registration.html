@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is registering a partnership firm mandatory?","acceptedAnswer":{"@type":"Answer","text":"No. Registration of a partnership firm with the state Registrar of Firms is optional under the Indian Partnership Act, 1932 — a partnership deed alone can bring the firm into existence. But an unregistered firm loses important legal rights, which is why most CAs recommend registering from day one."}},{"@type":"Question","name":"What actually happens if I don't register my partnership firm?","acceptedAnswer":{"@type":"Answer","text":"Under Section 69 of the Indian Partnership Act, 1932, an unregistered firm — or any of its partners — cannot file a suit in court to enforce a right arising from a contract against a third party, cannot claim a set-off in a dispute over such a contract, and partners cannot sue each other or the firm to enforce rights under the Partnership Act. Importantly, this disability runs only one way: a third party can still sue an unregistered firm or its partners. This is the main practical reason founders choose to register."}},{"@type":"Question","name":"What is the minimum and maximum number of partners?","acceptedAnswer":{"@type":"Answer","text":"A partnership firm needs a minimum of 2 partners. The maximum is capped at 50 partners, per Rule 10 of the Companies (Miscellaneous) Rules, 2014."}},{"@type":"Question","name":"Do partners have limited liability?","acceptedAnswer":{"@type":"Answer","text":"No. In a partnership firm, partners have unlimited personal liability — each partner is personally liable for the firm's debts and obligations, and personal assets are not shielded. This is a genuine tradeoff compared to a Private Limited company or an LLP, both of which offer a liability shield."}},{"@type":"Question","name":"How is a partnership firm taxed?","acceptedAnswer":{"@type":"Answer","text":"The firm itself is taxed on its profits as a separate taxable entity. A partner's share of profit received from the firm is generally not taxed again in the partner's hands, under Section 10(2A) of the Income Tax Act, since the firm has already paid tax on that income. Talk to your CA about how this applies to your specific structure."}},{"@type":"Question","name":"How much does partnership firm registration cost and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — cost varies by state stamp duty on the Partnership Deed and the complexity of your terms, since registration is filed with the state Registrar of Firms rather than a single central portal. Share your state and partner details and a CA will confirm an exact quote. Timelines also vary by state — your CA will confirm a realistic timeline once your state and deed complexity are known."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is registering a partnership firm mandatory?","acceptedAnswer":{"@type":"Answer","text":"No. Registration of a partnership firm with the state Registrar of Firms is optional under the Indian Partnership Act, 1932 — a partnership deed alone can bring the firm into existence. But an unregistered firm loses important legal rights, which is why most CAs recommend registering from day one."}},{"@type":"Question","name":"What actually happens if I don't register my partnership firm?","acceptedAnswer":{"@type":"Answer","text":"Under Section 69 of the Indian Partnership Act, 1932, an unregistered firm — or any of its partners — cannot file a suit in court to enforce a right arising from a contract against a third party, cannot claim a set-off in a dispute over such a contract, and partners cannot sue each other or the firm to enforce rights under the Partnership Act. Importantly, this disability runs only one way: a third party can still sue an unregistered firm or its partners. This is the main practical reason founders choose to register."}},{"@type":"Question","name":"What is the minimum and maximum number of partners?","acceptedAnswer":{"@type":"Answer","text":"A partnership firm needs a minimum of 2 partners. The maximum is capped at 50 partners, per Rule 10 of the Companies (Miscellaneous) Rules, 2014."}},{"@type":"Question","name":"Do partners have limited liability?","acceptedAnswer":{"@type":"Answer","text":"No. In a partnership firm, partners have unlimited personal liability — each partner is personally liable for the firm's debts and obligations, and personal assets are not shielded. This is a genuine tradeoff compared to a Private Limited company or an LLP, both of which offer a liability shield."}},{"@type":"Question","name":"How is a partnership firm taxed?","acceptedAnswer":{"@type":"Answer","text":"The firm itself is taxed on its profits as a separate taxable entity. A partner's share of profit received from the firm is generally not taxed again in the partner's hands, under Section 10(2A) of the Income Tax Act, since the firm has already paid tax on that income. Talk to your CA about how this applies to your specific structure."}},{"@type":"Question","name":"How much does partnership firm registration cost and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. State stamp duty on the Partnership Deed and the Registrar of Firms fee vary by state and are billed separately, along with any third-party costs, since registration is filed with the state Registrar of Firms rather than a single central portal. Share your state and partner details and a CA will walk you through the full cost. Timelines also vary by state — your CA will confirm a realistic timeline once your state and deed complexity are known."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Partnership Firm Registration", "serviceType": "Partnership Firm Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "Partnership Firm registration handled by a qualified CA — stamped Partnership Deed drafted, PAN applied, and application filed with the state Registrar of Firms. Professional fee ₹1,999.", "audience": {"@type": "Audience", "audienceType": "Small businesses, family businesses, trust-based partnerships"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "Partnership Firm Registration"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>Partnership Firm</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/partnership-firm-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Partnership Firm Registration Cost in India: What You Will Actually Pay in Total</h3>
+          <p class="creg_article_excerpt">What a partnership firm costs to register: {{FEE}} professional fee, state stamp duty, Registrar of Firms fee, and what comes after.</p>
+        </div>
+      </a>
+      <a href="/company-registration/partnership-firm-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Documents Required for Partnership Firm Registration in India: Complete Checklist</h3>
+          <p class="creg_article_excerpt">Every document you need to register a partnership firm, who provides it, and the mismatches that cause delays.</p>
+        </div>
+      </a>
+      <a href="/company-registration/partnership-firm-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Partnership Firm Registration Process and Timeline in India: Step by Step</h3>
+          <p class="creg_article_excerpt">The six steps from partnership deed to registration certificate and bank account, and what makes the timeline vary by state.</p>
+        </div>
+      </a>
+      <a href="/company-registration/partnership-deed-format-and-clauses" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Partnership Deed Format and Essential Clauses: A Practical Checklist for Indian Firms</h3>
+          <p class="creg_article_excerpt">The clauses every partnership deed should cover, the interest and remuneration limits that affect tax, and a format you can follow.</p>
+        </div>
+      </a>
+      <a href="/company-registration/partnership-firm-vs-llp-vs-private-limited" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Partnership Firm vs LLP vs Private Limited Company: Which Should You Pick?</h3>
+          <p class="creg_article_excerpt">Partnership firm, LLP or Private Limited? Compare liability, compliance, tax and funding, and see when a plain firm is enough.</p>
+        </div>
+      </a>
+      <a href="/company-registration/partnership-firm-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Partnership Firm Registration Package: What Shunya's Fee Covers and What Is Billed Separately</h3>
+          <p class="creg_article_excerpt">What Shunya's {{FEE}} partnership firm registration fee covers, what stamp duty and Registrar fees are billed separately, and how to start.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/partnership-firm-registration-guides">view all 8 Partnership Firm guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -459,7 +544,7 @@
       <div class="creg_faq_card"><p class="creg_faq_q">What is the minimum and maximum number of partners?</p><p class="creg_faq_a">A partnership firm needs a minimum of 2 partners. The maximum is capped at 50 partners, per Rule 10 of the Companies (Miscellaneous) Rules, 2014.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Do partners have limited liability?</p><p class="creg_faq_a">No. In a partnership firm, partners have unlimited personal liability — each partner is personally liable for the firm's debts and obligations, and personal assets are not shielded. This is a genuine tradeoff compared to a Private Limited company or an LLP, both of which offer a liability shield.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">How is a partnership firm taxed?</p><p class="creg_faq_a">The firm itself is taxed on its profits as a separate taxable entity. A partner's share of profit received from the firm is generally not taxed again in the partner's hands, under Section 10(2A) of the Income Tax Act, since the firm has already paid tax on that income. Talk to your CA about how this applies to your specific structure.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does partnership firm registration cost and how long does it take?</p><p class="creg_faq_a">There's no flat fee — cost varies by state stamp duty on the Partnership Deed and the complexity of your terms, since registration is filed with the state Registrar of Firms rather than a single central portal. Share your state and partner details and a CA will confirm an exact quote. Timelines also vary by state — your CA will confirm a realistic timeline once your state and deed complexity are known.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does partnership firm registration cost and how long does it take?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. State stamp duty on the Partnership Deed and the Registrar of Firms fee vary by state and are billed separately, along with any third-party costs, since registration is filed with the state Registrar of Firms rather than a single central portal. Share your state and partner details and a CA will walk you through the full cost. Timelines also vary by state — your CA will confirm a realistic timeline once your state and deed complexity are known.</p></div>
     </div>
   </div>
 </section>

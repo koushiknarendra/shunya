@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Public Limited company?","acceptedAnswer":{"@type":"Answer","text":"A Public Limited Company is a business structure registered under the Companies Act, 2013, that is permitted to raise capital from the public by issuing shares or debentures. It has a separate legal identity from its shareholders, limited liability, and a company name that ends in 'Limited' rather than 'Private Limited'."}},{"@type":"Question","name":"How many directors and shareholders does a Public Limited company need?","acceptedAnswer":{"@type":"Answer","text":"A minimum of 3 directors and 7 shareholders, with no maximum limit on shareholders — unlike a Private Limited company, which is capped at 2–15 directors and 200 shareholders. At least one director must be a resident of India."}},{"@type":"Question","name":"How is a Public Limited company different from a Private Limited company?","acceptedAnswer":{"@type":"Answer","text":"A Public Limited company needs more directors and shareholders (3+ directors, 7+ shareholders, no shareholder cap, versus 2+2 with a 200 cap for Private Limited), can raise funds from the public through shares or debentures, and carries heavier ongoing compliance — more mandatory board meetings and a compulsory company secretary once paid-up capital crosses ₹10 crore under Section 203. Both are filed via SPICe+ on the MCA portal, but the name must end in 'Limited' and the MOA/AOA content differs."}},{"@type":"Question","name":"What compliance does a Public Limited company have to follow after incorporation?","acceptedAnswer":{"@type":"Answer","text":"Public Limited companies must hold more board meetings annually than a Private Limited company, follow stricter disclosure and governance norms, and appoint a whole-time Company Secretary once paid-up share capital crosses ₹10 crore, per Section 203 of the Companies Act, 2013. This is a genuine trade-off against the ability to raise capital publicly, and something to factor in before choosing this structure."}},{"@type":"Question","name":"Can a Public Limited company convert to or from a Private Limited company?","acceptedAnswer":{"@type":"Answer","text":"Yes. A Private Limited company can convert to Public Limited as it scales and needs to raise capital more broadly, and a Public Limited company can convert back to Private Limited if it no longer needs that structure, subject to MCA approval and the relevant special resolutions. Our CA can guide you through either conversion."}},{"@type":"Question","name":"How much does Public Limited company registration cost?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — cost depends on your authorised capital, number of shareholders and directors, and the complexity of your MOA/AOA. Share your structure with us and a CA will confirm an exact quote, including government fees and stamp duty, on your first call."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Public Limited company?","acceptedAnswer":{"@type":"Answer","text":"A Public Limited Company is a business structure registered under the Companies Act, 2013, that is permitted to raise capital from the public by issuing shares or debentures. It has a separate legal identity from its shareholders, limited liability, and a company name that ends in 'Limited' rather than 'Private Limited'."}},{"@type":"Question","name":"How many directors and shareholders does a Public Limited company need?","acceptedAnswer":{"@type":"Answer","text":"A minimum of 3 directors and 7 shareholders, with no maximum limit on shareholders — unlike a Private Limited company, which is capped at 2–15 directors and 200 shareholders. At least one director must be a resident of India."}},{"@type":"Question","name":"How is a Public Limited company different from a Private Limited company?","acceptedAnswer":{"@type":"Answer","text":"A Public Limited company needs more directors and shareholders (3+ directors, 7+ shareholders, no shareholder cap, versus 2+2 with a 200 cap for Private Limited), can raise funds from the public through shares or debentures, and carries heavier ongoing compliance — more mandatory board meetings and a compulsory company secretary once paid-up capital crosses ₹10 crore under Section 203. Both are filed via SPICe+ on the MCA portal, but the name must end in 'Limited' and the MOA/AOA content differs."}},{"@type":"Question","name":"What compliance does a Public Limited company have to follow after incorporation?","acceptedAnswer":{"@type":"Answer","text":"Public Limited companies must hold more board meetings annually than a Private Limited company, follow stricter disclosure and governance norms, and appoint a whole-time Company Secretary once paid-up share capital crosses ₹10 crore, per Section 203 of the Companies Act, 2013. This is a genuine trade-off against the ability to raise capital publicly, and something to factor in before choosing this structure."}},{"@type":"Question","name":"Can a Public Limited company convert to or from a Private Limited company?","acceptedAnswer":{"@type":"Answer","text":"Yes. A Private Limited company can convert to Public Limited as it scales and needs to raise capital more broadly, and a Public Limited company can convert back to Private Limited if it no longer needs that structure, subject to MCA approval and the relevant special resolutions. Our CA can guide you through either conversion."}},{"@type":"Question","name":"How much does Public Limited company registration cost?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. Government fees and stamp duty depend on your authorised capital and structure, and the DSC issuer's charge and other third-party costs are billed separately. Share your structure with us and a CA will walk you through the full cost on your first call."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Public Limited Company Registration", "serviceType": "Public Limited Company Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "Public Limited company registration handled by a qualified CA — SPICe+ filed on the MCA portal, professional fee ₹1,999 plus statutory costs."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "Public Limited Company Registration"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>Public Limited</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/public-limited-company-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Public Limited Company Registration Cost in India (2026): What You Will Actually Pay</h3>
+          <p class="creg_article_excerpt">A line-by-line view of public limited company registration cost: the {{FEE}} professional fee, MCA fee, stamp duty and what you pay after incorporation.</p>
+        </div>
+      </a>
+      <a href="/company-registration/public-limited-company-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Documents Required for Public Limited Company Registration in India (2026 Checklist)</h3>
+          <p class="creg_article_excerpt">The full checklist of documents for public limited company registration, who provides each one, and the mismatches that get filings rejected.</p>
+        </div>
+      </a>
+      <a href="/company-registration/public-limited-company-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Public Limited Company Registration Process and Timeline in India (Step by Step, 2026)</h3>
+          <p class="creg_article_excerpt">The step-by-step public limited company registration process, a realistic timeline range, and the delays that stretch it.</p>
+        </div>
+      </a>
+      <a href="/company-registration/public-limited-company-requirements-members-directors-and-capital" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Public Limited Company Requirements: Members, Directors and Capital (2026)</h3>
+          <p class="creg_article_excerpt">Public limited company requirements at a glance: members, directors, capital, resident director and the thresholds that trigger extra rules.</p>
+        </div>
+      </a>
+      <a href="/company-registration/public-limited-vs-private-limited-company" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Public Limited vs Private Limited Company: Which Structure Fits Your Business?</h3>
+          <p class="creg_article_excerpt">A decision guide: members, directors, share transfer, fundraising and compliance load, and when each structure actually fits.</p>
+        </div>
+      </a>
+      <a href="/company-registration/public-limited-company-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Public Limited Company Registration Package: What Shunya's Fee Covers and What It Does Not</h3>
+          <p class="creg_article_excerpt">What Shunya's public limited registration fee covers, what is billed separately, questions to ask any provider, and how to start.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/public-limited-company-registration-guides">view all 8 Public Limited guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -459,7 +544,7 @@
       <div class="creg_faq_card"><p class="creg_faq_q">How is a Public Limited company different from a Private Limited company?</p><p class="creg_faq_a">A Public Limited company needs more directors and shareholders (3+ directors, 7+ shareholders, no shareholder cap, versus 2+2 with a 200 cap for Private Limited), can raise funds from the public through shares or debentures, and carries heavier ongoing compliance — more mandatory board meetings and a compulsory company secretary once paid-up capital crosses ₹10 crore under Section 203. Both are filed via SPICe+ on the MCA portal, but the name must end in "Limited" and the MOA/AOA content differs.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">What compliance does a Public Limited company have to follow after incorporation?</p><p class="creg_faq_a">Public Limited companies must hold more board meetings annually than a Private Limited company, follow stricter disclosure and governance norms, and appoint a whole-time Company Secretary once paid-up share capital crosses ₹10 crore, per Section 203 of the Companies Act, 2013. This is a genuine trade-off against the ability to raise capital publicly, and something to factor in before choosing this structure.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Can a Public Limited company convert to or from a Private Limited company?</p><p class="creg_faq_a">Yes. A Private Limited company can convert to Public Limited as it scales and needs to raise capital more broadly, and a Public Limited company can convert back to Private Limited if it no longer needs that structure, subject to MCA approval and the relevant special resolutions. Our CA can guide you through either conversion.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does Public Limited company registration cost?</p><p class="creg_faq_a">There's no flat fee — cost depends on your authorised capital, number of shareholders and directors, and the complexity of your MOA/AOA. Share your structure with us and a CA will confirm an exact quote, including government fees and stamp duty, on your first call.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does Public Limited company registration cost?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. Government fees and stamp duty depend on your authorised capital and structure, and the DSC issuer's charge and other third-party costs are billed separately. Share your structure with us and a CA will walk you through the full cost on your first call.</p></div>
     </div>
   </div>
 </section>

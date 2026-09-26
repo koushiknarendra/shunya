@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who needs FCRA registration?","acceptedAnswer":{"@type":"Answer","text":"Any Section 8 company, Trust, or Society in India that wants to legally receive foreign contributions — donations, grants, or CSR-style funding from a foreign source — needs FCRA registration under the Foreign Contribution (Regulation) Act, 2010. It is a legal precondition: accepting foreign contributions without it is a violation of the Act. FCRA is a follow-on registration for an organisation that already exists — it does not replace incorporation as a Section 8 company, Trust, or Society."}},{"@type":"Question","name":"What are the eligibility requirements for Normal FCRA registration?","acceptedAnswer":{"@type":"Answer","text":"For Normal registration, the organisation must generally have existed for at least 3 years, and must have spent at least ₹15 lakh on its core charitable activities in the preceding 3 years — this figure excludes administrative expenses. If your organisation doesn't yet meet this bar, the Prior Permission route may apply instead."}},{"@type":"Question","name":"What is Prior Permission and when does it apply?","acceptedAnswer":{"@type":"Answer","text":"Prior Permission (filed via Form FC-3B) is for newer organisations that don't yet meet the 3-year / ₹15-lakh eligibility for Normal registration, but already have a specific foreign donor committed to a specific project. It lets the organisation receive foreign funds for that one project while it builds up eligibility for Normal registration over time."}},{"@type":"Question","name":"Why does the FCRA account have to be at SBI, New Delhi Main Branch?","acceptedAnswer":{"@type":"Answer","text":"Since the 2020 FCRA amendment, every registered NGO is required to open a dedicated FCRA account at State Bank of India, New Delhi Main Branch. This is legally where all foreign contributions must first land, before being transferred onward to 'utilisation accounts' the NGO can hold at other banks. This requirement is still current."}},{"@type":"Question","name":"How long is FCRA registration valid, and what if my renewal is pending?","acceptedAnswer":{"@type":"Answer","text":"FCRA registration is valid for 5 years, and renewal is due at least 6 months before expiry. The Ministry of Home Affairs has periodically issued blanket validity extensions for NGOs whose renewal is pending, so the standard 5-year clock doesn't always apply strictly if a renewal is already in process. A CA will confirm your organisation's specific renewal deadline rather than assuming the standard timeline. Registered NGOs also need to file an FC-4 annual return as an ongoing compliance requirement."}},{"@type":"Question","name":"How much does FCRA registration cost and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — cost varies by route (Normal vs. Prior Permission) and the complexity of your documentation. Share your organisation's details with us and a CA will confirm an exact quote on your first call, along with a realistic timeline once your documents and route are reviewed."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who needs FCRA registration?","acceptedAnswer":{"@type":"Answer","text":"Any Section 8 company, Trust, or Society in India that wants to legally receive foreign contributions — donations, grants, or CSR-style funding from a foreign source — needs FCRA registration under the Foreign Contribution (Regulation) Act, 2010. It is a legal precondition: accepting foreign contributions without it is a violation of the Act. FCRA is a follow-on registration for an organisation that already exists — it does not replace incorporation as a Section 8 company, Trust, or Society."}},{"@type":"Question","name":"What are the eligibility requirements for Normal FCRA registration?","acceptedAnswer":{"@type":"Answer","text":"For Normal registration, the organisation must generally have existed for at least 3 years, and must have spent at least ₹15 lakh on its core charitable activities in the preceding 3 years — this figure excludes administrative expenses. If your organisation doesn't yet meet this bar, the Prior Permission route may apply instead."}},{"@type":"Question","name":"What is Prior Permission and when does it apply?","acceptedAnswer":{"@type":"Answer","text":"Prior Permission (filed via Form FC-3B) is for newer organisations that don't yet meet the 3-year / ₹15-lakh eligibility for Normal registration, but already have a specific foreign donor committed to a specific project. It lets the organisation receive foreign funds for that one project while it builds up eligibility for Normal registration over time."}},{"@type":"Question","name":"Why does the FCRA account have to be at SBI, New Delhi Main Branch?","acceptedAnswer":{"@type":"Answer","text":"Since the 2020 FCRA amendment, every registered NGO is required to open a dedicated FCRA account at State Bank of India, New Delhi Main Branch. This is legally where all foreign contributions must first land, before being transferred onward to 'utilisation accounts' the NGO can hold at other banks. This requirement is still current."}},{"@type":"Question","name":"How long is FCRA registration valid, and what if my renewal is pending?","acceptedAnswer":{"@type":"Answer","text":"FCRA registration is valid for 5 years, and renewal is due at least 6 months before expiry. The Ministry of Home Affairs has periodically issued blanket validity extensions for NGOs whose renewal is pending, so the standard 5-year clock doesn't always apply strictly if a renewal is already in process. A CA will confirm your organisation's specific renewal deadline rather than assuming the standard timeline. Registered NGOs also need to file an FC-4 annual return as an ongoing compliance requirement."}},{"@type":"Question","name":"How much does FCRA registration cost and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. Government fees, which vary by route (Normal or Prior Permission), and any third-party costs are billed separately. Share your organisation's details with us and a CA will walk you through the full cost on your first call, along with a realistic timeline once your documents and route are reviewed."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "FCRA Registration", "serviceType": "FCRA Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "FCRA (Foreign Contribution Regulation Act, 2010) registration handled by a qualified CA — Normal or Prior Permission route, filed on fcraonline.nic.in with the Ministry of Home Affairs. Professional fee ₹1,999.", "audience": {"@type": "Audience", "audienceType": "Section 8 companies, Trusts, and Societies receiving foreign contributions"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "FCRA Registration"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>FCRA</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/fcra-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">FCRA Registration Cost and Fees in India: What an NGO Pays in Total in 2026</h3>
+          <p class="creg_article_excerpt">The government fee, the {{FEE}} professional fee and the other costs of FCRA registration, itemised as of September 2026.</p>
+        </div>
+      </a>
+      <a href="/company-registration/fcra-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">FCRA Registration Documents Required: The Checklist for NGOs, Trusts and Societies</h3>
+          <p class="creg_article_excerpt">A checklist of documents for an FCRA application: entity papers, accounts, activity reports and key persons' details.</p>
+        </div>
+      </a>
+      <a href="/company-registration/fcra-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">FCRA Registration Process and Timeline: Steps from FC-3A to Your Certificate</h3>
+          <p class="creg_article_excerpt">The FC-3A steps from route check to certificate, and why FCRA registration typically takes several months.</p>
+        </div>
+      </a>
+      <a href="/company-registration/fcra-eligibility-and-who-can-apply" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">FCRA Eligibility: Who Can Apply for Registration and Who Cannot</h3>
+          <p class="creg_article_excerpt">Who can apply for FCRA registration: entity types, the 3-year and ₹15 lakh test, who cannot receive foreign contribution.</p>
+        </div>
+      </a>
+      <a href="/company-registration/fcra-registration-vs-prior-permission" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">FCRA Registration vs Prior Permission: FC-3A or FC-3B, and Which Route Fits Your NGO</h3>
+          <p class="creg_article_excerpt">FC-3A registration or FC-3B prior permission? A decision guide with a comparison table, eligibility tests and the pitfalls of each route.</p>
+        </div>
+      </a>
+      <a href="/company-registration/fcra-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">FCRA Registration Package: Shunya's Professional Fee, What It Covers and What Is Billed Separately</h3>
+          <p class="creg_article_excerpt">What Shunya's FCRA professional fee covers, what is billed separately, how to start, and what to ask any provider.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/fcra-registration-guides">view all 8 FCRA guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -459,7 +544,7 @@
       <div class="creg_faq_card"><p class="creg_faq_q">What is Prior Permission and when does it apply?</p><p class="creg_faq_a">Prior Permission (filed via Form FC-3B) is for newer organisations that don't yet meet the 3-year / ₹15-lakh eligibility for Normal registration, but already have a specific foreign donor committed to a specific project. It lets the organisation receive foreign funds for that one project while it builds up eligibility for Normal registration over time.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Why does the FCRA account have to be at SBI, New Delhi Main Branch?</p><p class="creg_faq_a">Since the 2020 FCRA amendment, every registered NGO is required to open a dedicated FCRA account at State Bank of India, New Delhi Main Branch. This is legally where all foreign contributions must first land, before being transferred onward to "utilisation accounts" the NGO can hold at other banks. This requirement is still current.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">How long is FCRA registration valid, and what if my renewal is pending?</p><p class="creg_faq_a">FCRA registration is valid for 5 years, and renewal is due at least 6 months before expiry. The Ministry of Home Affairs has periodically issued blanket validity extensions for NGOs whose renewal is pending, so the standard 5-year clock doesn't always apply strictly if a renewal is already in process. A CA will confirm your organisation's specific renewal deadline rather than assuming the standard timeline. Registered NGOs also need to file an FC-4 annual return as an ongoing compliance requirement.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does FCRA registration cost and how long does it take?</p><p class="creg_faq_a">There's no flat fee — cost varies by route (Normal vs. Prior Permission) and the complexity of your documentation. Share your organisation's details with us and a CA will confirm an exact quote on your first call, along with a realistic timeline once your documents and route are reviewed.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does FCRA registration cost and how long does it take?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. Government fees, which vary by route (Normal or Prior Permission), and any third-party costs are billed separately. Share your organisation's details with us and a CA will walk you through the full cost on your first call, along with a realistic timeline once your documents and route are reviewed.</p></div>
     </div>
   </div>
 </section>

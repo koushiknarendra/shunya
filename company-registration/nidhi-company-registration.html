@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Nidhi company?","acceptedAnswer":{"@type":"Answer","text":"A Nidhi Company is a type of non-banking financial company registered under the Companies Act, 2013 and regulated by the Nidhi Rules, formed to cultivate the habit of savings and lending among its own members only. It cannot accept deposits from or lend to the general public — only registered members."}},{"@type":"Question","name":"How is a Nidhi company different from an NBFC?","acceptedAnswer":{"@type":"Answer","text":"A Nidhi Company deals only with its own members and does not need an RBI NBFC license, unlike a regular NBFC which can deal with the public and is directly regulated by the RBI. A Nidhi Company is instead governed by the Companies Act and the Nidhi Rules, with its own compliance framework including periodic returns to the Registrar of Companies."}},{"@type":"Question","name":"How many directors and members does a Nidhi company need?","acceptedAnswer":{"@type":"Answer","text":"A minimum of 3 directors and 7 members is the commonly cited starting point to incorporate a Nidhi company. There are also post-incorporation requirements around growing your membership base and maintaining minimum Net Owned Funds within a period set by the Nidhi Rules — our CA will walk you through the exact current requirements for your case."}},{"@type":"Question","name":"Can a Nidhi company accept deposits from the general public?","acceptedAnswer":{"@type":"Answer","text":"No. A Nidhi Company can only accept deposits from and lend to its own registered members — this member-only restriction is the defining feature of the structure and is enforced under the Nidhi Rules."}},{"@type":"Question","name":"How much does Nidhi company registration cost?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — cost depends on your founding member structure and documentation. Share your details with us and a CA will confirm an exact quote, including government fees, on your first call."}},{"@type":"Question","name":"What compliance does a Nidhi company have after incorporation?","acceptedAnswer":{"@type":"Answer","text":"Nidhi Companies must meet ongoing requirements under the Nidhi Rules, including periodic returns (such as NDH-1 and NDH-3) to the Registrar of Companies, membership and Net Owned Fund thresholds within prescribed timelines, and restrictions on the kind of lending and deposit activity permitted. Our CA can guide you through the compliance calendar after incorporation."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Nidhi company?","acceptedAnswer":{"@type":"Answer","text":"A Nidhi Company is a type of non-banking financial company registered under the Companies Act, 2013 and regulated by the Nidhi Rules, formed to cultivate the habit of savings and lending among its own members only. It cannot accept deposits from or lend to the general public — only registered members."}},{"@type":"Question","name":"How is a Nidhi company different from an NBFC?","acceptedAnswer":{"@type":"Answer","text":"A Nidhi Company deals only with its own members and does not need an RBI NBFC license, unlike a regular NBFC which can deal with the public and is directly regulated by the RBI. A Nidhi Company is instead governed by the Companies Act and the Nidhi Rules, with its own compliance framework including periodic returns to the Registrar of Companies."}},{"@type":"Question","name":"How many directors and members does a Nidhi company need?","acceptedAnswer":{"@type":"Answer","text":"A minimum of 3 directors and 7 members is the commonly cited starting point to incorporate a Nidhi company. There are also post-incorporation requirements around growing your membership base and maintaining minimum Net Owned Funds within a period set by the Nidhi Rules — our CA will walk you through the exact current requirements for your case."}},{"@type":"Question","name":"Can a Nidhi company accept deposits from the general public?","acceptedAnswer":{"@type":"Answer","text":"No. A Nidhi Company can only accept deposits from and lend to its own registered members — this member-only restriction is the defining feature of the structure and is enforced under the Nidhi Rules."}},{"@type":"Question","name":"How much does Nidhi company registration cost?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. Government fees, the DSC issuer's charge and other third-party costs are billed separately. Share your details with us and a CA will walk you through the full cost on your first call."}},{"@type":"Question","name":"What compliance does a Nidhi company have after incorporation?","acceptedAnswer":{"@type":"Answer","text":"Nidhi Companies must meet ongoing requirements under the Nidhi Rules, including periodic returns (such as NDH-1 and NDH-3) to the Registrar of Companies, membership and Net Owned Fund thresholds within prescribed timelines, and restrictions on the kind of lending and deposit activity permitted. Our CA can guide you through the compliance calendar after incorporation."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Nidhi Company Registration", "serviceType": "Nidhi Company Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "Nidhi company registration handled by a qualified CA — SPICe+ filed on the MCA portal, Nidhi Rules compliant, professional fee ₹1,999 plus statutory costs."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "Nidhi Company Registration"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>Nidhi</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/nidhi-company-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Nidhi Company Registration Cost in India (2026): Fees, Capital and What You Actually Pay</h3>
+          <p class="creg_article_excerpt">What Nidhi company registration costs: professional fee, MCA fee, stamp duty, and why the paid-up capital and NOF are not fees.</p>
+        </div>
+      </a>
+      <a href="/company-registration/nidhi-company-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Documents Required for Nidhi Company Registration (Incorporation and NDH-4 Checklist)</h3>
+          <p class="creg_article_excerpt">A checklist of documents for Nidhi company registration: director and member KYC, office proof, MOA/AOA, and NDH-4 declarations.</p>
+        </div>
+      </a>
+      <a href="/company-registration/nidhi-company-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Nidhi Company Registration Process and Timeline: Incorporation, then the 120-Day Path to NDH-4</h3>
+          <p class="creg_article_excerpt">The Nidhi registration process step by step: incorporation, the 120-day NDH-4 deadline and the 45-day decision window.</p>
+        </div>
+      </a>
+      <a href="/company-registration/nidhi-company-requirements-members-and-net-owned-funds" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Nidhi Company Requirements (2026): Members, Net Owned Funds, Paid-Up Capital and Deposit Ratios</h3>
+          <p class="creg_article_excerpt">Every number a Nidhi company must meet: members, directors, NOF, paid-up capital, the 1:20 ratio and unencumbered deposits.</p>
+        </div>
+      </a>
+      <a href="/company-registration/nidhi-company-ndh-4-declaration-process" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">NDH-4 Declaration for a Nidhi Company: Deadline, Process and What Happens If You Miss It</h3>
+          <p class="creg_article_excerpt">The 120-day NDH-4 rule for new Nidhi companies, the 200-member and ₹20 lakh NOF test, the steps, and the cost of missing it.</p>
+        </div>
+      </a>
+      <a href="/company-registration/nidhi-company-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Nidhi Company Registration at Shunya: What the {{FEE}} Professional Fee Covers and What It Does Not</h3>
+          <p class="creg_article_excerpt">What Shunya's {{FEE}} professional fee covers for Nidhi company registration, what is billed separately, and how to start.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/nidhi-company-registration-guides">view all 8 Nidhi guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -458,7 +543,7 @@
       <div class="creg_faq_card"><p class="creg_faq_q">How is a Nidhi company different from an NBFC?</p><p class="creg_faq_a">A Nidhi Company deals only with its own members and does not need an RBI NBFC license, unlike a regular NBFC which can deal with the public and is directly regulated by the RBI. A Nidhi Company is instead governed by the Companies Act and the Nidhi Rules, with its own compliance framework including periodic returns to the Registrar of Companies.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">How many directors and members does a Nidhi company need?</p><p class="creg_faq_a">A minimum of 3 directors and 7 members is the commonly cited starting point to incorporate a Nidhi company. There are also post-incorporation requirements around growing your membership base and maintaining minimum Net Owned Funds within a period set by the Nidhi Rules — our CA will walk you through the exact current requirements for your case.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Can a Nidhi company accept deposits from the general public?</p><p class="creg_faq_a">No. A Nidhi Company can only accept deposits from and lend to its own registered members — this member-only restriction is the defining feature of the structure and is enforced under the Nidhi Rules.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does Nidhi company registration cost?</p><p class="creg_faq_a">There's no flat fee — cost depends on your founding member structure and documentation. Share your details with us and a CA will confirm an exact quote, including government fees, on your first call.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does Nidhi company registration cost?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. Government fees, the DSC issuer's charge and other third-party costs are billed separately. Share your details with us and a CA will walk you through the full cost on your first call.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">What compliance does a Nidhi company have after incorporation?</p><p class="creg_faq_a">Nidhi Companies must meet ongoing requirements under the Nidhi Rules, including periodic returns (such as NDH-1 and NDH-3) to the Registrar of Companies, membership and Net Owned Fund thresholds within prescribed timelines, and restrictions on the kind of lending and deposit activity permitted. Our CA can guide you through the compliance calendar after incorporation.</p></div>
     </div>
   </div>

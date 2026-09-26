@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Section 8 company?","acceptedAnswer":{"@type":"Answer","text":"A Section 8 Company is a non-profit entity registered under the Companies Act, 2013, formed to promote objects like education, charity, religion, art, science, sports, social welfare, or environmental protection. It has limited liability and a separate legal identity, and any profit or income must be applied only toward its stated objects — it cannot be distributed to members as dividend."}},{"@type":"Question","name":"How is a Section 8 company different from a Trust or Society?","acceptedAnswer":{"@type":"Answer","text":"A Section 8 Company is registered with the Ministry of Corporate Affairs under company law, which generally gives it more structured governance and wider credibility with donors, CSR funders, and grant-making bodies than a Trust (registered under state Trust Acts) or a Society (registered under the Societies Registration Act). It also requires a license from the Registrar of Companies, which a Trust or Society does not."}},{"@type":"Question","name":"Does registering a Section 8 company automatically give tax exemption?","acceptedAnswer":{"@type":"Answer","text":"No. Section 8 incorporation and tax exemption are two separate steps. Once incorporated, an organisation can separately apply for 12A registration (income tax exemption) and 80G registration (so donors can claim a tax deduction) under the Income Tax Act. Our Section 8 registration service covers the incorporation itself; 12A/80G is a distinct follow-on filing."}},{"@type":"Question","name":"Can a Section 8 company distribute profits to its members?","acceptedAnswer":{"@type":"Answer","text":"No. Any income or profit must be applied only toward promoting the company's charitable or non-profit objects. Members cannot receive dividends, which is the core distinction between a Section 8 company and a for-profit structure like a Private Limited company."}},{"@type":"Question","name":"How much does Section 8 company registration cost?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — cost depends on the complexity of your objects, the license application, and your MOA/AOA drafting. Share your organisation's objects with us and a CA will confirm an exact quote, including government fees, on your first call."}},{"@type":"Question","name":"How long does Section 8 company registration take?","acceptedAnswer":{"@type":"Answer","text":"It typically takes longer than a standard Private Limited registration because the Registrar of Companies reviews the license application and objects clause before approving incorporation. Your CA will give you a realistic timeline once your objects and documents are reviewed."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Section 8 company?","acceptedAnswer":{"@type":"Answer","text":"A Section 8 Company is a non-profit entity registered under the Companies Act, 2013, formed to promote objects like education, charity, religion, art, science, sports, social welfare, or environmental protection. It has limited liability and a separate legal identity, and any profit or income must be applied only toward its stated objects — it cannot be distributed to members as dividend."}},{"@type":"Question","name":"How is a Section 8 company different from a Trust or Society?","acceptedAnswer":{"@type":"Answer","text":"A Section 8 Company is registered with the Ministry of Corporate Affairs under company law, which generally gives it more structured governance and wider credibility with donors, CSR funders, and grant-making bodies than a Trust (registered under state Trust Acts) or a Society (registered under the Societies Registration Act). It also requires a license from the Registrar of Companies, which a Trust or Society does not."}},{"@type":"Question","name":"Does registering a Section 8 company automatically give tax exemption?","acceptedAnswer":{"@type":"Answer","text":"No. Section 8 incorporation and tax exemption are two separate steps. Once incorporated, an organisation can separately apply for 12A registration (income tax exemption) and 80G registration (so donors can claim a tax deduction) under the Income Tax Act. Our Section 8 registration service covers the incorporation itself; 12A/80G is a distinct follow-on filing."}},{"@type":"Question","name":"Can a Section 8 company distribute profits to its members?","acceptedAnswer":{"@type":"Answer","text":"No. Any income or profit must be applied only toward promoting the company's charitable or non-profit objects. Members cannot receive dividends, which is the core distinction between a Section 8 company and a for-profit structure like a Private Limited company."}},{"@type":"Question","name":"How much does Section 8 company registration cost?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. Government fees, the DSC issuer's charge and other third-party costs are billed separately. Share your organisation's objects with us and a CA will walk you through the full cost on your first call."}},{"@type":"Question","name":"How long does Section 8 company registration take?","acceptedAnswer":{"@type":"Answer","text":"It typically takes longer than a standard Private Limited registration because the Registrar of Companies reviews the license application and objects clause before approving incorporation. Your CA will give you a realistic timeline once your objects and documents are reviewed."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Section 8 Company Registration", "serviceType": "Section 8 Company Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "Section 8 (non-profit) company registration handled by a qualified CA — license and SPICe+ filed on the MCA portal, professional fee ₹1,999 plus statutory costs.", "audience": {"@type": "Audience", "audienceType": "Non-profit organisations, NGOs, charitable foundations"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "Section 8 Company Registration"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>Section 8</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/section-8-company-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Section 8 Company Registration Cost in India (2026): What You Pay in Total and Why Quotes Differ</h3>
+          <p class="creg_article_excerpt">Section 8 company registration cost: the {{FEE}} professional fee, what is billed separately, and how to compare quotes.</p>
+        </div>
+      </a>
+      <a href="/company-registration/section-8-company-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Documents Required for Section 8 Company Registration (2026 Checklist for NGOs and Non-Profits)</h3>
+          <p class="creg_article_excerpt">The full document checklist for Section 8 company registration, plus the mismatches that get licence applications sent back.</p>
+        </div>
+      </a>
+      <a href="/company-registration/section-8-company-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Section 8 Company Registration Process and Timeline (2026): Steps, Licence and What Causes Delays</h3>
+          <p class="creg_article_excerpt">The Section 8 registration process step by step, from name approval to licence and certificate, with a realistic timeline.</p>
+        </div>
+      </a>
+      <a href="/company-registration/section-8-company-eligibility-objects-and-requirements" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Section 8 Company Eligibility, Permitted Objects and Requirements (2026 Guide)</h3>
+          <p class="creg_article_excerpt">Who can form a Section 8 company, which objects qualify, name rules, and the members and directors you need.</p>
+        </div>
+      </a>
+      <a href="/company-registration/section-8-company-vs-trust-vs-society" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Section 8 Company vs Trust vs Society: Which Structure Should Your NGO Choose?</h3>
+          <p class="creg_article_excerpt">Section 8 company, trust or society for your NGO? A side-by-side table on formation, governance, tax route and funding, plus when each fits.</p>
+        </div>
+      </a>
+      <a href="/company-registration/section-8-company-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Section 8 Company Registration Package: What Shunya's {{FEE}} Fee Covers</h3>
+          <p class="creg_article_excerpt">What Shunya's Section 8 professional fee covers, what is billed separately, how to start, and questions to ask any provider before you pay.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/section-8-company-registration-guides">view all 8 Section 8 guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -458,7 +543,7 @@
       <div class="creg_faq_card"><p class="creg_faq_q">How is a Section 8 company different from a Trust or Society?</p><p class="creg_faq_a">A Section 8 Company is registered with the Ministry of Corporate Affairs under company law, which generally gives it more structured governance and wider credibility with donors, CSR funders, and grant-making bodies than a Trust (registered under state Trust Acts) or a Society (registered under the Societies Registration Act). It also requires a license from the Registrar of Companies, which a Trust or Society does not.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Does registering a Section 8 company automatically give tax exemption?</p><p class="creg_faq_a">No. Section 8 incorporation and tax exemption are two separate steps. Once incorporated, an organisation can separately apply for <a href="/company-registration/12a-80g-registration" style="color:#7ab8ff;">12A registration (income tax exemption) and 80G registration</a> (so donors can claim a tax deduction) under the Income Tax Act. Our Section 8 registration service covers the incorporation itself; 12A/80G is a distinct follow-on filing.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Can a Section 8 company distribute profits to its members?</p><p class="creg_faq_a">No. Any income or profit must be applied only toward promoting the company's charitable or non-profit objects. Members cannot receive dividends, which is the core distinction between a Section 8 company and a for-profit structure like a Private Limited company.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does Section 8 company registration cost?</p><p class="creg_faq_a">There's no flat fee — cost depends on the complexity of your objects, the license application, and your MOA/AOA drafting. Share your organisation's objects with us and a CA will confirm an exact quote, including government fees, on your first call.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does Section 8 company registration cost?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. Government fees, the DSC issuer's charge and other third-party costs are billed separately. Share your organisation's objects with us and a CA will walk you through the full cost on your first call.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">How long does Section 8 company registration take?</p><p class="creg_faq_a">It typically takes longer than a standard Private Limited registration because the Registrar of Companies reviews the license application and objects clause before approving incorporation. Your CA will give you a realistic timeline once your objects and documents are reviewed.</p></div>
     </div>
   </div>

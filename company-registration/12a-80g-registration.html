@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between 12A and 80G?","acceptedAnswer":{"@type":"Answer","text":"They're two distinct benefits. 12A registration exempts your NGO's own income from income tax — it benefits the organisation. 80G registration lets your donors claim a tax deduction on their donation to you — it benefits the donor, not the NGO's own tax position. Many founders assume the two are the same thing; they aren't."}},{"@type":"Question","name":"Do I need both 12A and 80G?","acceptedAnswer":{"@type":"Answer","text":"Most NGOs apply for both together, since they're filed using the same forms — Form 10A for a fresh application, Form 10AB for renewal — and processed on the same income tax e-filing portal. You could hold only 12A, but without 80G your donors get no deduction for their contribution, which affects your ability to raise donations."}},{"@type":"Question","name":"How long is the registration valid?","acceptedAnswer":{"@type":"Answer","text":"Provisional registration is valid for 3 years from the year it's granted, or your first year of activity. Regular (permanent) registration is normally valid for 5 years — but under a Finance Act 2025 amendment, if your organisation's total income before claiming the 11/12 exemption stays under ₹5 crore in each of the 2 preceding years, your renewed registration gets 10-year validity instead of 5. Renewal must be filed at least 6 months before expiry."}},{"@type":"Question","name":"What is Form 10BD and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"Form 10BD is an annual statement of donations received that your NGO must file with the income tax department once you hold 80G registration. After it's filed, your donors receive a Form 10BE certificate — the document they actually need to claim their 80G deduction. It's an ongoing annual compliance step, not a one-time filing, and missing it means your donors can't claim their deduction even if your registration itself is valid."}},{"@type":"Question","name":"Can a Trust or Society apply, or only a Section 8 Company?","acceptedAnswer":{"@type":"Answer","text":"Any of the three — Section 8 Company, Trust, or Society — can apply for 12A and 80G registration. It isn't exclusive to Section 8 companies. The requirement is that your organisation is already registered under one of these structures, with a governing document (MOA, Trust Deed, or Society bylaws) that clearly states your charitable objects."}},{"@type":"Question","name":"How much does it cost, and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — pricing depends on your entity type and financial complexity. Share your registration certificate and governing document with us and a CA will confirm an exact quote on your first call. We don't quote a fixed timeline upfront; your CA will confirm a realistic timeline once your documents are reviewed."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between 12A and 80G?","acceptedAnswer":{"@type":"Answer","text":"They're two distinct benefits. 12A registration exempts your NGO's own income from income tax — it benefits the organisation. 80G registration lets your donors claim a tax deduction on their donation to you — it benefits the donor, not the NGO's own tax position. Many founders assume the two are the same thing; they aren't."}},{"@type":"Question","name":"Do I need both 12A and 80G?","acceptedAnswer":{"@type":"Answer","text":"Most NGOs apply for both together, since they're filed using the same forms — Form 10A for a fresh application, Form 10AB for renewal — and processed on the same income tax e-filing portal. You could hold only 12A, but without 80G your donors get no deduction for their contribution, which affects your ability to raise donations."}},{"@type":"Question","name":"How long is the registration valid?","acceptedAnswer":{"@type":"Answer","text":"Provisional registration is valid for 3 years from the year it's granted, or your first year of activity. Regular (permanent) registration is normally valid for 5 years — but under a Finance Act 2025 amendment, if your organisation's total income before claiming the 11/12 exemption stays under ₹5 crore in each of the 2 preceding years, your renewed 12A registration can get 10-year validity instead of 5 — confirm with your CA how this applies to 80G. Renewal must be filed at least 6 months before expiry."}},{"@type":"Question","name":"What is Form 10BD and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"Form 10BD is an annual statement of donations received that your NGO must file with the income tax department once you hold 80G registration. After it's filed, your donors receive a Form 10BE certificate — the document they actually need to claim their 80G deduction. It's an ongoing annual compliance step, not a one-time filing, and missing it means your donors can't claim their deduction even if your registration itself is valid."}},{"@type":"Question","name":"Can a Trust or Society apply, or only a Section 8 Company?","acceptedAnswer":{"@type":"Answer","text":"Any of the three — Section 8 Company, Trust, or Society — can apply for 12A and 80G registration. It isn't exclusive to Section 8 companies. The requirement is that your organisation is already registered under one of these structures, with a governing document (MOA, Trust Deed, or Society bylaws) that clearly states your charitable objects."}},{"@type":"Question","name":"How much does it cost, and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. Any government or third-party costs are billed separately. Share your registration certificate and governing document with us and a CA will walk you through the full cost on your first call. We don't quote a fixed timeline upfront; your CA will confirm a realistic timeline once your documents are reviewed."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "12A and 80G Registration", "serviceType": "12A and 80G Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "12A income tax exemption and 80G donor-deduction registration for already-incorporated NGOs — Form 10A/10AB filed by a CA on the income tax e-filing portal, professional fee ₹1,999 plus statutory costs.", "audience": {"@type": "Audience", "audienceType": "Section 8 companies, Trusts, and Societies"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "12A & 80G Registration"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>12A &amp; 80G</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/12a-80g-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">12A and 80G Registration Cost in India: Professional Fee, Government Fee and Other Costs (September 2026)</h3>
+          <p class="creg_article_excerpt">What 12A and 80G registration costs: Shunya's professional fee, whether any government fee applies, and the other costs to budget for.</p>
+        </div>
+      </a>
+      <a href="/company-registration/12a-80g-registration-documents-required" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Documents Required for 12A and 80G Registration: Checklist for Trusts, Societies and Section 8 Organisations</h3>
+          <p class="creg_article_excerpt">The documents a trust, society or Section 8 company should keep ready for 12A and 80G registration, with a checklist and common mismatches.</p>
+        </div>
+      </a>
+      <a href="/company-registration/12a-80g-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">12A and 80G Registration Process and Timeline: Form 10A, Provisional and Regular Registration Step by Step</h3>
+          <p class="creg_article_excerpt">Step by step: how 12A and 80G registration works, from Form 10A provisional registration to Form 10AB regular registration, and what timing to expect.</p>
+        </div>
+      </a>
+      <a href="/company-registration/12a-and-80g-difference-and-eligibility" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">12A vs 80G: The Difference, Who Is Eligible and Whether Your NGO Needs Both</h3>
+          <p class="creg_article_excerpt">12A exempts your organisation's income, 80G lets donors claim a deduction. Who is eligible, whether you need both, and the donor-side limits.</p>
+        </div>
+      </a>
+      <a href="/company-registration/12a-80g-validity-renewal-and-form-10ab" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">12A and 80G Validity and Renewal: 3, 5 or 10 Years, and How Form 10AB Works</h3>
+          <p class="creg_article_excerpt">How long 12A and 80G last, when 10-year validity applies, when to file Form 10AB, and what happens if you miss the renewal window.</p>
+        </div>
+      </a>
+      <a href="/company-registration/12a-80g-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Shunya's 12A and 80G Registration Package: Professional Fee, What's Included and What's Billed Separately</h3>
+          <p class="creg_article_excerpt">What Shunya's professional fee covers for 12A and 80G registration, what is billed separately, and what to ask any provider before you pay.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/12a-80g-registration-guides">view all 8 12A &amp; 80G guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -456,10 +541,10 @@
     <div class="creg_faq_list">
       <div class="creg_faq_card"><p class="creg_faq_q">What's the difference between 12A and 80G?</p><p class="creg_faq_a">They're two distinct benefits. 12A registration exempts your NGO's own income from income tax — it benefits the organisation. 80G registration lets your donors claim a tax deduction on their donation to you — it benefits the donor, not the NGO's own tax position. Many founders assume the two are the same thing; they aren't.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Do I need both 12A and 80G?</p><p class="creg_faq_a">Most NGOs apply for both together, since they're filed using the same forms — Form 10A for a fresh application, Form 10AB for renewal — and processed on the same income tax e-filing portal. You could hold only 12A, but without 80G your donors get no deduction for their contribution, which affects your ability to raise donations.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How long is the registration valid?</p><p class="creg_faq_a">Provisional registration is valid for 3 years from the year it's granted, or your first year of activity. Regular (permanent) registration is normally valid for 5 years — but under a Finance Act 2025 amendment, if your organisation's total income before claiming the 11/12 exemption stays under ₹5 crore in each of the 2 preceding years, your renewed registration gets 10-year validity instead of 5. Renewal must be filed at least 6 months before expiry.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How long is the registration valid?</p><p class="creg_faq_a">Provisional registration is valid for 3 years from the year it's granted, or your first year of activity. Regular (permanent) registration is normally valid for 5 years — but under a Finance Act 2025 amendment, if your organisation's total income before claiming the 11/12 exemption stays under ₹5 crore in each of the 2 preceding years, your renewed 12A registration can get 10-year validity instead of 5 — confirm with your CA how this applies to 80G. Renewal must be filed at least 6 months before expiry.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">What is Form 10BD and why does it matter?</p><p class="creg_faq_a">Form 10BD is an annual statement of donations received that your NGO must file with the income tax department once you hold 80G registration. After it's filed, your donors receive a Form 10BE certificate — the document they actually need to claim their 80G deduction. It's an ongoing annual compliance step, not a one-time filing, and missing it means your donors can't claim their deduction even if your registration itself is valid.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Can a Trust or Society apply, or only a Section 8 Company?</p><p class="creg_faq_a">Any of the three — Section 8 Company, Trust, or Society — can apply for 12A and 80G registration. It isn't exclusive to Section 8 companies. The requirement is that your organisation is already registered under one of these structures, with a governing document (MOA, Trust Deed, or Society bylaws) that clearly states your charitable objects.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does it cost, and how long does it take?</p><p class="creg_faq_a">There's no flat fee — pricing depends on your entity type and financial complexity. Share your registration certificate and governing document with us and a CA will confirm an exact quote on your first call. We don't quote a fixed timeline upfront; your CA will confirm a realistic timeline once your documents are reviewed.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does it cost, and how long does it take?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. Any government or third-party costs are billed separately. Share your registration certificate and governing document with us and a CA will walk you through the full cost on your first call. We don't quote a fixed timeline upfront; your CA will confirm a realistic timeline once your documents are reviewed.</p></div>
     </div>
   </div>
 </section>

@@ -172,8 +172,23 @@
 .creg_cta_secondary:hover{opacity:.9;}
 .creg_cta_consult{display:block;margin-top:24px;font-family:var(--font-inter),sans-serif;font-size:.8125rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .creg_cta_consult:hover{color:rgba(255,255,255,.65);}
+.creg_articles_section{position:relative;overflow:hidden;background:#0a0a0b;border-top:1px solid rgba(255,255,255,.08);}
+.creg_articles_glow{position:absolute;bottom:0;right:0;width:600px;height:400px;background:radial-gradient(ellipse,rgba(20,110,255,.06) 0%,transparent 70%);pointer-events:none;}
+.creg_articles_inner{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:80px 24px;}
+.creg_articles_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.creg_articles_grid{grid-template-columns:1fr;}}
+.creg_article_card{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:20px;text-decoration:none;}
+.creg_article_top{display:flex;align-items:center;justify-content:space-between;}
+.creg_article_tag{font-family:var(--font-inter),sans-serif;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em;background:rgba(20,110,255,.15);color:#146EFF;border:1px solid rgba(20,110,255,.3);}
+.creg_article_read_time{font-family:var(--font-inter),sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);}
+.creg_article_content{flex:1;}
+.creg_article_title{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;color:#fff;line-height:1.4;margin:0 0 12px;}
+.creg_article_excerpt{font-family:var(--font-inter),sans-serif;font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.65;margin:0;}
+.creg_articles_cta{margin-top:40px;text-align:center;}
+.creg_articles_cta a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-inter),sans-serif;font-size:.875rem;font-weight:600;color:#7ab8ff;text-decoration:none;}
+.creg_articles_cta a:hover{text-decoration:underline;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an Indian Subsidiary (WOS)?","acceptedAnswer":{"@type":"Answer","text":"A Wholly Owned Subsidiary (WOS) is a Private Limited Company incorporated in India where a foreign parent company holds virtually all of the shares. It is registered under the same Companies Act, 2013 framework as any Private Limited company, with additional FEMA/RBI compliance layered on top for the foreign investment involved."}},{"@type":"Question","name":"Can a foreign company be the sole shareholder of an Indian subsidiary?","acceptedAnswer":{"@type":"Answer","text":"No. Indian law requires a minimum of 2 shareholders for a Private Limited company, so a single foreign corporate entity cannot be the sole shareholder. In practice, the foreign parent holds 99%+ of shares directly, and a nominee shareholder — an individual or another group entity — holds a token share to meet this requirement."}},{"@type":"Question","name":"What is the FDI reporting requirement for an Indian Subsidiary?","acceptedAnswer":{"@type":"Answer","text":"Foreign Direct Investment into the subsidiary must be reported to the RBI. Form FC-GPR is filed via the RBI's FIRMS portal within 30 days of allotting shares to the foreign parent, and an Annual Return on Foreign Liabilities and Assets (FLA Return) must be filed with the RBI every year by 15 July."}},{"@type":"Question","name":"What extra documents are needed from the parent company?","acceptedAnswer":{"@type":"Answer","text":"You'll need the foreign parent's certificate of incorporation and a board resolution authorising the Indian subsidiary and the investment. These documents typically need notarisation and apostille (or consular legalisation) in the country of origin before they can be used for the Indian filing — this adds real time versus a purely domestic incorporation."}},{"@type":"Question","name":"Is 100% foreign ownership always allowed?","acceptedAnswer":{"@type":"Answer","text":"Not always. Most sectors allow 100% FDI under the automatic route, which needs no prior government approval, but some sectors require the government approval route instead. Check applicability for your specific sector before assuming automatic-route eligibility — our CA can confirm this for you."}},{"@type":"Question","name":"What is the ongoing compliance like for an Indian Subsidiary?","acceptedAnswer":{"@type":"Answer","text":"Heavier than a standard Private Limited company. Beyond the usual MCA filings, you'll have the FEMA/RBI layer — the FC-GPR filing and the annual FLA return — and related-party transactions with your foreign parent may trigger transfer-pricing documentation requirements. It's a genuine trade-off worth factoring in before you incorporate."}},{"@type":"Question","name":"How much does Indian Subsidiary registration cost?","acceptedAnswer":{"@type":"Answer","text":"There's no flat fee — cost depends on your shareholding structure, number of directors, and whether your sector falls under the automatic or government approval route for FDI. Share your structure with us and a CA will confirm an exact quote on your first call. Timelines also vary more than a domestic Private Limited incorporation, since they depend on apostille and notarisation turnaround from the parent company's country, which we don't control."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an Indian Subsidiary (WOS)?","acceptedAnswer":{"@type":"Answer","text":"A Wholly Owned Subsidiary (WOS) is a Private Limited Company incorporated in India where a foreign parent company holds virtually all of the shares. It is registered under the same Companies Act, 2013 framework as any Private Limited company, with additional FEMA/RBI compliance layered on top for the foreign investment involved."}},{"@type":"Question","name":"Can a foreign company be the sole shareholder of an Indian subsidiary?","acceptedAnswer":{"@type":"Answer","text":"No. Indian law requires a minimum of 2 shareholders for a Private Limited company, so a single foreign corporate entity cannot be the sole shareholder. In practice, the foreign parent holds 99%+ of shares directly, and a nominee shareholder — an individual or another group entity — holds a token share to meet this requirement."}},{"@type":"Question","name":"What is the FDI reporting requirement for an Indian Subsidiary?","acceptedAnswer":{"@type":"Answer","text":"Foreign Direct Investment into the subsidiary must be reported to the RBI. Form FC-GPR is filed via the RBI's FIRMS portal within 30 days of allotting shares to the foreign parent, and an Annual Return on Foreign Liabilities and Assets (FLA Return) must be filed with the RBI every year by 15 July."}},{"@type":"Question","name":"What extra documents are needed from the parent company?","acceptedAnswer":{"@type":"Answer","text":"You'll need the foreign parent's certificate of incorporation and a board resolution authorising the Indian subsidiary and the investment. These documents typically need notarisation and apostille (or consular legalisation) in the country of origin before they can be used for the Indian filing — this adds real time versus a purely domestic incorporation."}},{"@type":"Question","name":"Is 100% foreign ownership always allowed?","acceptedAnswer":{"@type":"Answer","text":"Not always. Most sectors allow 100% FDI under the automatic route, which needs no prior government approval, but some sectors require the government approval route instead. Check applicability for your specific sector before assuming automatic-route eligibility — our CA can confirm this for you."}},{"@type":"Question","name":"What is the ongoing compliance like for an Indian Subsidiary?","acceptedAnswer":{"@type":"Answer","text":"Heavier than a standard Private Limited company. Beyond the usual MCA filings, you'll have the FEMA/RBI layer — the FC-GPR filing and the annual FLA return — and related-party transactions with your foreign parent may trigger transfer-pricing documentation requirements. It's a genuine trade-off worth factoring in before you incorporate."}},{"@type":"Question","name":"How much does Indian Subsidiary registration cost?","acceptedAnswer":{"@type":"Answer","text":"Shunya's professional fee is ₹1,999. Government fees, stamp duty and third-party costs such as apostille and the DSC are billed separately, and depend on your shareholding structure and sector route. Share your structure with us and a CA will walk you through the full cost on your first call. Timelines also vary more than a domestic Private Limited incorporation, since they depend on apostille and notarisation turnaround from the parent company's country, which we don't control."}}]}</script>
 <link rel="stylesheet" href="/exit-popup.css"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Indian Subsidiary Registration", "serviceType": "Indian Subsidiary (Wholly Owned Subsidiary) Registration", "provider": {"@type": "Organization", "name": "Shunya", "url": "https://shunya.so"}, "areaServed": "IN", "description": "Indian Subsidiary (WOS) registration handled by a qualified CA — SPICe+ filed on the MCA portal, FEMA/RBI compliance including FC-GPR reporting included, professional fee ₹1,999 plus statutory costs."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shunya.so"}, {"@type": "ListItem", "position": 2, "name": "Company Registration", "item": "https://shunya.so/company-registration"}, {"@type": "ListItem", "position": 3, "name": "Indian Subsidiary"}]}</script></head>
 <body class="__variable_a4bae9 __variable_f367f3 __variable_73ee6c">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -446,6 +461,76 @@
   </div>
 </section>
 
+<!-- Guides -->
+<section class="creg_articles_section">
+  <div class="creg_articles_glow"></div>
+  <div class="creg_articles_inner">
+    <div class="creg_section_center">
+      <h2 class="creg_section_h2">before you register your <strong>Indian Subsidiary</strong></h2>
+      <p class="creg_section_sub">the cost, documents, timeline and pitfalls, answered by a CA.</p>
+    </div>
+    <div class="creg_articles_grid">
+      <a href="/company-registration/indian-subsidiary-registration-cost-and-fees" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Cost</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Indian Subsidiary Registration Cost and Fees: What a Foreign Parent Actually Pays</h3>
+          <p class="creg_article_excerpt">Itemised cost of setting up an Indian subsidiary: professional fee, MCA and stamp duty, apostille abroad, DSC and bank charges.</p>
+        </div>
+      </a>
+      <a href="/company-registration/indian-subsidiary-registration-documents-and-apostille" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Documents</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Indian Subsidiary Registration Documents: Parent Company Papers, Apostille and Director KYC</h3>
+          <p class="creg_article_excerpt">Checklist of documents a foreign parent needs for an Indian subsidiary, and which ones need notarisation and apostille.</p>
+        </div>
+      </a>
+      <a href="/company-registration/indian-subsidiary-registration-process-and-timeline" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Process</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Indian Subsidiary Registration Process and Timeline: From Parent Resolution to FC-GPR</h3>
+          <p class="creg_article_excerpt">Step-by-step process and realistic timeline for setting up an Indian subsidiary, and what slows it down.</p>
+        </div>
+      </a>
+      <a href="/company-registration/indian-subsidiary-fdi-and-fema-reporting-requirements" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Eligibility</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Indian Subsidiary FDI and FEMA Reporting Requirements: Routes, FC-GPR and FLA Explained</h3>
+          <p class="creg_article_excerpt">FDI route, land-border rule, FC-GPR within 30 days and the annual FLA return: what a foreign parent must report.</p>
+        </div>
+      </a>
+      <a href="/company-registration/indian-subsidiary-shareholder-and-director-requirements" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Compare</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Indian Subsidiary Shareholder and Director Requirements: Who Can Hold What</h3>
+          <p class="creg_article_excerpt">How many shareholders and directors a wholly owned Indian subsidiary needs, who can be the nominee, and who counts as the resident director.</p>
+        </div>
+      </a>
+      <a href="/company-registration/indian-subsidiary-registration-package-shunya-fee-and-inclusions" class="creg_article_card">
+        <div class="creg_article_top">
+          <span class="creg_article_tag">Package</span>
+        </div>
+        <div class="creg_article_content">
+          <h3 class="creg_article_title">Indian Subsidiary Registration with Shunya: Fee, Inclusions and What Is Billed Separately</h3>
+          <p class="creg_article_excerpt">What Shunya's professional fee covers for an Indian subsidiary, what is billed separately, what to ask any provider, and how to start.</p>
+        </div>
+      </a>
+    </div>
+    <div class="creg_articles_cta">
+      <a href="/company-registration/indian-subsidiary-registration-guides">view all 8 Indian Subsidiary guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="creg_faq_section">
   <div class="creg_faq_glow"></div>
@@ -460,7 +545,7 @@
       <div class="creg_faq_card"><p class="creg_faq_q">What extra documents are needed from the parent company?</p><p class="creg_faq_a">You'll need the foreign parent's certificate of incorporation and a board resolution authorising the Indian subsidiary and the investment. These documents typically need notarisation and apostille (or consular legalisation) in the country of origin before they can be used for the Indian filing — this adds real time versus a purely domestic incorporation.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">Is 100% foreign ownership always allowed?</p><p class="creg_faq_a">Not always. Most sectors allow 100% FDI under the automatic route, which needs no prior government approval, but some sectors require the government approval route instead. Check applicability for your specific sector before assuming automatic-route eligibility — our CA can confirm this for you.</p></div>
       <div class="creg_faq_card"><p class="creg_faq_q">What is the ongoing compliance like for an Indian Subsidiary?</p><p class="creg_faq_a">Heavier than a standard Private Limited company. Beyond the usual MCA filings, you'll have the FEMA/RBI layer — the FC-GPR filing and the annual FLA return — and related-party transactions with your foreign parent may trigger transfer-pricing documentation requirements. It's a genuine trade-off worth factoring in before you incorporate.</p></div>
-      <div class="creg_faq_card"><p class="creg_faq_q">How much does Indian Subsidiary registration cost?</p><p class="creg_faq_a">There's no flat fee — cost depends on your shareholding structure, number of directors, and whether your sector falls under the automatic or government approval route for FDI. Share your structure with us and a CA will confirm an exact quote on your first call. Timelines also vary more than a domestic Private Limited incorporation, since they depend on apostille and notarisation turnaround from the parent company's country, which we don't control.</p></div>
+      <div class="creg_faq_card"><p class="creg_faq_q">How much does Indian Subsidiary registration cost?</p><p class="creg_faq_a">Shunya's professional fee is ₹1,999. Government fees, stamp duty and third-party costs such as apostille and the DSC are billed separately, and depend on your shareholding structure and sector route. Share your structure with us and a CA will walk you through the full cost on your first call. Timelines also vary more than a domestic Private Limited incorporation, since they depend on apostille and notarisation turnaround from the parent company's country, which we don't control.</p></div>
     </div>
   </div>
 </section>
