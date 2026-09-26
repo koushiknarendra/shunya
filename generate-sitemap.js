@@ -3,7 +3,17 @@ const path = require("path");
 
 const BASE_URL = "https://shunya.so";
 const WEB_DIR = __dirname;
-const TODAY = new Date().toISOString().split("T")[0];
+
+// lastmod comes from the page's own dateModified (JSON-LD / article:modified_time).
+// Never "today": a sitemap where every URL changes on every deploy teaches Google to
+// ignore lastmod. Pages with no recorded date simply omit <lastmod>.
+function lastmodFor(slug) {
+  const file = path.join(WEB_DIR, slug === "/" ? "index.html" : slug.replace(/^\//, "") + ".html");
+  if (!fs.existsSync(file)) return null;
+  const html = fs.readFileSync(file, "utf8");
+  const m = html.match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})/) || html.match(/article:modified_time" content="(\d{4}-\d{2}-\d{2})/);
+  return m ? m[1] : null;
+}
 
 // Pages excluded from the sitemap
 const EXCLUDE = new Set([
@@ -100,8 +110,7 @@ const slugs = collectHtmlFiles(WEB_DIR, WEB_DIR).sort((a, b) => {
 
 const entries = slugs.map((slug) => `  <url>
     <loc>${BASE_URL}${slug === "/" ? "/" : slug}</loc>
-    <lastmod>${TODAY}</lastmod>
-    <changefreq>${getChangefreq(slug)}</changefreq>
+${lastmodFor(slug) ? `    <lastmod>${lastmodFor(slug)}</lastmod>\n` : ""}    <changefreq>${getChangefreq(slug)}</changefreq>
     <priority>${getPriority(slug).toFixed(1)}</priority>
   </url>`).join("\n");
 
