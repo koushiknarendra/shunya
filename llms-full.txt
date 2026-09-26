@@ -744,9 +744,9 @@ What FSSAI registration means, the three license tiers, and how the 2026 turnove
 https://shunya.so/startup-india/angel-tax-exemption-section-56-startups
 Angel tax used to hit startups raising funding at a valuation premium. DPIIT-recognised startups meeting specific conditions can be fully exempted.
 
-## How to Apply for Startup India Online
+## Startup India Registration Online: Step-by-Step Process
 https://shunya.so/startup-india/how-to-register-for-startup-india-online
-How to apply for Startup India (DPIIT) recognition: eligibility, the exact application steps, documents needed, fees, and how long it takes.
+Startup India registration online: DPIIT eligibility, step-by-step application, documents needed, no government fee, and recognition in about 2 to 4 weeks.
 
 ## Startup India / DPIIT Recognition: Complete Guide
 https://shunya.so/startup-india/resources
@@ -886,9 +886,9 @@ Company registration cost in Haryana: ₹1,999 flat professional fee + low stamp
 https://shunya.so/company-registration/company-registration-cost-in-himachal-pradesh
 Company registration cost in Himachal Pradesh: ₹1,999 flat professional fee + low stamp duty (~₹123), no Professional Tax.
 
-## How Much Does Company Registration Cost in India?
+## Company Registration Fees in India: Cost, MCA & Stamp Duty
 https://shunya.so/company-registration/company-registration-cost-in-india
-Company registration cost in India breaks into three parts: professional fee, MCA government fees, and state stamp duty. Shunya charges a flat ₹1,999.
+Company registration fees in India: professional fee, MCA fee (nil up to ₹15 lakh authorised capital) and state stamp duty. Shunya charges ₹1,999 flat.
 
 ## Pvt Ltd Company Registration Fees in Jharkhand
 https://shunya.so/company-registration/company-registration-cost-in-jharkhand
@@ -1240,7 +1240,7 @@ Indian subsidiary FDI and FEMA reporting: automatic vs government route, land-bo
 
 ## Indian Subsidiary (WOS) Registration Online
 https://shunya.so/company-registration/indian-subsidiary-registration
-CA-assisted Indian Subsidiary (WOS) registration, SPICe+ filed with FEMA/RBI compliance included. Professional fee ₹1,999.
+CA-assisted Indian Subsidiary (WOS) registration, SPICe+ filed with a FEMA-aware structure. Professional fee ₹1,999.
 
 ## Indian Subsidiary Registration Cost and Fees
 https://shunya.so/company-registration/indian-subsidiary-registration-cost-and-fees
