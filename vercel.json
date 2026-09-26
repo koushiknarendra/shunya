@@ -4,6 +4,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/company-registration/shunya-vs-incorpx", "destination": "/company-registration", "permanent": true },
+    { "source": "/company-registration/shunya-vs-indiafilings", "destination": "/company-registration", "permanent": true },
+    { "source": "/company-registration/shunya-vs-vakilsearch", "destination": "/company-registration", "permanent": true },
     { "source": "/start-registration", "destination": "/company-registration", "permanent": true },
     { "source": "/blogs/how-llc-registration-works-and-its-key-business-benefits", "destination": "/blogs/how-llp-registration-works-and-its-key-business-benefits", "permanent": true },
     { "source": "/blogs/how-to-register-a-limited-company-online-with-companies-house", "destination": "/blogs/how-to-register-a-private-limited-company-online-with-mca", "permanent": true },
