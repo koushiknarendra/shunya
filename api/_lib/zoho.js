@@ -99,7 +99,7 @@ const SERVICE_BY_PATH = [
   [/^\/lower-tds-certificate-nri/, 'Lower TDS Certificate (NRI)'],
   [/^\/fssai-registration/, 'FSSAI Registration & License'],
   [/^\/(company-closure|ccfs-2026-company-closure)/, 'Company Closure / Strike Off'],
-  [/^\/(company-registration|start-registration)/, 'Company Registration'],
+  [/^\/company-registration/, 'Company Registration'],
   [/^\/startup-india/, 'Startup India Registration'],
   [/^\/15ca-15cb/, 'Form 145 / 146 (15CA/15CB)'],
   [/^\/consultation/, 'CA Consultation'],

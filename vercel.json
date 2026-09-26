@@ -4,6 +4,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/start-registration", "destination": "/company-registration", "permanent": true },
     { "source": "/blogs/how-llc-registration-works-and-its-key-business-benefits", "destination": "/blogs/how-llp-registration-works-and-its-key-business-benefits", "permanent": true },
     { "source": "/blogs/how-to-register-a-limited-company-online-with-companies-house", "destination": "/blogs/how-to-register-a-private-limited-company-online-with-mca", "permanent": true },
     { "source": "/blogs/how-to-register-an-llc-online-in-the-usa-step-by-step", "destination": "/blogs/how-to-register-an-llp-online-in-india-step-by-step", "permanent": true },
@@ -15,7 +16,6 @@
     { "source": "/_next/image", "destination": "/api/next-image" },
     { "source": "/startup-india/apply", "destination": "/api/startup-india/apply" },
     { "source": "/transaction/verify", "destination": "/api/transaction/verify" },
-    { "source": "/start-registration", "destination": "/start-registration.html" },
     { "source": "/blogs/:slug", "destination": "/blogs/:slug.html" },
     { "source": "/thank-you-ca", "destination": "/thank-you-ca.html" }
   ],
