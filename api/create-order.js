@@ -4,7 +4,7 @@ const SERVICE_CONFIG = {
   '15ca_15cb': {
     receiptPrefix: 'SH15CB',
     label: 'Form 145 / 146 (15CA/15CB)',
-    amount: 199900,
+    amount: 299900,
     notesExtra: ({ company }) => ({ company: company || 'Individual / NRI' }),
   },
   'gst-refund': {
