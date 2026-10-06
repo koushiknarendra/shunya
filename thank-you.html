@@ -45,6 +45,13 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNM9JT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 (function(){
+  var service = new URLSearchParams(window.location.search).get('service') || 'general';
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event:'thank_you_callback', service_slug: service});
+})();
+</script>
+<script>
+(function(){
   var tries = 0;
   function fireLead(){
     if (typeof window.oaiq === 'function') {
