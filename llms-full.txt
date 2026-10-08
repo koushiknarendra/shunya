@@ -52,7 +52,7 @@ File your Income Tax Return online with a CA. Missed the deadline? You can still
 
 ## Tax Audit u/s 44AB Online | Form 3CD Filing
 https://shunya.so/tax-audit-44ab
-Tax audit under Section 44AB filed by a CA: Form 3CA/3CB and 3CD, UDIN-tagged, before the 30 September 2026 deadline. From ₹4,999.
+Tax audit under Section 44AB filed by a CA: Form 3CA/3CB and 3CD, UDIN-tagged. Extended: tax audit report now due 21 October 2026. From ₹4,999.
 
 ## GST Refund Filing Online: CA-Assisted RFD-01
 https://shunya.so/gst-refund-filing
@@ -544,7 +544,7 @@ If tax was deducted at source but your actual liability is lower, the excess com
 
 ## Belated and Revised Tax Audit Report — How It Works
 https://shunya.so/tax-audit-44ab/belated-revised-tax-audit-report
-How to file a belated tax audit report after missing 30 September, and how a revised Form 3CD works if you find an error after filing.
+How to file a belated tax audit report if you miss the extended 21 October 2026 deadline, and how a revised Form 3CD works if you find an error after filing.
 
 ## How to Calculate F&O Turnover for Tax Audit
 https://shunya.so/tax-audit-44ab/fo-turnover-calculation-tax-audit
@@ -574,9 +574,9 @@ Who needs a tax audit for AY 2026-27: turnover thresholds for businesses and pro
 https://shunya.so/tax-audit-44ab/tax-audit-documents-checklist
 The documents a tax audit actually needs — separate checklists for businesses, professionals, and F&O traders, and what's worth digitising.
 
-## Tax Audit Due Date AY 2026-27: 30 Sept, Extension Status
+## Tax Audit Due Date AY 2026-27: Extended to 21 Oct 2026 (ITR 21 Nov)
 https://shunya.so/tax-audit-44ab/tax-audit-due-date-ay-2026-27
-Tax audit report due 30 September 2026, ITR 31 October 2026. No CBDT extension notified as of 25 Sept — what to do now and if you miss it.
+CBDT extended the AY 2026-27 tax audit report deadline to 21 October 2026 and the ITR for audit cases to 21 November 2026. Who's covered, who isn't, what to do now.
 
 ## Tax Audit Fees — What CAs Charge and Why
 https://shunya.so/tax-audit-44ab/tax-audit-fees-ca-charges

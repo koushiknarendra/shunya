@@ -16,7 +16,7 @@
 - [LLP Closure](https://shunya.so/company-closure-llp): Close an LLP via Form 24 strike-off under Rule 37 of the LLP Rules 2009. Typical total ₹5,999 – ₹11,999 depending on the case; exact quote before you pay.
 - [OPC Closure](https://shunya.so/company-closure-opc): Close a One Person Company via Form STK-2 strike-off, with a single-signatory resolution, bond and affidavit. Typical total ₹7,999 – ₹12,999 depending on the case; exact quote before you pay.
 - [ITR Filing](https://shunya.so/itr-filing): File your Income Tax Return online with a CA. Missed the deadline? You can still file a belated return for AY 2026-27 until 31 December 2026. From ₹999.
-- [Tax Audit (Section 44AB)](https://shunya.so/tax-audit-44ab): Tax audit under Section 44AB filed by a CA: Form 3CA/3CB and 3CD, UDIN-tagged, before the 30 September 2026 deadline. From ₹4,999.
+- [Tax Audit (Section 44AB)](https://shunya.so/tax-audit-44ab): Tax audit under Section 44AB filed by a CA: Form 3CA/3CB and 3CD, UDIN-tagged. Extended: tax audit report now due 21 October 2026. From ₹4,999.
 - [GST Refund Filing](https://shunya.so/gst-refund-filing): File your GST refund claim online with a qualified CA — export, inverted duty, excess balance refunds. RFD-01 preparation, filing & follow-up till credited.
 - [GSTR-9 & GSTR-9C Annual Return Filing](https://shunya.so/gstr-9-gstr-9c-filing): File GSTR-9 annual return and GSTR-9C reconciliation online with a qualified CA. Books-to-return reconciliation, ITC review. From ₹1,999.
 - [Startup India (DPIIT) Registration](https://shunya.so/startup-india): DPIIT recognition under the Startup India scheme.
@@ -166,7 +166,7 @@
 - [The 44AD Opt-Out Trap: When Audit Becomes Mandatory](https://shunya.so/tax-audit-44ab/presumptive-taxation-44ad-opt-out-audit-trap)
 - [Tax Audit Applicability Under Section 44AB for AY 2026-27](https://shunya.so/tax-audit-44ab/tax-audit-applicability-ay-2026-27)
 - [Tax Audit Documents Checklist — What to Keep Ready](https://shunya.so/tax-audit-44ab/tax-audit-documents-checklist)
-- [Tax Audit Due Date AY 2026-27: 30 Sept, Extension Status](https://shunya.so/tax-audit-44ab/tax-audit-due-date-ay-2026-27)
+- [Tax Audit Due Date AY 2026-27: Extended to 21 Oct 2026 (ITR 21 Nov)](https://shunya.so/tax-audit-44ab/tax-audit-due-date-ay-2026-27)
 - [Tax Audit Fees — What CAs Charge and Why](https://shunya.so/tax-audit-44ab/tax-audit-fees-ca-charges)
 - [How the Tax Audit Process Works Online](https://shunya.so/tax-audit-44ab/tax-audit-online-process)
 - [Late Tax Audit Penalty: Section 271B Explained](https://shunya.so/tax-audit-44ab/tax-audit-penalty-section-271b)
