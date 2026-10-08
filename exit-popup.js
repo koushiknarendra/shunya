@@ -159,3 +159,32 @@
     }, { passive: true });
   }
 })();
+
+/* Contact consent (WhatsApp/call/email): one line under every lead or payment button.
+   Added by Supermaxx; edit the wording here and it updates on every page. */
+(function () {
+  var SELECTOR = 'button[type="submit"], button[onclick*="handlePayment"], button[onclick*="handleLead"], [id$="_pay_btn"], [id$="_lead_btn"], .sh-exitpop-submit';
+  var CSS = '.sh-consent{font-size:12px;line-height:1.45;color:#82848e;margin:8px 0 0;text-align:left}.sh-consent a{color:inherit;text-decoration:underline}';
+  var TEXT = 'By continuing, you agree to be contacted by Shunya via call, email and WhatsApp about your request, as per our <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.';
+  // One line per form: placed under the last lead/payment button in that form.
+  function add(root) {
+    var buttons = (root.querySelectorAll ? root : document).querySelectorAll(SELECTOR);
+    for (var i = 0; i < buttons.length; i++) {
+      var b = buttons[i];
+      if (b.dataset.shConsent || b.closest('.embed-copy, [data-no-consent]')) continue;
+      b.dataset.shConsent = '1';
+      var box = b.closest('form') || b.parentElement;
+      var p = box.querySelector('.sh-consent');
+      if (!p) { p = document.createElement('p'); p.className = 'sh-consent'; p.innerHTML = TEXT; }
+      b.insertAdjacentElement('afterend', p);
+    }
+  }
+  function init() {
+    if (!document.getElementById('sh-consent-css')) { var s = document.createElement('style'); s.id = 'sh-consent-css'; s.textContent = CSS; document.head.appendChild(s); }
+    add(document);
+    // Forms added later (e.g. the exit popup) get the line too.
+    new MutationObserver(function (ms) { for (var i = 0; i < ms.length; i++) for (var j = 0; j < ms[i].addedNodes.length; j++) { var n = ms[i].addedNodes[j]; if (n.nodeType === 1) add(n.parentNode || n); } })
+      .observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
