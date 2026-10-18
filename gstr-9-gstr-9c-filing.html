@@ -692,7 +692,7 @@ async function handleLead() {
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Could not submit. Please try again.');
-    window.location.href = '/thank-you-callback';
+    window.location.href = '/thank-you-callback?service=gstr-9-gstr-9c-filing';
   } catch (err) {
     errEl.textContent = err.message || 'Something went wrong. Please try again.';
     errEl.style.display = 'block';
@@ -729,7 +729,7 @@ async function handlePayment() {
       name: 'Shunya', description: 'GSTR-9 & GSTR-9C Filing', order_id: data.orderId,
       prefill: { name, email, contact: phone },
       theme: { color: '#146EFF' },
-      handler: function () { window.location.href = '/thank-you-payment'; },
+      handler: function () { window.location.href = '/thank-you-payment?service=gstr-9-gstr-9c-filing'; },
     });
     btn.style.opacity = ''; btn.style.cursor = ''; btn.disabled = false; btn.innerHTML = originalHTML;
     rzp.open();

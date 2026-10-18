@@ -380,7 +380,7 @@ async function handleLead() {
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Could not submit. Please try again.');
-    window.location.href = '/thank-you-callback';
+    window.location.href = '/thank-you-callback?service=company-closure';
   } catch (err) {
     errEl.textContent = err.message || 'Something went wrong. Please try again.';
     errEl.style.display = 'block';
