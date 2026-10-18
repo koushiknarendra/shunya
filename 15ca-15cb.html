@@ -715,7 +715,7 @@ async function handleLeadCallback() {
       throw new Error(data.error || 'Could not submit. Please try again.');
     }
 
-    window.location.href = '/thank-you-callback';
+    window.location.href = '/thank-you-callback?service=15ca-15cb';
 
   } catch (err) {
     errEl.textContent = err.message || 'Something went wrong. Please try again.';
@@ -772,7 +772,7 @@ async function handlePayment() {
       prefill: { name, email, contact: phone },
       theme: { color: '#146EFF' },
       handler: function () {
-        window.location.href = '/thank-you-payment';
+        window.location.href = '/thank-you-payment?service=15ca-15cb';
       },
     });
 
