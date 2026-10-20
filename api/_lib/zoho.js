@@ -134,6 +134,19 @@ export function pageUrlFromRequest(req) {
   }
 }
 
+// Google ad click id from the page a request came from (gclid, else gbraid/wbraid), as "gclid=...".
+// Kept in its own Razorpay note (each note fits 256 chars) so paid orders can be reported back to Google Ads.
+export function clickIdFromRequest(req) {
+  try {
+    const u = new URL(req.headers.referer || '');
+    for (const k of ['gclid', 'gbraid', 'wbraid']) {
+      const v = u.searchParams.get(k);
+      if (v && /^[\w-]{10,200}$/.test(v)) return `${k}=${v}`;
+    }
+  } catch {}
+  return '';
+}
+
 // lead: { name, phone, email?, company?, source, service?, gstin?, url?, details?: { label: value },
 //         payment?: { status: 'Pending' | 'Paid', amountPaise?, paymentId?, orderId?, paidAt?: Date } }
 // Never throws: a CRM outage must not break the visitor's form submit or payment.

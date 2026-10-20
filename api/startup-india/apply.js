@@ -1,4 +1,4 @@
-import { pageUrlFromRequest, pushOrder } from '../_lib/zoho.js';
+import { clickIdFromRequest, pageUrlFromRequest, pushOrder } from '../_lib/zoho.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -27,6 +27,7 @@ export default async function handler(req, res) {
 
   const amount = isDiscounted ? 499900 : 549900; // ₹4,999 or ₹5,499 in paise
   const pageUrl = pageUrlFromRequest(req);
+  const clickId = clickIdFromRequest(req);
   const receipt = `SHSI_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 
   const credentials = Buffer.from(
@@ -52,6 +53,7 @@ export default async function handler(req, res) {
         date_of_incorporation: date_of_incorporation || '',
         service: 'Startup India Registration',
         ...(pageUrl ? { page_url: pageUrl } : {}),
+        ...(clickId ? { click_id: clickId } : {}),
       },
     }),
   });

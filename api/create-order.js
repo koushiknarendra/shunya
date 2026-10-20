@@ -1,4 +1,4 @@
-import { pageUrlFromRequest, pushOrder } from './_lib/zoho.js';
+import { clickIdFromRequest, pageUrlFromRequest, pushOrder } from './_lib/zoho.js';
 
 const SERVICE_CONFIG = {
   '15ca_15cb': {
@@ -111,6 +111,7 @@ export default async function handler(req, res) {
   const receipt = `${config.receiptPrefix}_${Date.now()}_${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 
   const pageUrl = pageUrlFromRequest(req);
+  const clickId = clickIdFromRequest(req);
 
   const notes = {
     name,
@@ -120,6 +121,7 @@ export default async function handler(req, res) {
     ...(selectedPlan ? { plan: selectedPlan } : {}),
     ...(config.notesExtra ? config.notesExtra(req.body) : {}),
     ...(pageUrl ? { page_url: pageUrl } : {}),
+    ...(clickId ? { click_id: clickId } : {}),
   };
 
   const credentials = Buffer.from(
