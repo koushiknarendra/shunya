@@ -365,6 +365,15 @@
             <button type="button" id="p15_pay_btn" class="p15_secondary_btn" onclick="handlePayment()">
               Start now: <s style="opacity:.55;font-weight:500;">₹5,499</s>₹2,999 →
             </button>
+            <div id="p15_pay_fail" role="alert" style="display:none;padding:14px;border:1px solid rgba(248,113,113,0.2);background:rgba(248,113,113,0.1);border-radius:12px;font-family:var(--font-inter),sans-serif;">
+              <p style="margin:0 0 10px;font-size:.8125rem;font-weight:600;color:#f87171;">Payment didn't go through.</p>
+              <button type="button" class="p15_secondary_btn" onclick="p15RetryPayment()">Retry payment</button>
+              <p style="margin:12px 0 8px;font-size:.75rem;color:rgba(255,255,255,.45);text-align:center;">Talk to a CA</p>
+              <div style="display:flex;gap:8px;">
+                <a class="p15_wa_btn" href="tel:+919326918797">Call</a>
+                <a class="p15_wa_btn" href="https://wa.me/919326918797?text=Hi%2C%20my%2015CA%2F15CB%20payment%20failed" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
+            </div>
           </div>
           <p class="p15_wa_divider">or connect instantly</p>
           <a class="p15_wa_btn" href="https://wa.me/919326918797" target="_blank" rel="noopener noreferrer">
@@ -771,6 +780,27 @@ async function handleLeadCallback() {
   }
 }
 
+let p15RzpOptions = null;
+function p15ShowPayFail() {
+  const box = document.getElementById('p15_pay_fail');
+  if (box) box.style.display = 'block';
+}
+function p15HidePayFail() {
+  const box = document.getElementById('p15_pay_fail');
+  if (box) box.style.display = 'none';
+}
+function p15OpenCheckout(opts) {
+  p15RzpOptions = opts;
+  p15HidePayFail();
+  const rzp = new Razorpay(opts);
+  rzp.on('payment.failed', function () { p15ShowPayFail(); });
+  rzp.open();
+}
+function p15RetryPayment() {
+  if (p15RzpOptions) p15OpenCheckout(p15RzpOptions);
+  else handlePayment();
+}
+
 async function handlePayment() {
   const btn = document.getElementById('p15_pay_btn');
   const errEl = document.getElementById('p15_error');
@@ -806,7 +836,7 @@ async function handlePayment() {
       throw new Error(data.error || 'Could not initiate payment. Please try again.');
     }
 
-    const rzp = new Razorpay({
+    const rzpOptions = {
       key: data.keyId,
       amount: data.amount,
       currency: data.currency,
@@ -815,17 +845,46 @@ async function handlePayment() {
       order_id: data.orderId,
       prefill: { name, email, contact: phone },
       theme: { color: '#146EFF' },
-      handler: function () {
-        window.location.href = '/thank-you-payment?service=15ca-15cb';
+      modal: { ondismiss: p15ShowPayFail },
+      handler: function (response) {
+        p15HidePayFail();
+        let redirected = false;
+        const go = function () {
+          if (redirected) return;
+          redirected = true;
+          window.location.href = '/thank-you-payment?service=15ca-15cb';
+        };
+        // Payment is captured either way; Supermaxx reconciles every 15 min, so never block the redirect.
+        setTimeout(go, 8000);
+        fetch('/api/transaction/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_signature: response.razorpay_signature
+          })
+        })
+          .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, data: d }; }); })
+          .then(function (result) {
+            if (!(result.ok && result.data.success === 1)) {
+              console.error('15CA/15CB payment verification failed. Payment ID: ' + response.razorpay_payment_id);
+            }
+            go();
+          })
+          .catch(function () {
+            console.error('15CA/15CB payment could not be confirmed. Payment ID: ' + response.razorpay_payment_id);
+            go();
+          });
       },
-    });
+    };
 
     btn.style.opacity = '';
     btn.style.cursor = '';
     btn.disabled = false;
     btn.innerHTML = originalHTML;
 
-    rzp.open();
+    p15OpenCheckout(rzpOptions);
 
   } catch (err) {
     errEl.textContent = err.message || 'Something went wrong. Please try again.';
